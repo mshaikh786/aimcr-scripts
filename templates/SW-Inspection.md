@@ -1,25 +1,25 @@
-# Software Inspection Report  
+## Software 
 **Software Name:**   
 **Version:**   
 **Environment / Image:**   
 
 ---
 
-## 1. Summary
+### 1. Summary
 
 ---
 
-## 2. SBOM Extract (from Trivy)
+### 2. SBOM Extract (from Trivy)
 
 ---
 
-## 3. Software Source / Provenance
+### 3. Software Source / Provenance
 
-### 3.1 Source Channel
+#### 3.1 Source Channel
 - **Distribution channel:** 
 - **Exact URL:** 
 
-### 3.2 GitHub Repository Metadata (as of DD/MM/YYYY)
+#### 3.2 GitHub Repository Metadata (as of DD/MM/YYYY)
 *(Fill only if applicable)*  
 
 - **Maintainer / Organization:**  
@@ -30,19 +30,19 @@
 - **Total Commits:**  
 - **Activity Health:** 
 
-### 3.3 Package Release History
+#### 3.3 Package Release History
 - **Latest release date:**  
 - **Frequency of releases:** 
 
 ---
 
-## 4. License Analysis
+### 4. License Analysis
 
-### 4.1 License Type
+#### 4.1 License Type
 - **License:** 
 - **License URL:** 
 
-### 4.2 Permissibility Summary
+#### 4.2 Permissibility Summary
 | Question                           | Answer   |
 |------------------------------------|----------|
 | Can be used for academic purposes? | Yes/No   |
