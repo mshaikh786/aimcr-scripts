@@ -8,7 +8,8 @@
 4. [Hugging Face Accelerate](#hugging-face-accelerate)
 5. [PyTorch](#pytorch)
 6. [Hugging Face Transformers](#hugging-face-transformers)
-7. [FlashAttention](#flash-attention)
+7. [FlashAttention](#flashattention)
+8. [Flash-MoBA](#flash-moba)
 
 ## Alibaba ROLL
 **Software Name:**  Alibaba ROLL  \
@@ -421,6 +422,65 @@ improves performance by fusing attention operations and leveraging GPU-specific 
 | Can be used for academic purposes? | Yes    |
 | Can be used for commercial use?    | Yes    |
 | Modification allowed?              | Yes    |
+
+---
+
+## Flash-MoBA
+**Software Name:**   Flash-MoBA 
+**Version:**   2.0.0
+**Environment / Image:**  Built from source within a GPU-enabled container (e.g., PyTorch + CUDA base image)
+
+---
+
+### 1. Summary
+Flash-MoBA (Flash-Model Based Attention) is an open-source research library developed by the MIT Human-Centered 
+Artificial Intelligence Lab (Dao-AILab) that extends the FlashAttention family of optimized attention mechanisms to 
+support **causal, hard attention, and multimodal attention patterns**. It is designed to deliver high-performance 
+attention kernels that outperform standard frameworks for large transformer models by fusing multiple GPU kernels and 
+reducing memory traffic.
+---
+
+### 2. SBOM Extract (from Trivy)
+
+---
+
+### 3. Software Source / Provenance
+
+#### 3.1 Source Channel
+- **Distribution channel:** GitHub (source code)
+- **Exact URL:** https://github.com/mit-han-lab/flash-moba
+
+#### 3.2 GitHub Repository Metadata (as of 17/12/2025)
+*(Fill only if applicable)*  
+
+- **Maintainer / Organization:**  MIT Human-Centered AI Lab / Dao-AILab
+- **Last Commit Date:**  last month
+- **Number of Stars:**  207
+- **Number of Issues (Open/Closed):**  4
+- **Number of PRs (Open/Closed):**  0
+- **Total Commits:**  5
+- **Activity Health:** Moderate
+
+#### 3.3 Package Release History
+- **Latest release date:**  Nov 17
+- **Frequency of releases:** No other releases shown on GitHub
+
+---
+
+### 4. License Analysis
+
+#### 4.1 License Type
+- **License:**  BSD-3-Clause license 
+- **License URL:** https://github.com/mit-han-lab/flash-moba/blob/main/LICENSE
+
+#### 4.2 Permissibility Summary
+| Question                           | Answer |
+|------------------------------------|--------|
+| Can be used for academic purposes? | Yes    |
+| Can be used for commercial use?    | Yes    |
+| Modification allowed?              | Yes    |
+
+
 
 
 
