@@ -18,7 +18,7 @@
 
 ---
 
-## 1. Summary
+### 1. Summary
 
 ROLL (Reinforcement Learning Operations Lifecycle) is an open-source framework by Alibaba DAMO Academy designed to 
 streamline the development, training, and deployment of RL-based and LLM-enhanced systems. It provides distributed 
@@ -30,18 +30,18 @@ distributed GPU support.
 
 ---
 
-## 2. SBOM Extract (from Trivy)
+### 2. SBOM Extract (from Trivy)
 [View SBOM log](roll.log)
 
 ---
 
-## 3. Software Source / Provenance
+### 3. Software Source / Provenance
 
-### 3.1 Source Channel
+#### 3.1 Source Channel
 - **Distribution channel:** GitHub (open-source repository)  
 - **Exact URL:**  https://github.com/alibaba/ROLL
 
-### 3.2 GitHub Repository Metadata (as of December 16th, 2025)
+#### 3.2 GitHub Repository Metadata (as of December 16th, 2025)
 *(Fill only if applicable)*  
 
 - **Maintainer / Organization:**  Alibaba DAMO Academy
@@ -52,19 +52,19 @@ distributed GPU support.
 - **Total Commits:**  368
 - **Activity Health:** Active
 
-### 3.3 Package Release History
+#### 3.3 Package Release History
 - **Latest release date:**  Second week of December 2025
 - **Frequency of releases:** monthly
 
 ---
 
-## 4. License Analysis
+### 4. License Analysis
 
-### 4.1 License Type
+#### 4.1 License Type
 - **License:** Apache 2.0
 - **License URL:**  https://github.com/alibaba/ROLL/blob/main/LICENSE
 
-### 4.2 Permissibility Summary
+#### 4.2 Permissibility Summary
 | Question                           | Answer                                |
 |------------------------------------|---------------------------------------|
 | Can be used for academic purposes? | Yes                                   |
@@ -77,12 +77,12 @@ distributed GPU support.
 
 ## RLinf
 **Software Name:**  RLinf \
-**Version:** 0.1
+**Version:** 0.1 \
 **Environment / Image:** rlinf/rlinf:agentic-rlinf0.1-torch2.6.0-openvla-openvlaoft-pi0   
 
 ---
 
-## 1. Summary
+### 1. Summary
 
 RLinf is an open-source, flexible and scalable reinforcement learning (RL) infrastructure designed for post-training 
 optimization of **foundation models** (including LLMs, VLMs, and VLAs) via RL algorithms. It provides a backbone for 
@@ -91,18 +91,18 @@ distributed configurations, and integrations with model backends and simulators.
 
 ---
 
-## 2. SBOM Extract (from Trivy)
+### 2. SBOM Extract (from Trivy)
 [View SBOM log](rlinf.log)
 
 ---
 
-## 3. Software Source / Provenance
+### 3. Software Source / Provenance
 
-### 3.1 Source Channel
+#### 3.1 Source Channel
 - **Distribution channel:** GitHub (open-source repository)  \
 - **Exact URL:** https://github.com/RLinf/RLinf
 
-### 3.2 GitHub Repository Metadata (as of 16/12/2025)
+#### 3.2 GitHub Repository Metadata (as of 16/12/2025)
 *(Fill only if applicable)*  
 
 - **Maintainer / Organization:**  RLinf organization on GitHub
@@ -113,19 +113,19 @@ distributed configurations, and integrations with model backends and simulators.
 - **Total Commits:**  200
 - **Activity Health:** Active
 
-### 3.3 Package Release History
+#### 3.3 Package Release History
 - **Latest release date:**  No major releases yet just version 0.1
 - **Frequency of releases:** --
 
 ---
 
-## 4. License Analysis
+### 4. License Analysis
 
-### 4.1 License Type
+#### 4.1 License Type
 - **License:** Apache License 2.0
 - **License URL:** https://github.com/RLinf/RLinf/blob/main/LICENSE
 
-### 4.2 Permissibility Summary
+#### 4.2 Permissibility Summary
 | Question                           | Answer |
 |------------------------------------|--------|
 | Can be used for academic purposes? | Yes    |
@@ -136,12 +136,12 @@ distributed configurations, and integrations with model backends and simulators.
 
 ## DeepSpeed
 **Software Name:**  DeepSpeed \
-**Version:** 0.18.2
+**Version:** 0.18.2 \
 **Environment / Image:** PyPI Package 
 
 ---
 
-## 1. Summary
+### 1. Summary
 
 DeepSpeed is an open-source deep learning optimization library developed by Microsoft to enable efficient training and 
 inference of large-scale models, including large language models (LLMs). It provides advanced system-level optimizations 
@@ -150,20 +150,20 @@ strategies, and optimized CUDA kernels.
 
 ---
 
-## 2. SBOM Extract (from Trivy)
+### 2. SBOM Extract (from Trivy)
 [View SBOM log](torch-stack.log)
 
 ---
 
-## 3. Software Source / Provenance
+### 3. Software Source / Provenance
 
-### 3.1 Source Channel
+#### 3.1 Source Channel
 - **Distribution channel:**
   - PyPI (Python package)  
   - GitHub (source code)
 - **Exact URL:** https://github.com/microsoft/DeepSpeed
 
-### 3.2 GitHub Repository Metadata (as of 16/12/2025)
+#### 3.2 GitHub Repository Metadata (as of 16/12/2025)
 *(Fill only if applicable)*  
 
 - **Maintainer / Organization:**  Microsoft
@@ -174,19 +174,19 @@ strategies, and optimized CUDA kernels.
 - **Total Commits:**  3,004
 - **Activity Health:** Active
 
-### 3.3 Package Release History
+#### 3.3 Package Release History
 - **Latest release date:**  Last week
 - **Frequency of releases:** monthly
 
 ---
 
-## 4. License Analysis
+### 4. License Analysis
 
-### 4.1 License Type
+#### 4.1 License Type
 - **License:** Apache License 2.0
 - **License URL:** https://github.com/deepspeedai/DeepSpeed/blob/master/LICENSE
 
-### 4.2 Permissibility Summary
+#### 4.2 Permissibility Summary
 | Question                           | Answer |
 |------------------------------------|--------|
 | Can be used for academic purposes? | Yes    |
@@ -203,7 +203,7 @@ strategies, and optimized CUDA kernels.
 
 ---
 
-## 1. Summary
+### 1. Summary
 
 Hugging Face Accelerate is an open-source library developed by Hugging Face that simplifies the process of training and 
 running deep learning models across different hardware configurations, including single GPU, multi-GPU, multi-node, TPU, 
@@ -212,20 +212,20 @@ compatible with popular frameworks such as PyTorch, DeepSpeed, and Fully Sharded
 
 ---
 
-## 2. SBOM Extract (from Trivy)
+### 2. SBOM Extract (from Trivy)
 [View SBOM log](torch-stack.log)
 
 ---
 
-## 3. Software Source / Provenance
+### 3. Software Source / Provenance
 
-### 3.1 Source Channel
+#### 3.1 Source Channel
 - **Distribution channel:** 
   - PyPI (Python package)  
   - GitHub (source code)
 - **Exact URL:** https://github.com/huggingface/accelerate
 
-### 3.2 GitHub Repository Metadata (as of 16/12/2025)
+#### 3.2 GitHub Repository Metadata (as of 16/12/2025)
 *(Fill only if applicable)*  
 
 - **Maintainer / Organization:**  Hugging Face  
@@ -236,19 +236,19 @@ compatible with popular frameworks such as PyTorch, DeepSpeed, and Fully Sharded
 - **Total Commits:**  1,891
 - **Activity Health:** Active
 
-### 3.3 Package Release History
+#### 3.3 Package Release History
 - **Latest release date:**  Last month
 - **Frequency of releases:** monthly
 
 ---
 
-## 4. License Analysis
+### 4. License Analysis
 
-### 4.1 License Type
+#### 4.1 License Type
 - **License:** Apache License 2.0
 - **License URL:** https://github.com/huggingface/accelerate/blob/main/LICENSE
 
-### 4.2 Permissibility Summary
+#### 4.2 Permissibility Summary
 | Question                           | Answer |
 |------------------------------------|--------|
 | Can be used for academic purposes? | Yes    |
@@ -438,8 +438,8 @@ improves performance by fusing attention operations and leveraging GPU-specific 
 ---
 
 ## Flash-MoBA
-**Software Name:**   Flash-MoBA 
-**Version:**   2.0.0
+**Software Name:**   Flash-MoBA \
+**Version:**   2.0.0 \
 **Environment / Image:**  Built from source within a GPU-enabled container (e.g., PyTorch + CUDA base image)
 
 ---
