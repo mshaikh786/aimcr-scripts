@@ -101,5 +101,23 @@ https://github.com/x-humanoid-robomind/x-humanoid-robomind.github.io
 LLaVA-OneVision-Data is a curated aggregation of **~90 heterogeneous vision-language datasets**, exposed as individual
 Hugging Face configurations and unified under a LLaVA-style conversation format.
 
+> **⚠️ Content Notice (Sensitive Domains)**
+>
+> During dataset inspection, we identified subsets that contain **sensitive human-related content**:
+>
+> - **Medical data**:
+>   - `PMC-VQA (MathV360K)`
+>   - `MathV360K_VQA-RAD`
+>   
+>   These subsets include **medical images and medically related question–answer pairs**, which may involve human subjects and clinical context. Extra care is required when handling, visualizing, or redistributing samples from these subsets, and usage should be limited to **approved research and educational purposes** in accordance with institutional and ethical guidelines.
+>
+> - **Hate / sensitive social content**:
+>   - `hateful_memes`
+>
+>   This subset intentionally contains **hateful or offensive language and imagery**, likely included to help models **learn to recognize, classify, or distinguish hateful speech and content**. Visualization and downstream use should be conducted with appropriate content warnings and safeguards.
+>
+> These findings highlight the importance of **per-subset inspection and governance**, as LLaVA-OneVision-Data is a collection of heterogeneous datasets with varying sensitivity levels.
+
+
 Inspection jupyter is too big to push to github but can be found at /ibex/project/c2320/dataset-check/lava-onevision-dataset/llava-onevision-data.ipynb 
 
