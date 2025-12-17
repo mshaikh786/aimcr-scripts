@@ -88,6 +88,7 @@ RLinf is an open-source, flexible and scalable reinforcement learning (RL) infra
 optimization of **foundation models** (including LLMs, VLMs, and VLAs) via RL algorithms. It provides a backbone for 
 continuous fine-tuning and scalable RL training workflows, supporting a variety of training modes, large-scale 
 distributed configurations, and integrations with model backends and simulators.
+
 ---
 
 ## 2. SBOM Extract (from Trivy)
@@ -146,6 +147,7 @@ DeepSpeed is an open-source deep learning optimization library developed by Micr
 inference of large-scale models, including large language models (LLMs). It provides advanced system-level optimizations 
 such as ZeRO (Zero Redundancy Optimizer), tensor and pipeline parallelism, activation checkpointing, offloading 
 strategies, and optimized CUDA kernels.
+
 ---
 
 ## 2. SBOM Extract (from Trivy)
@@ -202,10 +204,12 @@ strategies, and optimized CUDA kernels.
 ---
 
 ## 1. Summary
+
 Hugging Face Accelerate is an open-source library developed by Hugging Face that simplifies the process of training and 
 running deep learning models across different hardware configurations, including single GPU, multi-GPU, multi-node, TPU, 
 and CPU setups. It provides a unified interface that abstracts away distributed training complexity while remaining 
 compatible with popular frameworks such as PyTorch, DeepSpeed, and Fully Sharded Data Parallel (FSDP).
+
 ---
 
 ## 2. SBOM Extract (from Trivy)
@@ -262,9 +266,11 @@ compatible with popular frameworks such as PyTorch, DeepSpeed, and Fully Sharded
 ---
 
 ### 1. Summary
+
 PyTorch is an open-source deep learning framework developed and maintained by Meta (Facebook AI Research) and the 
 PyTorch open-source community. It provides tensor computation with strong GPU acceleration, automatic differentiation, 
 and a flexible programming model widely adopted for research, prototyping, and production AI systems.
+
 ---
 
 ### 2. SBOM Extract (from Trivy)
@@ -320,8 +326,10 @@ and a flexible programming model widely adopted for research, prototyping, and p
 ---
 
 ### 1. Summary
+
 Hugging Face Transformers is an open-source library that provides state-of-the-art implementations of transformer-based 
 models for natural language processing (NLP), computer vision (CV), audio, and multimodal tasks. It supports a wide range of architectures such as BERT, GPT, T5, LLaMA, ViT, and many others, and integrates tightly with PyTorch, TensorFlow, and JAX.
+
 ---
 
 ### 2. SBOM Extract (from Trivy)
@@ -378,9 +386,11 @@ models for natural language processing (NLP), computer vision (CV), audio, and m
 ---
 
 ### 1. Summary
+
 FlashAttention is an open-source CUDA-based library developed by the Dao-AILab research group that provides highly 
 optimized implementations of attention mechanisms for transformer models. It significantly reduces memory usage and 
 improves performance by fusing attention operations and leveraging GPU-specific optimizations.
+
 ---
 
 ### 2. SBOM Extract (from Trivy)
@@ -435,11 +445,13 @@ improves performance by fusing attention operations and leveraging GPU-specific 
 ---
 
 ### 1. Summary
+
 Flash-MoBA (Flash-Model Based Attention) is an open-source research library developed by the MIT Human-Centered 
 Artificial Intelligence Lab (Dao-AILab) that extends the FlashAttention family of optimized attention mechanisms to 
 support **causal, hard attention, and multimodal attention patterns**. It is designed to deliver high-performance 
 attention kernels that outperform standard frameworks for large transformer models by fusing multiple GPU kernels and 
 reducing memory traffic.
+
 ---
 
 ### 2. SBOM Extract (from Trivy)
