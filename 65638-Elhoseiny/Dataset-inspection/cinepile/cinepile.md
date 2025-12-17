@@ -79,6 +79,13 @@ Curated **movie-based video–language dataset**, constructed for research purpo
     - subject to non-commercial or attribution requirements
 
     - Underlying movie content may carry additional constraints
+    - 
+
+> **CinePile itself is licensed as a dataset** (metadata + text + QA).
+> **The actual videos are NOT licensed or redistributed** by CinePile.
+> You are legally safe **as long as you do not download, redistribute, or store the YouTube videos**.
+
+
 
 ---
 
