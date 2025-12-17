@@ -19,6 +19,7 @@
 ---
 
 ## 1. Summary
+
 ROLL (Reinforcement Learning Operations Lifecycle) is an open-source framework by Alibaba DAMO Academy designed to 
 streamline the development, training, and deployment of RL-based and LLM-enhanced systems. It provides distributed 
 training support, RL pipelines, multi-agent orchestration, and integration with modern AI toolchains such as PyTorch, 
@@ -26,6 +27,7 @@ vLLM, Triton, and other inference accelerators. \
 In this environment, ROLL is included as part of a larger AI container image containing PyTorch 2.8.0, vLLM 0.10.2, and 
 other inference/training frameworks. The software is used for high-performance RL workflows and agent training with 
 distributed GPU support.
+
 ---
 
 ## 2. SBOM Extract (from Trivy)
