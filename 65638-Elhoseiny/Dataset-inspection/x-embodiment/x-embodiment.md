@@ -124,6 +124,28 @@ presence could only be inferred structurally.
 
 ### Dataset Access
 
+#### 1. Resolving Dataset Access Issues (TFDS [Issue #5392](https://github.com/tensorflow/datasets/issues/5392))
+
+Some X-Embodiment datasets initially appeared inaccessible or incomplete when
+queried through a single GCS location. As discussed in TFDS [issue #5392](https://github.com/tensorflow/datasets/issues/5392), datasets are distributed
+across multiple GCS buckets and cannot be reliably discovered from one bucket
+alone.
+
+To resolve this, we explicitly probed all known Open-X-Embodiment storage
+locations instead of relying on TFDS defaults.
+
+```python
+# === Buckets to try (order matters) ===
+BUCKETS = [
+    "gs://gdm-robotics-open-x-embodiment",
+    "gs://gresearch/robotics",
+]
+```
+By iterating over these buckets in order, datasets that were missing or
+inaccessible from one location could be successfully resolved in another,
+allowing reliable access to their `features.json` metadata.
+
+#### 2. RGB Detection Methodology
 Datasets were accessed through their referenced **Google Cloud Storage (GCS)**
 buckets as defined by the Open-X-Embodiment / TFDS registry.
 
@@ -140,11 +162,11 @@ As a result, the audit relied on **direct schema inspection** rather than
 descriptions alone.
 
 
-### RGB Detection Methodology
+
 
 RGB availability was determined using a **three-stage verification process**.
 
-#### 1. Description-based verification
+#### 2.1 Description-based verification
 
 The first stage scanned human-readable descriptions inside `features.json`.
 
@@ -162,7 +184,7 @@ Datasets meeting this criterion were marked as:
 This step confirmed RGB presence for **44 datasets**.
 
 
-#### 2. Schema-based verification (TFDS / RLDS inspection)
+#### 2.2 Schema-based verification (TFDS / RLDS inspection)
 
 Many datasets lacked explicit textual descriptions despite containing image data.
 To avoid false negatives, the TFDS/RLDS feature schema was inspected directly.
@@ -190,7 +212,7 @@ Datasets satisfying these structural conditions were marked as:
 This step recovered **23 datasets** that would otherwise appear to lack RGB data.
 
 
-#### 3. Explicit non-RGB datasets
+#### 2.3 Explicit non-RGB datasets
 
 Some datasets explicitly state that image data is unavailable or replaced with
 zero-valued placeholders (e.g., `np.zeros`).
