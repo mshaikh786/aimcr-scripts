@@ -395,6 +395,9 @@ improves performance by fusing attention operations and leveraging GPU-specific 
 
 ### 2. SBOM Extract (from Trivy)
 
+- No SBOM available for v2.8.3 
+- The SBOM [torch-stack.log](torch-stack.log) contains flash-attn v2.7.3
+
 ---
 
 ### 3. Software Source / Provenance
@@ -455,6 +458,8 @@ reducing memory traffic.
 ---
 
 ### 2. SBOM Extract (from Trivy)
+
+No SBOM available - Technical difficulty
 
 ---
 
