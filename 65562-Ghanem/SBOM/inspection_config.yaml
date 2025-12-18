@@ -1,0 +1,210 @@
+project_name: "DAC ShaheenIII GPU Stack"
+snapshot_date: "2025-12-18"
+
+components:
+  - id: pytorch
+    name: "PyTorch"
+    version: "2.2.2"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/torch/"
+
+  - id: torchvision
+    name: "torchvision"
+    version: "0.17.2"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/torchvision/"
+
+  - id: torchaudio
+    name: "torchaudio"
+    version: "2.2.2"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/torchaudio/"
+
+  - id: pyg
+    name: "PyTorch Geometric (pyg)"
+    version: "2.5.2"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/pyg/"
+
+  - id: torch-scatter
+    name: "torch-scatter"
+    version: "2.1.2"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/torch-scatter/"
+
+  - id: torch-sparse
+    name: "torch-sparse"
+    version: "0.6.18"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/torch-sparse/"
+
+  - id: torch-cluster
+    name: "torch-cluster"
+    version: "1.6.3"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/torch-cluster/"
+
+  - id: pytorch-lightning
+    name: "PyTorch Lightning"
+    version: "2.2.1"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/pytorch-lightning/"
+
+  - id: torchmetrics
+    name: "TorchMetrics"
+    version: "1.3.2"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/torchmetrics/"
+
+  - id: numpy
+    name: "NumPy"
+    version: "1.26.4"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/numpy/"
+
+  - id: scipy
+    name: "SciPy"
+    version: "1.12.0"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/scipy/"
+
+  - id: pandas
+    name: "pandas"
+    version: "2.2.1"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/pandas/"
+
+  - id: scikit-learn
+    name: "scikit-learn"
+    version: "1.4.1.post1"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/scikit-learn/"
+
+  - id: matplotlib
+    name: "Matplotlib"
+    version: "3.8.3"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/matplotlib/"
+
+  - id: numba
+    name: "Numba"
+    version: "0.59.1"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/numba/"
+
+  - id: einops
+    name: "einops"
+    version: "0.7.0"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/einops/"
+
+  - id: e3nn
+    name: "e3nn"
+    version: "0.5.5"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/e3nn/"
+
+  - id: ase
+    name: "ASE"
+    version: "3.23.0"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/ase/"
+
+  - id: rdkit
+    name: "RDKit"
+    version: "2023.9.5"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/rdkit/"
+
+  - id: deepchem
+    name: "DeepChem"
+    version: "2.8.0"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/deepchem/"
+
+  - id: transformers
+    name: "Transformers"
+    version: "4.51.3"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/transformers/"
+
+  - id: lmdb
+    name: "lmdb (py-lmdb)"
+    version: "1.4.1"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/lmdb/"
+
+  - id: wandb
+    name: "Weights & Biases (wandb)"
+    version: "0.16.5"
+    environment: "Python package (PyPI)"
+    sbom_log: "stack.log"
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/wandb/"
