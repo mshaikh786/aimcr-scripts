@@ -1,0 +1,43 @@
+FROM nvcr.io/nvidia/pytorch:25.05-py3
+
+# ------------------------------------------------------------
+# System build dependencies
+# ------------------------------------------------------------
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    ninja-build \
+    python3-dev \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# ------------------------------------------------------------
+# Python build tooling
+# ------------------------------------------------------------
+RUN python3 -m pip install --upgrade pip setuptools wheel packaging ninja
+
+# ------------------------------------------------------------
+# IMPORTANT: ARM + CUDA build settings
+# ------------------------------------------------------------
+# Set this according to your GPU:
+#   Jetson Orin      -> 87
+#   Grace Hopper     -> 90
+# DO NOT leave this empty.
+ENV TORCH_CUDA_ARCH_LIST="90"
+
+# Very important: limit parallelism (ARM OOMs easily)
+ENV MAX_JOBS=1
+
+# Optional but recommended to reduce memory pressure
+ENV CMAKE_BUILD_PARALLEL_LEVEL=1
+
+# ------------------------------------------------------------
+# Install FlashAttention (NO build isolation!)
+# ------------------------------------------------------------
+RUN python3 - << 'PY'
+import torch
+print("Torch:", torch.__version__)
+print("CUDA:", torch.version.cuda)
+PY
+
+RUN pip install --no-cache-dir --no-build-isolation flash-attn==2.8.3
+
