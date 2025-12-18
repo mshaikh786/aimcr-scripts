@@ -215,11 +215,28 @@ def main():
         # 4.1 License type
         print("#### 4.1 License Type")
         print()
-        lic_spdx = license_info.get("spdx_id") or "Unknown"
-        lic_name = license_info.get("name") or "Unknown"
-        print(f"- **SPDX ID:** {lic_spdx}")
-        print(f"- **License name:** {lic_name}")
+
+        lic_spdx = license_info.get("spdx_id")
+        raw_lic_name = license_info.get("name")
+
+        # Normalize / shorten license name so we don't dump full license texts
+        def normalize_license_name(name):
+            if not name:
+                return "Unknown"
+            # Collapse whitespace/newlines
+            cleaned = " ".join(str(name).split())
+            # If it's very long, just point to upstream instead of printing it all
+            if len(cleaned) > 120:
+                return "Custom / see upstream license text"
+            return cleaned
+
+        spdx_display = lic_spdx or "Unknown"
+        lic_display = normalize_license_name(raw_lic_name)
+
+        print(f"- **SPDX ID:** {spdx_display}")
+        print(f"- **License name:** {lic_display}")
         print()
+
 
         # 4.2 Permissibility Summary
         print("#### 4.2 Permissibility Summary")

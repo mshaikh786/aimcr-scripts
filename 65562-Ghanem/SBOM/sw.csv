@@ -1,0 +1,25 @@
+Software Package,Version,URL
+Pytorch,2.2.2,https://pypi.org/project/torch/
+torchvision,0.17.2,https://pypi.org/project/torchvision/
+torchaudio,2.2.2,https://pypi.org/project/torchaudio/
+PyTorch Geometric (pyg),2.5.2,https://pypi.org/project/pyg/
+torch-scatter,2.1.2,https://pypi.org/project/torch-scatter/
+torch-sparse,0.6.18,https://pypi.org/project/torch-sparse/
+torch-cluster,1.6.3,https://pypi.org/project/torch-cluster/
+(PyTorch) Lightning,2.2.1,https://pypi.org/project/pytorch-lightning
+TorchMetrics,1.3.2,https://pypi.org/project/torchmetrics/
+NumPy,1.26.4,https://pypi.org/project/numpy/
+SciPy,1.12.0,https://pypi.org/project/scipy/
+pandas,2.2.1,https://pypi.org/project/pandas/
+scikit-learn,1.4.1.post1,https://pypi.org/project/scikit-learn/
+Matplotlib,3.8.3,https://pypi.org/project/matplotlib/
+Numba,0.59.1,https://pypi.org/project/numba/
+einops,0.7.0,https://pypi.org/project/einops/
+e3nn,0.5.5,https://pypi.org/project/e3nn/
+ASE (Atomic Simulation Environment),3.23.0,https://pypi.org/project/ase/
+RDKit,2023.9.5,https://pypi.org/project/rdkit/
+DeepChem,2.8.0,https://pypi.org/project/deepchem/
+Transformers,4.51.3,https://pypi.org/project/transformers/
+Accelerate,1.6.0,https://pypi.org/project/accelerate/
+lmdb (py-lmdb),1.4.1,https://pypi.org/project/lmdb/
+Weights & Biases (wandb),0.16.5,https://pypi.org/project/wandb/

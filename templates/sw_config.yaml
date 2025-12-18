@@ -1,0 +1,75 @@
+# ============================
+# Software Stack Inspection Config
+# ============================
+# This file describes:
+# - The project / workload being inspected
+# - The snapshot date (when this inspection is valid)
+# - The list of software components
+#
+# You can reuse this template across projects by:
+#  1. Updating `project_name` and `snapshot_date`
+#  2. Filling the `components` list with the software you care about
+#  3. Pointing `sbom_log` to the Trivy SBOM/log file for each component
+#  4. Adjusting distribution channels (PyPI, GitHub, Docker, Conda, NGC, etc.)
+
+project_name: "<PROJECT NAME HERE>"
+snapshot_date: "YYYY-MM-DD"    # e.g. "2025-12-18"
+
+components:
+  # ============================
+  # Example 1: Pure PyPI package
+  # ============================
+  - id: torch                       # short, stable ID used in JSON/rendered report
+    name: "PyTorch"                 # human-friendly name
+    version: "2.2.2"                # version as used in your environment
+    environment: "Python package (PyPI) in /opt/venv"
+    sbom_log: "logs/torch.log"      # path to SBOM/Trivy output file (relative to where you will launch collect_metadata.py)
+
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/torch/"
+      # If you know the GitHub repo, you can add it explicitly (optional).
+      # If you don't, collect_metadata.py will try to infer it from PyPI metadata.
+      - type: "github"
+        url: "https://github.com/pytorch/pytorch"
+
+    # Optional manual overrides (if you want to force things instead of auto-detect)
+    # summary_override: |
+    #   Short human-written summary of how PyTorch is used in this workload.
+    #
+    # license_override:
+    #   name: "BSD-3-Clause"
+    #   spdx_id: "BSD-3-Clause"
+
+  # =================================
+  # Example 2: Library + Docker image
+  # =================================
+  - id: deepspeed
+    name: "DeepSpeed"
+    version: "0.18.2"
+    environment: "PyPI package inside nvcr.io/nvidia/pytorch:25.05-py3"
+    sbom_log: "logs/deepspeed.log"
+
+    distribution_channels:
+      - type: "pypi"
+        url: "https://pypi.org/project/deepspeed/"
+      - type: "github"
+        url: "https://github.com/microsoft/DeepSpeed"
+      - type: "docker"              # free-form type, still useful for documentation
+        url: "nvcr.io/nvidia/pytorch:25.05-py3"
+
+  # =================================
+  # Example 3: Non-PyPI / only GitHub
+  # (e.g. Flash-MoBA or custom repo)
+  # =================================
+  - id: flash-moba
+    name: "Flash-MoBA"
+    version: "2.0.0"
+    environment: "Built from source on GH200 (CUDA 12.x)"
+    sbom_log: "logs/flash-moba.log"
+
+    distribution_channels:
+      - type: "github"
+        url: "https://github.com/mit-han-lab/flash-moba/"
+      # - type: "ngc"               # you can add custom labels for NGC, Aliyun, etc.
+      #   url: "nvcr.io/your-org/your-image:tag"
