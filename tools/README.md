@@ -1,7 +1,7 @@
-# ShaheenIII Software Inspection Toolkit
+# Software Inspection Toolkit
 
-This mini-toolkit automates most of the workflow for inspecting software stacks
-from ShaheenIII Grand Challenge proposals:
+This mini-toolkit automates part of the workflow for inspecting software stacks
+from proposals:
 
 1. **Extract software list from the proposal PDF**
 2. **Generate a YAML config for inspection**
