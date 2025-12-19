@@ -66,41 +66,40 @@ Default: "YYYY-MM-DD".
 
 1. `sw.csv`
 Columns:
+   - Software Package 
+   - Version 
+   - URL \
 
-- Software Package 
-- Version 
-- URL
-This is convenient to open in Excel / Google Sheets for progress tracking.
+   This is convenient to open in Excel / Google Sheets for progress tracking.
 
 2. `config.yaml`
+    
+    Example shape:
+    ```yaml
+    project_name: "DAC ShaheenIII GPU Stack"
+    snapshot_date: "2025-12-18"
+    
+    components:
+    
+    - id: pytorch
+      name: "PyTorch"
+      version: "2.2.2"
+      environment: "Python package (PyPI)"
+      distribution_channels:
+        - type: "pypi"
+          url: "https://pypi.org/project/torch/"
+      declared_license: "BSD 3-Clause"
+      declared_function: "tensor & DL framework"
+    
+    - id: torchvision
+      ...
+    
+    ```
 
-Example shape:
-```yaml
-project_name: "DAC ShaheenIII GPU Stack"
-snapshot_date: "2025-12-18"
-
-components:
-
-- id: pytorch
-  name: "PyTorch"
-  version: "2.2.2"
-  environment: "Python package (PyPI)"
-  distribution_channels:
-    - type: "pypi"
-      url: "https://pypi.org/project/torch/"
-  declared_license: "BSD 3-Clause"
-  declared_function: "tensor & DL framework"
-
-- id: torchvision
-  ...
-
-```
-
-You can now adjust:
-- `snapshot_date` if needed 
-- environment (e.g. “inside nvcr.io/nvidia/cuda:12.1.0-base-ubuntu22.04”)
-- add sbom_log fields, e.g.:
-  - sbom_log: "stack.log"
+    You can now adjust:
+    - `snapshot_date` if needed 
+      - environment (e.g. “inside nvcr.io/nvidia/cuda:12.1.0-base-ubuntu22.04”)
+      - add sbom_log fields, e.g.: " sbom_log: "stack.log" "
 
 ## 2. collect_metadata.py
 
