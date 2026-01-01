@@ -34,4 +34,22 @@
 - **Hosting Platform Location:** United States
 - **Availability:** Global access via Hugging Face, subject to platform access controls and sanctions compliance
 
+## Sample Representation
+
+A single OMol25 data unit represents **one DFT-evaluated molecular structure** and consists of:
+
+- An **ASE `Atoms` object** containing:
+  - Atomic numbers (element types)
+  - 3D atomic positions (Å)
+  - Total energy (eV)
+  - Per-atom forces (eV/Å)
+
+- Associated **metadata** attached to the structure, including:
+  - Molecular identifiers and composition
+  - Global electronic properties (charge, spin, HOMO–LUMO gap)
+  - DFT calculation details (basis size, SCF steps, dispersion energy)
+  - Atomic-level charges and, if applicable, spins
+
+Each entry is stored as a **key–value record in an LMDB database**, optimized for fast retrieval in machine learning workflows.
+
 > No proposal justification, or description of intended usage.
