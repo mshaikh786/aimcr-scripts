@@ -36,13 +36,15 @@
 - **Originating Organization:** United States (Lawrence Berkeley National Laboratory / Materials Project)
 
 ## Sample Representation
+
 - Structured tabular and graph-based representations of materials
 - Inputs may include:
-  - Chemical composition
-  - Crystal structure (atomic positions, lattice parameters)
+    - Chemical composition
+    - Crystal structure (atomic positions, lattice parameters)
 - Outputs include:
-  - Continuous properties (e.g., formation energy, band gap)
-  - Binary labels (e.g., metal vs non-metal)
-  
+    - Continuous properties (e.g., formation energy, band gap)
+    - Binary labels (e.g., metal vs non-metal)
+
 ## Usage Justification
+
 > No proposal justification, or description of intended usage.
