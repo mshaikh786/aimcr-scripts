@@ -1,7 +1,7 @@
 ## Open Materials
 
 ### Access Conditions
-- Not Gated
+- Publicly accessible dataset
 
 #### License Implications
 - **License:** CC-BY-4.0
