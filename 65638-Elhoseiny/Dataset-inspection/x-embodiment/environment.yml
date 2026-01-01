@@ -1,0 +1,19 @@
+# environment.yml
+name: oxe-jupyter
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - jupyterlab
+  - ipykernel
+  - numpy
+  - pandas
+  - matplotlib
+  - pillow
+  - tqdm
+  - google-cloud-sdk      # provides gsutil
+  - tensorflow>=2.13
+  - pip
+  - pip:
+      - rlds
+      - tensorflow-datasets>=4.9

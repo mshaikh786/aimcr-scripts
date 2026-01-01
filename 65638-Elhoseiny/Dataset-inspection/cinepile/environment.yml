@@ -1,0 +1,66 @@
+name: aimcr-jupyter-cuda
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  # =====================
+  # Core
+  # =====================
+  - python=3.10
+  - pip
+
+  # Jupyter
+  - ipykernel
+  - jupyterlab
+  - notebook
+  - jupyter_server
+  - ipywidgets
+  - widgetsnbextension
+
+  # =====================
+  # PyTorch + CUDA (conda)
+  # =====================
+  - pytorch=2.5.*
+  - pytorch-cuda=12.1
+
+  # =====================
+  # Data / Utils
+  # =====================
+  - numpy
+  - pandas
+  - pyarrow
+  - scipy
+  - tqdm
+  - rich
+  - pyyaml
+  - requests
+
+  # =====================
+  # Visualization
+  # =====================
+  - matplotlib
+  - pillow
+
+  # =====================
+  # Video / Media
+  # =====================
+  - ffmpeg
+  - opencv
+  - imageio
+  - av
+
+  # =====================
+  # Hugging Face & VLM tools (pip-only / fresher)
+  # =====================
+  - pip:
+      - datasets
+      - huggingface_hub
+      - transformers
+      - accelerate
+      - safetensors
+      - tokenizers
+      - evaluate
+      - sentencepiece
+      - decord
+
