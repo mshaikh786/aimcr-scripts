@@ -20,7 +20,7 @@
 - **Primary Distribution Platform:** Hugging Face
 - **Repository:** https://huggingface.co/facebook/OMol25
 - **Access Method:** Identity-gated download via Hugging Face
-- **Provenance:** Curated and released by Meta as a standalone dataset, separate from any accompanying models or code
+- **Provenance:** Curated and released by Meta as a standalone dataset, separate from any accompanying models or code (1225 commits and 1.9k stars on GitHub).
 - **Maintenance Status:** Actively maintained (~50 commits; last update 2026-01-01)
 
 ### Associated paper:

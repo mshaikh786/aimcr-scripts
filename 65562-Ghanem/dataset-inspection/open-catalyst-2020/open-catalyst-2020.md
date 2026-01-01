@@ -18,7 +18,7 @@
 - **Primary Distribution Platform:** fair-chem / [Open Catalyst Project website](https://opencatalystproject.org/)
 - **Access Method:** Direct download of pre-sharded LMDB files (https://fair-chem.github.io/catalysts/datasets/summary)
 - **GtHub Repo**: https://github.com/facebookresearch/fairchem/tree/main/src/fairchem/data/oc
-- **Provenance:** Curated and released by Meta as a standalone dataset.
+- **Provenance:** Curated and released by Meta as a standalone dataset (1225 commits and 1.9k stars on GitHub).
 - **Maintenance Status:** Last commit on GitHub was on July 2025.
 
 ### Associated paper:

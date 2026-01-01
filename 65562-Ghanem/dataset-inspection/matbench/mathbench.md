@@ -23,6 +23,7 @@
 - **Provenance:**
     - Aggregates datasets derived from established materials science databases (e.g., Materials Project, JARVIS,
       experimental datasets)
+    - 772 commits and 179 stars on GitHub.
 - **Maintenance Status:** last commit Jan 2024.
 
 ### Associated paper:

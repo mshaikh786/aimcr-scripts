@@ -17,7 +17,7 @@
 - **Primary Distribution Platform:** Hugging Face
 - **Repository:** https://huggingface.co/datasets/facebook/OMAT24
 - **Access Method:** download via Hugging Face
-- **Provenance:** Curated and released by Meta as a standalone dataset
+- **Provenance:** Curated and released by Meta as a standalone dataset (1225 commits and 1.9k stars on GitHub).
 - **Maintenance Status:** Actively maintained (~20 commits; last update 2025-12)
 
 ### Associated paper:
