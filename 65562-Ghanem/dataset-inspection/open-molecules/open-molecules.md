@@ -1,4 +1,4 @@
-## OMol25 – Access, Licensing, and Provenance Summary
+## OMol25 
 
 ### Access Conditions
 - Identity-gated access (not anonymous)
@@ -6,11 +6,8 @@
 - Submitted information cannot be edited later
 - No justification or description of intended use is required
 
-### Dataset
-- **Name:** OMol25
-- **License:** CC-BY-4.0
-
 #### License Implications
+- **License:** CC-BY-4.0
 - Free to use, modify, and redistribute
 - Commercial use permitted
 - Attribution to the dataset authors is required
@@ -31,8 +28,6 @@
 ### Country of Origin
 - **Originating Organization:** Meta Platforms, Inc. (United States)  
   *(Meta Platforms Ireland Limited serves as the legal entity for EEA distribution)*
-- **Hosting Platform Location:** United States
-- **Availability:** Global access via Hugging Face, subject to platform access controls and sanctions compliance
 
 ## Sample Representation
 
@@ -51,5 +46,7 @@ A single OMol25 data unit represents **one DFT-evaluated molecular structure** a
   - Atomic-level charges and, if applicable, spins
 
 Each entry is stored as a **key–value record in an LMDB database**, optimized for fast retrieval in machine learning workflows.
+
+## Usage Justification
 
 > No proposal justification, or description of intended usage.
