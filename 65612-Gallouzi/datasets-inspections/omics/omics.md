@@ -43,7 +43,3 @@
 - **Metadata Included:**
     - Calculation type (single-point or relaxation)
     - Subdataset identifier (input generation strategy)
-
-## Usage Justification
-
-> No proposal justification, or description of intended usage.
