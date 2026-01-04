@@ -28,18 +28,3 @@
 
 - **Originating Organization:** Meta Platforms, Inc. (United States)
   *(Meta Platforms Ireland Limited serves as the legal entity for EEA distribution)*
-
-## Sample Representation
-
-- **Unit of Data:** One DFT-evaluated material structure
-- **Core Fields:**
-    - Atomic species
-    - Atomic positions
-    - Cell / lattice information
-- **Labels / Targets:**
-    - Total energy (eV)
-    - Atomic forces (eV/Å)
-    - Stress tensor (eV/Å³)
-- **Metadata Included:**
-    - Calculation type (single-point or relaxation)
-    - Subdataset identifier (input generation strategy)
