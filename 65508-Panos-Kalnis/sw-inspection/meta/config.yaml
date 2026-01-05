@@ -1,0 +1,73 @@
+project_name: ML models for Scientific Data Compression
+snapshot_date: '2026-01-04'
+components:
+
+- id: pytorch
+  name: Pytorch
+  version: 2.8.0
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/pytorch/pytorch/tree/v2.8.0
+  declared_license: BSD
+  declared_function: Train neural networks
+
+- id: pytorch-lightning
+  name: Pytorch Lightning
+  version: 2.5.5
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/Lightning-AI/pytorch-lightning/tree/2.5.5
+  declared_license: BSD
+  declared_function: Train neural networks
+
+- id: numpy
+  name: Numpy
+  version: 2.3.4
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/numpy/numpy/tree/v2.3.4
+  declared_license: ''
+  declared_function: Helper for Torch
+
+- id: xarray
+  name: Xarray
+  version: 2025.10.1
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/pydata/xarray/tree/v2025.10.1
+  declared_license: ''
+  declared_function: Process netcdf files
+
+- id: matplotlib
+  name: Matplotlib
+  version: 3.10.7
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/matplotlib/matplotlib/tree/v3.10.7
+  declared_license: ''
+  declared_function: Plotting
+
+- id: pyinterp
+  name: Pyinterp
+  version: 2025.11.0
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/CNES/pangeo-pyinterp/tree/2025.11.0
+  declared_license: ''
+  declared_function: Interpolation functions
+
+- id: scipy
+  name: Scipy
+  version: 1.16.3
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/scipy/scipy/tree/v1.16.3
+  declared_license: ''
+  declared_function: Interpolation functions

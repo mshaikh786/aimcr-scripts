@@ -1,0 +1,8 @@
+Software Package,Version,URL
+Pytorch,2.8.0,https://github.com/pytorch/pytorch/tree/v2.8.0
+Pytorch Lightning,2.5.5,https://github.com/Lightning-AI/pytorch-lightning/tree/2.5.5
+Numpy,2.3.4,https://github.com/numpy/numpy/tree/v2.3.4
+Xarray,2025.10.1,https://github.com/pydata/xarray/tree/v2025.10.1
+Matplotlib,3.10.7,https://github.com/matplotlib/matplotlib/tree/v3.10.7
+Pyinterp,2025.11.0,https://github.com/CNES/pangeo-pyinterp/tree/2025.11.0
+Scipy,1.16.3,https://github.com/scipy/scipy/tree/v1.16.3

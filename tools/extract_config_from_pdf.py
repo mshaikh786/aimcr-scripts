@@ -7,26 +7,30 @@ Extract software packages from a Shaheen III proposal PDF and generate:
 
 The script:
   * Looks for the "1. Codes & Libraries" section in the PDF
-  * Parses each entry (Name of Code/Library, Version, URL)
+  * Parses each entry (Name of Code/Library, Version, URL, etc.)
   * Writes a CSV for progress tracking
   * Writes a YAML config with components and distribution channels,
     leaving 'sbom_log' empty for manual filling.
 
+Missing URLs:
+  * Always warn to stderr and prompt on stdin:
+      URL missing for 'X' (version Y). Enter URL (or leave blank to keep empty):
+  * If you just press Enter, the URL stays empty (but the entry is kept).
+
 Usage:
-  extract_sw_from_pdf.py --pdf PROPOSAL.pdf --out-dir OUTPUT_DIR \
+  extract_config_from_pdf.py --pdf PROPOSAL.pdf --out-dir OUTPUT_DIR \
       --project-name "DAC ShaheenIII GPU Stack" \
       --snapshot-date 2025-12-18
 """
 
 import argparse
 import csv
-import os
 import re
 import sys
 from pathlib import Path
 
-import pdfplumber  # pip install pdfplumber
-import yaml        # pip install pyyaml
+import pdfplumber   # pip install pdfplumber
+import yaml         # pip install pyyaml
 
 
 DEFAULT_ENV = "Python package (PyPI)"
@@ -34,7 +38,7 @@ DEFAULT_ENV = "Python package (PyPI)"
 
 # ---------- PDF PARSING HELPERS ----------
 
-def extract_lines(pdf_path):
+def extract_lines(pdf_path: Path):
     """Extract all non-empty lines of text from a PDF."""
     lines = []
     with pdfplumber.open(str(pdf_path)) as pdf:
@@ -54,8 +58,6 @@ def slice_codes_section(lines):
       '1. Codes & Libraries'
     and
       '2. Software Containers'
-
-    Assumes all proposals follow this layout.
     """
     start_idx = None
     end_idx = None
@@ -83,7 +85,8 @@ def parse_codes_section(lines):
       URL (for Open-Source codes) https://pypi.org/project/torch/
       Function: tensor & DL framework
 
-    Returns list of dicts: {name, version, url, ownership, function}
+    Returns list of dicts:
+      {name, version, url, ownership, function}
     """
     components = []
     current = None
@@ -122,14 +125,14 @@ def parse_codes_section(lines):
 
 # ---------- COMMON HELPERS ----------
 
-def slugify(name):
+def slugify(name: str) -> str:
     s = name.lower()
     s = re.sub(r"[^a-z0-9]+", "-", s)
     s = re.sub(r"-+", "-", s).strip("-")
     return s
 
 
-def classify_channel(url):
+def classify_channel(url: str) -> str:
     u = (url or "").lower()
     if "pypi.org/project" in u:
         return "pypi"
@@ -142,9 +145,51 @@ def classify_channel(url):
     return "other"
 
 
+def handle_missing_urls(components_raw):
+    """
+    Always warn on missing URLs and prompt user to fill them interactively.
+    User can press Enter to keep them empty.
+    """
+    missing = [c for c in components_raw if not c.get("url")]
+
+    if not missing:
+        return
+
+    print("[WARN] Some software entries have missing URLs:", file=sys.stderr)
+    for c in missing:
+        print(
+            f"  - '{c['name']}' (version: {c['version']}) has no URL in the PDF.",
+            file=sys.stderr,
+        )
+
+    print("[INFO] Prompting for missing URLs (press Enter to leave empty).", file=sys.stderr)
+
+    for c in missing:
+        prompt = (
+            f"URL missing for '{c['name']}' (version {c['version']}).\n"
+            "Enter URL (or leave blank to keep empty): "
+        )
+        try:
+            user_input = input(prompt)
+        except EOFError:
+            user_input = ""
+        c["url"] = user_input.strip()
+
+    # Final reminder if still missing
+    still_missing = [c for c in components_raw if not c.get("url")]
+    if still_missing:
+        print("[WARN] After prompting, some URLs are still empty:", file=sys.stderr)
+        for c in still_missing:
+            print(
+                f"  - '{c['name']}' (version: {c['version']}) has no URL; "
+                "metadata will be limited.",
+                file=sys.stderr,
+            )
+
+
 # ---------- OUTPUT WRITERS ----------
 
-def write_csv(components_raw, csv_path):
+def write_csv(components_raw, csv_path: Path):
     """Write sw.csv with Software Package / Version / URL."""
     with open(csv_path, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
@@ -153,7 +198,7 @@ def write_csv(components_raw, csv_path):
             writer.writerow([c["name"], c["version"], c["url"]])
 
 
-def build_config(project_name, snapshot_date, components_raw):
+def build_config(project_name: str, snapshot_date: str, components_raw):
     """Build the YAML structure (dict) for config.yaml."""
     components_yaml = []
 
@@ -200,7 +245,7 @@ def build_config(project_name, snapshot_date, components_raw):
     return config
 
 
-def write_config_yaml(config, yaml_path):
+def write_config_yaml(config: dict, yaml_path: Path):
     """Dump YAML with extra blank lines between components for readability."""
     yaml_str = yaml.dump(
         config,
@@ -271,6 +316,9 @@ def main():
 
     components_raw = parse_codes_section(codes_lines)
     print(f"[INFO] Parsed {len(components_raw)} software entries.", file=sys.stderr)
+
+    # Always handle missing URLs interactively
+    handle_missing_urls(components_raw)
 
     # Paths
     csv_path = out_dir / "sw.csv"

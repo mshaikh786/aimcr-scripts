@@ -1,371 +1,596 @@
 #!/usr/bin/env python3
+"""
+collect_metadata.py
 
+Read an inspection config YAML (config.yaml) and collect metadata for each
+software component:
+
+- PyPI metadata (if a PyPI URL exists)
+- GitHub metadata (if a GitHub URL exists)
+- SBOM / Trivy log file info (if sbom_log is set)
+- Simple license/permissibility summary
+- A *manual* placeholder for ARM / AArch64 support (no automation)
+
+Outputs a single JSON document to stdout:
+
+{
+  "project_name": ...,
+  "snapshot_date": ...,
+  "generated_at": ...,
+  "components": [
+      {
+        "id": ...,
+        "name": ...,
+        "version": ...,
+        "environment": ...,
+        "distribution_channels": [...],
+        "declared_function": "...",
+        "sbom": {...},
+        "pypi": {...},
+        "github": {...},
+        "ngc_url": "...",
+        "arch_support": {
+            "arm_aarch64_available": "",
+            "arm_build_url": "",
+            "note": "TODO: manually check ARM/AArch64 support ..."
+        },
+        "license": {...}
+      },
+      ...
+  ]
+}
+"""
+
+import argparse
 import json
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime
+from pathlib import Path
 from urllib.parse import urlparse
 
 import requests
 import yaml
 
-PYPI_API_BASE = "https://pypi.org/pypi"
-GITHUB_API_BASE = "https://api.github.com"
+
+# -----------------------------
+# HTTP helper
+# -----------------------------
+
+def shorten_license_text(lic: str) -> str:
+    """
+    Normalize/shorten PyPI license strings so we don't dump full license texts
+    into inspection_data.json.
+
+    - If it's already short and single-line, keep it.
+    - If it's long or multi-line, return a short summary with a pointer to the
+      full license file / page.
+    """
+    if not lic:
+        return ""
+
+    s = lic.strip()
+    # If it's short and single-line, just keep it
+    if len(s) <= 120 and "\n" not in s and "\r" not in s:
+        return s
+
+    low = s.lower()
+
+    if "apache" in low:
+        return "Apache-2.0 (see project license file for full text)"
+    if "bsd" in low:
+        return "BSD-style license (see project license file for full text)"
+    if "mit" in low:
+        return "MIT license (see project license file for full text)"
+    if "gpl" in low or "gnu general public license" in low:
+        return "GPL-family license (see project license file for full text)"
+    if "lgpl" in low:
+        return "LGPL-family license (see project license file for full text)"
+    if "mpl" in low or "mozilla public license" in low:
+        return "MPL-family license (see project license file for full text)"
+
+    # Fallback: keep only the first line
+    first_line = s.splitlines()[0].strip()
+    return f"{first_line} ... (see project license file for full text)"
+
+def safe_get_json(url, headers=None, timeout=15):
+    try:
+        resp = requests.get(url, headers=headers or {}, timeout=timeout)
+        resp.raise_for_status()
+        return resp.json()
+    except Exception:
+        return None
 
 
-def load_config(path):
-    with open(path, "r", encoding="utf-8") as f:
-        return yaml.safe_load(f)
+# -----------------------------
+# URL / channel helpers
+# -----------------------------
 
-
-def extract_github_repo(url):
-    """Return (owner, repo) from a GitHub URL, or (None, None)."""
+def classify_url_type(url):
+    """
+    Roughly classify a URL into one of: pypi, github, ngc, docker, other.
+    """
     if not url:
-        return None, None
-    parsed = urlparse(url)
-    if "github.com" not in parsed.netloc:
-        return None, None
+        return "other"
+    host = (urlparse(url).netloc or "").lower()
+    if "pypi.org" in host:
+        return "pypi"
+    if "github.com" in host:
+        return "github"
+    if "ngc.nvidia.com" in host or "nvcr.io" in host:
+        return "ngc"
+    if "docker.io" in host or "ghcr.io" in host:
+        return "docker"
+    return "other"
+
+
+def guess_pypi_url_from_github(github_url):
+    """
+    Try to infer a PyPI project URL from a GitHub repo URL.
+
+    Strategy:
+      - Extract repo name from https://github.com/owner/repo[...]
+      - Try a few candidate PyPI project names based on that repo name.
+      - For each candidate, call https://pypi.org/pypi/<name>/json
+        and accept the first that returns valid JSON.
+
+    Returns:
+      "https://pypi.org/project/<name>/" or "" if nothing works.
+    """
+    if not github_url:
+        return ""
+
+    parsed = urlparse(github_url)
+    if "github.com" not in (parsed.netloc or ""):
+        return ""
+
     parts = [p for p in parsed.path.split("/") if p]
     if len(parts) < 2:
-        return None, None
-    owner, repo = parts[0], parts[1]
-    repo = repo.rstrip(".git")
-    return owner, repo
+        return ""
 
+    repo_name = parts[1]  # owner/repo -> repo
+
+    candidates = []
+    base = repo_name
+    candidates.append(base)
+    candidates.append(base.lower())
+    candidates.append(base.replace("_", "-"))
+    candidates.append(base.replace("-", "_"))
+
+    seen = set()
+    candidates = [c for c in candidates if not (c in seen or seen.add(c))]
+
+    for name in candidates:
+        api_url = f"https://pypi.org/pypi/{name}/json"
+        data = safe_get_json(api_url, timeout=10)
+        if data and isinstance(data, dict) and data.get("info"):
+            return f"https://pypi.org/project/{name}/"
+
+    return ""
+
+
+def infer_channels_from_component(component):
+    """
+    Given whatever distribution_channels the config has (often just ONE),
+    infer useful URLs for pypi / github / ngc without requiring the user
+    to list them all manually.
+
+    Returns a dict:
+      {
+        "pypi_url": "... or ''",
+        "github_url": "... or ''",
+        "ngc_url": "... or ''",
+        "primary_type": "pypi|github|ngc|docker|other",
+        "primary_url": "..."
+      }
+    """
+    chans = component.get("distribution_channels") or []
+    primary_url = ""
+    primary_type = "other"
+
+    if chans:
+        primary_url = chans[0].get("url") or ""
+        primary_type = chans[0].get("type") or classify_url_type(primary_url)
+        primary_type = primary_type or classify_url_type(primary_url)
+
+    pypi_url = ""
+    github_url = ""
+    ngc_url = ""
+
+    # 1) Fill obvious ones from explicit channels
+    for ch in chans:
+        url = ch.get("url") or ""
+        ctype = ch.get("type") or classify_url_type(url)
+        if ctype == "pypi" and not pypi_url:
+            pypi_url = url
+        elif ctype == "github" and not github_url:
+            github_url = url
+        elif ctype == "ngc" and not ngc_url:
+            ngc_url = url
+
+    # 2) If we have PyPI but no GitHub, try to discover GitHub from PyPI project_urls
+    if pypi_url and not github_url:
+        tmp_meta = get_pypi_metadata(pypi_url)
+        proj_urls = tmp_meta.get("project_urls") or {}
+        for _, url in proj_urls.items():
+            if "github.com" in (url or "").lower():
+                github_url = url
+                break
+
+    # 3) If we have GitHub but no PyPI, try to guess PyPI project name from repo name
+    if github_url and not pypi_url:
+        guessed_pypi = guess_pypi_url_from_github(github_url)
+        if guessed_pypi:
+            pypi_url = guessed_pypi
+
+    return {
+        "pypi_url": pypi_url,
+        "github_url": github_url,
+        "ngc_url": ngc_url,
+        "primary_type": primary_type,
+        "primary_url": primary_url,
+    }
+
+
+# -----------------------------
+# PyPI metadata
+# -----------------------------
 
 def get_pypi_metadata(pypi_url, expected_version=None):
-    """Query PyPI JSON API using the project URL and try to guess a GitHub URL."""
+    """
+    Fetch basic metadata from PyPI.
+
+    Returns:
+      {
+        "project_name": ...,
+        "name": ...,
+        "version": ...,
+        "summary": ...,
+        "home_page": ...,
+        "project_urls": {...},
+        "license": ...,
+      }
+    """
     if not pypi_url:
         return {}
 
     parsed = urlparse(pypi_url)
-    parts = [p for p in parsed.path.split("/") if p]
-    if len(parts) < 2 or parts[0] != "project":
+    if "pypi.org" not in (parsed.netloc or ""):
         return {}
 
-    package_name = parts[1]
-
+    path_parts = [p for p in parsed.path.split("/") if p]
+    project_name = None
     try:
-        resp = requests.get(f"{PYPI_API_BASE}/{package_name}/json", timeout=15)
-        resp.raise_for_status()
-    except Exception as e:
-        return {"error": f"pypi_request_failed: {e}", "package_name": package_name}
+        idx = path_parts.index("project")
+        project_name = path_parts[idx + 1]
+    except (ValueError, IndexError):
+        if path_parts:
+            project_name = path_parts[-1]
 
-    data = resp.json()
+    if not project_name:
+        return {}
+
+    api_url = f"https://pypi.org/pypi/{project_name}/json"
+    data = safe_get_json(api_url, timeout=15)
+    if not data:
+        return {"project_name": project_name, "error": "Failed to fetch PyPI metadata."}
+
     info = data.get("info", {})
-    releases = data.get("releases", {})
+    releases = data.get("releases", {}) or {}
 
     version = expected_version or info.get("version")
-    version_data = releases.get(version, [])
-    upload_time = None
-    if version_data:
-        file_meta = version_data[0]
-        upload_time = file_meta.get("upload_time_iso_8601")
+    if expected_version and expected_version not in releases:
+        version = info.get("version")
+    raw_license = info.get("license") or ""
+    license_short = shorten_license_text(raw_license)
 
-    # Guess GitHub repo from project_urls / home_page
-    project_urls = info.get("project_urls") or {}
-    candidate_urls = []
-
-    for _, v in project_urls.items():
-        if isinstance(v, str):
-            candidate_urls.append(v)
-
-    home_page = info.get("home_page")
-    if home_page:
-        candidate_urls.append(home_page)
-
-    github_guess = None
-    for u in candidate_urls:
-        if "github.com" in u:
-            github_guess = u
-            break
-
-    return {
-        "package_name": package_name,
+    meta = {
+        "project_name": project_name,
+        "name": info.get("name") or project_name,
         "version": version,
-        "summary": info.get("summary"),
-        "license": info.get("license"),
-        "home_page": home_page,
-        "project_urls": project_urls,
-        "release_upload_time": upload_time,
-        "github_guess": github_guess,
+        "summary": info.get("summary") or "",
+        "home_page": info.get("home_page") or "",
+        "project_urls": info.get("project_urls") or {},
+        "license": license_short,
     }
-
-
-def github_request(path, token=None, params=None):
-    url = f"{GITHUB_API_BASE}{path}"
-    headers = {"Accept": "application/vnd.github+json"}
-    if token:
-        headers["Authorization"] = f"Bearer {token}"
-    resp = requests.get(url, headers=headers, params=params, timeout=15)
-    resp.raise_for_status()
-    return resp
-
-
-def get_github_metadata(github_url, token=None):
-    owner, repo = extract_github_repo(github_url)
-    if not owner:
-        return {}
-
-    meta = {"owner": owner, "repo": repo}
-
-    # Basic repo info
-    try:
-        r = github_request(f"/repos/{owner}/{repo}", token=token)
-        repo_data = r.json()
-    except Exception as e:
-        meta["error"] = f"github_repo_request_failed: {e}"
-        return meta
-
-    license_obj = repo_data.get("license") or {}
-    meta.update(
-        {
-            "full_name": repo_data.get("full_name"),
-            "description": repo_data.get("description"),
-            "stargazers_count": repo_data.get("stargazers_count"),
-            "forks_count": repo_data.get("forks_count"),
-            "open_issues_count": repo_data.get("open_issues_count"),
-            "default_branch": repo_data.get("default_branch"),
-            "license": license_obj.get("spdx_id"),
-            "license_name": license_obj.get("name"),
-        }
-    )
-
-    # Last commit on default branch
-    default_branch = repo_data.get("default_branch") or "main"
-    try:
-        r = github_request(
-            f"/repos/{owner}/{repo}/commits",
-            token=token,
-            params={"sha": default_branch, "per_page": 1},
-        )
-        commits = r.json()
-        if isinstance(commits, list) and commits:
-            commit = commits[0]
-            commit_date = (
-                commit.get("commit", {})
-                .get("committer", {})
-                .get("date", None)
-            )
-            meta["last_commit_date"] = commit_date
-    except Exception:
-        pass
-
-    # Simple activity classification
-    last_commit = meta.get("last_commit_date")
-    if last_commit:
-        try:
-            dt = datetime.fromisoformat(last_commit.replace("Z", "+00:00"))
-            delta_days = (datetime.now(timezone.utc) - dt).days
-            if delta_days <= 90:
-                health = "Active"
-            elif delta_days <= 365:
-                health = "Moderate"
-            else:
-                health = "Stale"
-            meta["activity_health"] = health
-        except Exception:
-            meta["activity_health"] = "Unknown"
-    else:
-        meta["activity_health"] = "Unknown"
-
     return meta
 
 
-def get_github_release_for_version(owner, repo, version, token=None):
-    """
-    Try to find a GitHub release corresponding to a given version.
-    Heuristics:
-      - Exact tag match: 'v{version}' or '{version}'
-      - Fallback: tag/name containing the version string
-    """
-    try:
-        r = github_request(
-            f"/repos/{owner}/{repo}/releases",
-            token=token,
-            params={"per_page": 100},
-        )
-        releases = r.json()
-    except Exception as e:
-        return {"error": f"github_releases_request_failed: {e}"}
+# -----------------------------
+# GitHub metadata
+# -----------------------------
 
-    if not isinstance(releases, list):
+def parse_github_repo_slug(github_url):
+    """
+    Convert https://github.com/owner/repo[...] into 'owner/repo'.
+    """
+    if not github_url:
+        return None
+    parsed = urlparse(github_url)
+    if "github.com" not in (parsed.netloc or ""):
+        return None
+    parts = [p for p in parsed.path.split("/") if p]
+    if len(parts) < 2:
+        return None
+    return f"{parts[0]}/{parts[1]}"
+
+
+def get_github_metadata(github_url, expected_version=None):
+    """
+    Fetch basic metadata from GitHub repo:
+    - stars, forks, open issues
+    - license
+    - last push / last commit date (approx)
+    """
+    slug = parse_github_repo_slug(github_url)
+    if not slug:
         return {}
 
-    candidates = []
+    token = os.getenv("GITHUB_TOKEN")
+    headers = {"Accept": "application/vnd.github+json"}
+    if token:
+        headers["Authorization"] = f"Bearer {token}"
 
-    for rel in releases:
-        tag = (rel.get("tag_name") or "").strip()
-        name = (rel.get("name") or "").strip()
+    base = f"https://api.github.com/repos/{slug}"
+    repo_json = safe_get_json(base, headers=headers, timeout=15)
+    if not repo_json:
+        return {"slug": slug, "error": "Failed to fetch GitHub repo metadata."}
 
-        if tag == version or tag == f"v{version}":
-            candidates.append((0, rel))
-        elif version in tag or version in name:
-            candidates.append((1, rel))
+    default_branch = repo_json.get("default_branch") or "main"
 
-    if not candidates:
-        return {}
+    # Get last commit on default branch (approx "last active")
+    commits_url = f"{base}/commits?sha={default_branch}&per_page=1"
+    commits_json = safe_get_json(commits_url, headers=headers, timeout=15) or []
+    last_commit_date = None
+    if isinstance(commits_json, list) and commits_json:
+        commit = commits_json[0].get("commit", {})
+        author = commit.get("author") or {}
+        last_commit_date = author.get("date")
 
-    candidates.sort(key=lambda x: x[0])
-    rel = candidates[0][1]
+    license_info = repo_json.get("license") or {}
+    gh_license = {
+        "key": license_info.get("key"),
+        "name": license_info.get("name"),
+        "spdx_id": license_info.get("spdx_id"),
+    }
 
+    meta = {
+        "slug": slug,
+        "full_name": repo_json.get("full_name"),
+        "description": repo_json.get("description") or "",
+        "stargazers_count": repo_json.get("stargazers_count"),
+        "forks_count": repo_json.get("forks_count"),
+        "open_issues_count": repo_json.get("open_issues_count"),
+        "watchers_count": repo_json.get("watchers_count"),
+        "default_branch": default_branch,
+        "created_at": repo_json.get("created_at"),
+        "updated_at": repo_json.get("updated_at"),
+        "pushed_at": repo_json.get("pushed_at"),
+        "last_commit_date": last_commit_date,
+        "license": gh_license,
+    }
+    return meta
+
+
+# -----------------------------
+# Manual ARM / arch placeholder
+# -----------------------------
+
+def manual_arch_support_placeholder():
+    """
+    Return a placeholder dict for ARM/AArch64 support to be filled manually.
+    """
     return {
-        "id": rel.get("id"),
-        "tag_name": rel.get("tag_name"),
-        "name": rel.get("name"),
-        "html_url": rel.get("html_url"),
-        "published_at": rel.get("published_at"),
-        "draft": rel.get("draft"),
-        "prerelease": rel.get("prerelease"),
+        "arm_aarch64_available": "",
+        "arm_build_url": "",
+        "note": (
+            "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, "
+            "PyPI wheels, vendor containers) and update 'arm_aarch64_available' "
+            "to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+        ),
     }
 
 
-def infer_license_permissibility(spdx_id, name):
-    lic = (spdx_id or name or "").upper()
+# -----------------------------
+# SBOM / log file info
+# -----------------------------
 
-    permissive = {"MIT", "BSD-3-CLAUSE", "BSD-2-CLAUSE", "APACHE-2.0", "ISC"}
-    copyleft = {"GPL-3.0", "AGPL-3.0", "LGPL-3.0"}
+def sbom_info_for_component(component, config_dir):
+    """
+    Build a small info dict about the SBOM / Trivy log for this component.
 
-    if any(k in lic for k in permissive):
+    Expected config structure:
+      sbom_log: "stack.log"       # relative to config_dir, or absolute path
+
+    Returns:
+      {
+        "path": "absolute/or/relative/path",
+        "exists": bool,
+        "size_bytes": int or None,
+        "modified_at": ISO8601 or None,
+      }
+    """
+    sbom_path_value = component.get("sbom_log")
+    if not sbom_path_value:
         return {
-            "academic": True,
-            "commercial": True,
-            "modification": True,
-            "redistribution": True,
-            "attribution": True,
-            "copyleft": False,
-        }
-    if any(k in lic for k in copyleft):
-        return {
-            "academic": True,
-            "commercial": True,  # but with conditions
-            "modification": True,
-            "redistribution": True,
-            "attribution": True,
-            "copyleft": True,
+            "path": None,
+            "exists": False,
+            "size_bytes": None,
+            "modified_at": None,
         }
 
-    return {
-        "academic": None,
-        "commercial": None,
-        "modification": None,
-        "redistribution": None,
-        "attribution": None,
-        "copyleft": None,
+    sbom_path = Path(sbom_path_value)
+    if not sbom_path.is_absolute():
+        sbom_path = (config_dir / sbom_path).resolve()
+
+    info = {
+        "path": str(sbom_path),
+        "exists": sbom_path.exists(),
+        "size_bytes": None,
+        "modified_at": None,
     }
 
-
-def check_sbom_file(path):
-    info = {"path": path, "exists": False}
-    if not path:
-        return info
-    if os.path.exists(path):
-        stat = os.stat(path)
-        info["exists"] = True
+    if sbom_path.exists():
+        stat = sbom_path.stat()
         info["size_bytes"] = stat.st_size
-        info["mtime"] = datetime.fromtimestamp(
-            stat.st_mtime, tz=timezone.utc
-        ).isoformat()
+        info["modified_at"] = datetime.fromtimestamp(stat.st_mtime).isoformat()
+
     return info
 
 
+# -----------------------------
+# License / permissibility
+# -----------------------------
+
+def infer_license_permissibility(component, pypi_meta, github_meta):
+    """
+    Very simple license/permissibility aggregator.
+
+    Returns:
+      {
+        "raw_license_strings": [...],
+        "effective_license": "...",
+        "permissive": bool or None,
+        "notes": "...",
+    }
+    """
+    declared = component.get("declared_license") or ""
+    pypi_lic = (pypi_meta or {}).get("license") or ""
+    gh_lic = (github_meta or {}).get("license", {}).get("spdx_id") or \
+             (github_meta or {}).get("license", {}).get("name") or ""
+
+    raw_licenses = [v for v in [declared, pypi_lic, gh_lic] if v]
+
+    joined = " ".join(raw_licenses).lower()
+    permissive_keywords = ["apache", "bsd", "mit", "isc"]
+    copyleft_keywords = ["gpl", "agpl", "lgpl"]
+
+    permissive = None
+    notes = ""
+    if any(k in joined for k in permissive_keywords):
+        permissive = True
+        notes = "Detected permissive license family (e.g. Apache/BSD/MIT)."
+    elif any(k in joined for k in copyleft_keywords):
+        permissive = False
+        notes = "Detected copyleft license family (e.g. GPL/AGPL/LGPL)."
+    elif raw_licenses:
+        notes = "License detected but could not classify as clearly permissive or copyleft."
+    else:
+        notes = "No license information detected from config/PyPI/GitHub."
+
+    effective = raw_licenses[0] if raw_licenses else ""
+
+    return {
+        "raw_license_strings": raw_licenses,
+        "effective_license": effective,
+        "permissive": permissive,
+        "notes": notes,
+    }
+
+
+# -----------------------------
+# Config & CLI
+# -----------------------------
+
+def load_config(path):
+    """Load YAML inspection config with project_name, snapshot_date, components."""
+    with open(path, "r", encoding="utf-8") as f:
+        return yaml.safe_load(f)
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description=(
+            "Collect metadata (PyPI, GitHub, SBOM) for software components "
+            "defined in a YAML inspection config and emit a combined JSON "
+            "report to stdout. ARM/AArch64 support is left as a manual "
+            "placeholder per component."
+        )
+    )
+    parser.add_argument(
+        "config",
+        help="Path to inspection config YAML file (e.g. meta/config.yaml).",
+    )
+    return parser.parse_args()
+
+
+# -----------------------------
+# Main
+# -----------------------------
+
 def main():
-    if len(sys.argv) < 2:
-        print("Usage: collect_metadata.py inspection_config.yaml", file=sys.stderr)
-        sys.exit(1)
+    args = parse_args()
 
-    config_path = sys.argv[1]
-    cfg = load_config(config_path)
+    config_path = Path(args.config).resolve()
+    if not config_path.exists():
+        raise SystemExit(f"Config file not found: {config_path}")
 
-    github_token = os.environ.get("GITHUB_TOKEN")
+    config = load_config(config_path)
+    config_dir = config_path.parent
 
-    enriched_components = []
+    project_name = config.get("project_name", "")
+    snapshot_date = config.get("snapshot_date", "")
+    components_cfg = config.get("components") or []
 
-    for comp in cfg.get("components", []):
+    # One-time reminder about manual ARM step
+    print(
+        "[INFO] ARM/AArch64 build checks are NOT automated. "
+        "Please edit 'arch_support' in inspection_data.json manually for each component.",
+        file=sys.stderr,
+    )
+
+    report = {
+        "project_name": project_name,
+        "snapshot_date": snapshot_date,
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "components": [],
+    }
+
+    for comp in components_cfg:
         comp_id = comp.get("id")
         name = comp.get("name")
-        version = comp.get("version")
-        distribution_channels = comp.get("distribution_channels", [])
-
+        version = (comp.get("version") or "").strip()
+        environment = comp.get("environment", "")
         print(f"[INFO] Processing component: {comp_id} ({name})", file=sys.stderr)
+        # Infer distribution channels from minimal config
+        channel_info = infer_channels_from_component(comp)
+        pypi_url = channel_info["pypi_url"]
+        github_url = channel_info["github_url"]
+        ngc_url = channel_info["ngc_url"]
 
-        pypi_meta = {}
-        pypi_url = None
-        github_url = None
+        # 1) PyPI metadata
+        pypi_meta = get_pypi_metadata(pypi_url, expected_version=version) if pypi_url else {}
 
-        # Collect URLs from config
-        for ch in distribution_channels:
-            ch_type = ch.get("type")
-            url = ch.get("url")
-            if ch_type == "pypi" and not pypi_url:
-                pypi_url = url
-            if ch_type == "github" and not github_url:
-                github_url = url
-            if not github_url and url and "github.com" in url:
-                github_url = url
+        # 2) GitHub metadata
+        github_meta = get_github_metadata(github_url, expected_version=version) if github_url else {}
 
-        # PyPI metadata (and possible GitHub guess)
-        if pypi_url:
-            pypi_meta = get_pypi_metadata(pypi_url, expected_version=version)
+        # 3) Manual ARM / arch placeholder
+        arch_support = manual_arch_support_placeholder()
 
-        # If GitHub URL not explicitly set, try to infer from PyPI
-        if not github_url and pypi_meta.get("github_guess"):
-            github_url = pypi_meta["github_guess"]
+        # 4) SBOM / Trivy log info
+        sbom_info = sbom_info_for_component(comp, config_dir)
 
-        # GitHub repo + release metadata
-        github_meta = {}
-        github_release_meta = {}
-        if github_url:
-            github_meta = get_github_metadata(github_url, token=github_token)
-            owner, repo = extract_github_repo(github_url)
-            if owner and repo:
-                github_release_meta = get_github_release_for_version(
-                    owner, repo, version, token=github_token
-                )
+        # 5) License info
+        license_info = infer_license_permissibility(comp, pypi_meta, github_meta)
 
-        # License and permissibility
-        license_spdx = github_meta.get("license") or None
-        license_name = github_meta.get("license_name") or pypi_meta.get("license")
-        perms = infer_license_permissibility(license_spdx, license_name)
-
-        # SBOM
-        sbom_log_path = comp.get("sbom_log")
-        sbom_info = check_sbom_file(sbom_log_path)
-
-        enriched = {
+        component_record = {
             "id": comp_id,
             "name": name,
             "version": version,
-            "environment": comp.get("environment"),
-            "distribution_channels": distribution_channels,
+            "environment": environment,
+            "distribution_channels": comp.get("distribution_channels", []),
+            "declared_function": comp.get("declared_function", ""),
             "sbom": sbom_info,
             "pypi": pypi_meta,
             "github": github_meta,
-            "github_release": github_release_meta,
-            "license": {
-                "spdx_id": license_spdx,
-                "name": license_name,
-            },
-            "permissibility": {
-                "academic": perms["academic"],
-                "commercial": perms["commercial"],
-                "modification": perms["modification"],
-                "redistribution": perms["redistribution"],
-                "attribution": perms["attribution"],
-                "copyleft": perms["copyleft"],
-            },
+            "ngc_url": ngc_url,
+            "arch_support": arch_support,
+            "license": license_info,
         }
 
-        enriched_components.append(enriched)
+        report["components"].append(component_record)
 
-    output = {
-        "project_name": cfg.get("project_name"),
-        "snapshot_date": cfg.get("snapshot_date"),
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "components": enriched_components,
-    }
-
-    json.dump(output, sys.stdout, indent=2, sort_keys=False)
+    json.dump(report, fp=sys.stdout, indent=2, ensure_ascii=False)
 
 
 if __name__ == "__main__":

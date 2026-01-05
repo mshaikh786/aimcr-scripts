@@ -1,0 +1,463 @@
+{
+  "project_name": "ML models for Scientific Data Compression",
+  "snapshot_date": "2026-01-04",
+  "generated_at": "2026-01-05T14:11:43.606307Z",
+  "components": [
+    {
+      "id": "pytorch",
+      "name": "Pytorch",
+      "version": "2.8.0",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/pytorch/pytorch/tree/v2.8.0"
+        }
+      ],
+      "declared_function": "Train neural networks",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "pytorch",
+        "name": "pytorch",
+        "version": "1.0.2",
+        "summary": "",
+        "home_page": "",
+        "project_urls": {},
+        "license": ""
+      },
+      "github": {
+        "slug": "pytorch/pytorch",
+        "full_name": "pytorch/pytorch",
+        "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+        "stargazers_count": 96345,
+        "forks_count": 26418,
+        "open_issues_count": 17929,
+        "watchers_count": 96345,
+        "default_branch": "main",
+        "created_at": "2016-08-13T05:26:41Z",
+        "updated_at": "2026-01-05T12:27:22Z",
+        "pushed_at": "2026-01-05T14:06:52Z",
+        "last_commit_date": "2026-01-05T09:18:29Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "",
+        "arm_build_url": "",
+        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD",
+          "NOASSERTION"
+        ],
+        "effective_license": "BSD",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "pytorch-lightning",
+      "name": "Pytorch Lightning",
+      "version": "2.5.5",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/Lightning-AI/pytorch-lightning/tree/2.5.5"
+        }
+      ],
+      "declared_function": "Train neural networks",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "pytorch-lightning",
+        "name": "pytorch-lightning",
+        "version": "2.5.5",
+        "summary": "PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. Scale your models. Write less boilerplate.",
+        "home_page": "https://github.com/Lightning-AI/lightning",
+        "project_urls": {
+          "Bug Tracker": "https://github.com/Lightning-AI/pytorch-lightning/issues",
+          "Documentation": "https://pytorch-lightning.rtfd.io/en/latest/",
+          "Download": "https://github.com/Lightning-AI/lightning",
+          "Homepage": "https://github.com/Lightning-AI/lightning",
+          "Source Code": "https://github.com/Lightning-AI/lightning"
+        },
+        "license": "Apache-2.0"
+      },
+      "github": {
+        "slug": "Lightning-AI/pytorch-lightning",
+        "full_name": "Lightning-AI/pytorch-lightning",
+        "description": "Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes.",
+        "stargazers_count": 30675,
+        "forks_count": 3638,
+        "open_issues_count": 939,
+        "watchers_count": 30675,
+        "default_branch": "master",
+        "created_at": "2019-03-31T00:45:57Z",
+        "updated_at": "2026-01-05T13:03:48Z",
+        "pushed_at": "2025-12-29T01:02:01Z",
+        "last_commit_date": "2025-12-22T12:41:14Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "",
+        "arm_build_url": "",
+        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD",
+          "Apache-2.0",
+          "Apache-2.0"
+        ],
+        "effective_license": "BSD",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "numpy",
+      "name": "Numpy",
+      "version": "2.3.4",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/numpy/numpy/tree/v2.3.4"
+        }
+      ],
+      "declared_function": "Helper for Torch",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "numpy",
+        "name": "numpy",
+        "version": "2.3.4",
+        "summary": "Fundamental package for array computing in Python",
+        "home_page": "",
+        "project_urls": {
+          "documentation": "https://numpy.org/doc/",
+          "download": "https://pypi.org/project/numpy/#files",
+          "homepage": "https://numpy.org",
+          "release notes": "https://numpy.org/doc/stable/release",
+          "source": "https://github.com/numpy/numpy",
+          "tracker": "https://github.com/numpy/numpy/issues"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "numpy/numpy",
+        "full_name": "numpy/numpy",
+        "description": "The fundamental package for scientific computing with Python.",
+        "stargazers_count": 31157,
+        "forks_count": 11922,
+        "open_issues_count": 2389,
+        "watchers_count": 31157,
+        "default_branch": "main",
+        "created_at": "2010-09-13T23:02:39Z",
+        "updated_at": "2026-01-05T13:17:09Z",
+        "pushed_at": "2026-01-05T11:56:36Z",
+        "last_commit_date": "2026-01-05T11:56:36Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "",
+        "arm_build_url": "",
+        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+      },
+      "license": {
+        "raw_license_strings": [
+          "NOASSERTION"
+        ],
+        "effective_license": "NOASSERTION",
+        "permissive": null,
+        "notes": "License detected but could not classify as clearly permissive or copyleft."
+      }
+    },
+    {
+      "id": "xarray",
+      "name": "Xarray",
+      "version": "2025.10.1",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/pydata/xarray/tree/v2025.10.1"
+        }
+      ],
+      "declared_function": "Process netcdf files",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "xarray",
+        "name": "xarray",
+        "version": "2025.10.1",
+        "summary": "N-D labeled arrays and datasets in Python",
+        "home_page": "",
+        "project_urls": {
+          "Documentation": "https://docs.xarray.dev",
+          "SciPy2015-talk": "https://www.youtube.com/watch?v=X0pAhJgySxk",
+          "homepage": "https://xarray.dev/",
+          "issue-tracker": "https://github.com/pydata/xarray/issues",
+          "source-code": "https://github.com/pydata/xarray"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "pydata/xarray",
+        "full_name": "pydata/xarray",
+        "description": "N-D labeled arrays and datasets in Python",
+        "stargazers_count": 4049,
+        "forks_count": 1210,
+        "open_issues_count": 1358,
+        "watchers_count": 4049,
+        "default_branch": "main",
+        "created_at": "2013-09-30T17:21:10Z",
+        "updated_at": "2026-01-04T07:31:57Z",
+        "pushed_at": "2026-01-04T07:31:51Z",
+        "last_commit_date": "2026-01-04T07:31:51Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "",
+        "arm_build_url": "",
+        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache-2.0"
+        ],
+        "effective_license": "Apache-2.0",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "matplotlib",
+      "name": "Matplotlib",
+      "version": "3.10.7",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/matplotlib/matplotlib/tree/v3.10.7"
+        }
+      ],
+      "declared_function": "Plotting",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "matplotlib",
+        "name": "matplotlib",
+        "version": "3.10.7",
+        "summary": "Python plotting package",
+        "home_page": "",
+        "project_urls": {
+          "Bug Tracker": "https://github.com/matplotlib/matplotlib/issues",
+          "Documentation": "https://matplotlib.org",
+          "Donate": "https://numfocus.org/donate-to-matplotlib",
+          "Download": "https://matplotlib.org/stable/install/index.html",
+          "Forum": "https://discourse.matplotlib.org/",
+          "Homepage": "https://matplotlib.org",
+          "Source Code": "https://github.com/matplotlib/matplotlib"
+        },
+        "license": "Apache-2.0 (see project license file for full text)"
+      },
+      "github": {
+        "slug": "matplotlib/matplotlib",
+        "full_name": "matplotlib/matplotlib",
+        "description": "matplotlib: plotting with Python",
+        "stargazers_count": 22186,
+        "forks_count": 8170,
+        "open_issues_count": 1539,
+        "watchers_count": 22186,
+        "default_branch": "main",
+        "created_at": "2011-02-19T03:17:12Z",
+        "updated_at": "2026-01-05T09:28:34Z",
+        "pushed_at": "2026-01-04T06:14:22Z",
+        "last_commit_date": "2026-01-04T06:14:22Z",
+        "license": {
+          "key": null,
+          "name": null,
+          "spdx_id": null
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "",
+        "arm_build_url": "",
+        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache-2.0 (see project license file for full text)"
+        ],
+        "effective_license": "Apache-2.0 (see project license file for full text)",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "pyinterp",
+      "name": "Pyinterp",
+      "version": "2025.11.0",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/CNES/pangeo-pyinterp/tree/2025.11.0"
+        }
+      ],
+      "declared_function": "Interpolation functions",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {},
+      "github": {
+        "slug": "CNES/pangeo-pyinterp",
+        "full_name": "CNES/pangeo-pyinterp",
+        "description": "Python library for optimized interpolation.",
+        "stargazers_count": 133,
+        "forks_count": 17,
+        "open_issues_count": 2,
+        "watchers_count": 133,
+        "default_branch": "master",
+        "created_at": "2019-06-27T08:37:37Z",
+        "updated_at": "2025-11-11T20:47:57Z",
+        "pushed_at": "2025-11-11T20:47:52Z",
+        "last_commit_date": "2025-11-11T20:47:47Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "",
+        "arm_build_url": "",
+        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD-3-Clause",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "scipy",
+      "name": "Scipy",
+      "version": "1.16.3",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/scipy/scipy/tree/v1.16.3"
+        }
+      ],
+      "declared_function": "Interpolation functions",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "scipy",
+        "name": "scipy",
+        "version": "1.16.3",
+        "summary": "Fundamental algorithms for scientific computing in Python",
+        "home_page": "",
+        "project_urls": {
+          "documentation": "https://docs.scipy.org/doc/scipy/",
+          "download": "https://github.com/scipy/scipy/releases",
+          "homepage": "https://scipy.org/",
+          "source": "https://github.com/scipy/scipy",
+          "tracker": "https://github.com/scipy/scipy/issues"
+        },
+        "license": "BSD-style license (see project license file for full text)"
+      },
+      "github": {
+        "slug": "scipy/scipy",
+        "full_name": "scipy/scipy",
+        "description": "SciPy library main repository",
+        "stargazers_count": 14314,
+        "forks_count": 5572,
+        "open_issues_count": 1744,
+        "watchers_count": 14314,
+        "default_branch": "main",
+        "created_at": "2011-03-09T18:52:03Z",
+        "updated_at": "2026-01-05T13:43:49Z",
+        "pushed_at": "2026-01-05T13:43:38Z",
+        "last_commit_date": "2026-01-05T13:43:38Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "",
+        "arm_build_url": "",
+        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-style license (see project license file for full text)",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD-style license (see project license file for full text)",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    }
+  ]
+}
