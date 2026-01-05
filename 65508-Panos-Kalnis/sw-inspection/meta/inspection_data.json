@@ -51,9 +51,9 @@
       },
       "ngc_url": "",
       "arch_support": {
-        "arm_aarch64_available": "",
-        "arm_build_url": "",
-        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "Linux aarch64 CUDA wheels via https://download.pytorch.org/whl (e.g. cu128 index for 2.8.0) and NVIDIA NGC PyTorch 25.xx images with torch 2.8.0.",
+        "note": "On aarch64 (e.g. GH200), use: pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128, or NGC containers such as nvcr.io/nvidia/pytorch:25.05-py3-igpu / GH200-ready tags."
       },
       "license": {
         "raw_license_strings": [
@@ -119,9 +119,9 @@
       },
       "ngc_url": "",
       "arch_support": {
-        "arm_aarch64_available": "",
-        "arm_build_url": "",
-        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "PyPI (pure-Python wheels) and conda-forge noarch builds that work on both x86_64 and aarch64.",
+        "note": "PyTorch Lightning is pure Python; ARM support mainly depends on the underlying PyTorch and its dependencies."
       },
       "license": {
         "raw_license_strings": [
@@ -189,9 +189,9 @@
       },
       "ngc_url": "",
       "arch_support": {
-        "arm_aarch64_available": "",
-        "arm_build_url": "",
-        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "PyPI manylinux2014_aarch64 wheels and conda-forge linux-aarch64 / osx-arm64 builds for NumPy 2.x.",
+        "note": "On aarch64, prefer conda-forge (linux-aarch64) or pip install numpy==2.3.4, which will usually pull a prebuilt ARM64 wheel."
       },
       "license": {
         "raw_license_strings": [
@@ -256,9 +256,9 @@
       },
       "ngc_url": "",
       "arch_support": {
-        "arm_aarch64_available": "",
-        "arm_build_url": "",
-        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "PyPI (pure Python) and conda-forge noarch builds usable on aarch64.",
+        "note": "xarray is implemented in pure Python; no architecture-specific binaries are required. As long as Python and NumPy are available on ARM, xarray works."
       },
       "license": {
         "raw_license_strings": [
@@ -325,9 +325,9 @@
       },
       "ngc_url": "",
       "arch_support": {
-        "arm_aarch64_available": "",
-        "arm_build_url": "",
-        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "Conda (and conda-forge) linux-aarch64 / osx-arm64 builds for 3.10.7 and PyPI manylinux ARM64 wheels in the 3.10.x series.",
+        "note": "On aarch64, use conda install -c conda-forge matplotlib==3.10.7 or pip install matplotlib==3.10.7 if an ARM64 wheel is available for your platform."
       },
       "license": {
         "raw_license_strings": [
@@ -378,9 +378,9 @@
       },
       "ngc_url": "",
       "arch_support": {
-        "arm_aarch64_available": "",
-        "arm_build_url": "",
-        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+        "arm_aarch64_available": "Yes (via conda-forge; PyPI is sdist-only for this version)",
+        "arm_build_url": "https://anaconda.org/conda-forge/pyinterp provides linux-aarch64 binaries for pyinterp 2025.11.0; PyPI only has a source tarball.",
+        "note": "On aarch64, prefer conda install -c conda-forge pyinterp==2025.11.0 to avoid compiling C++ extensions from source."
       },
       "license": {
         "raw_license_strings": [
@@ -445,9 +445,9 @@
       },
       "ngc_url": "",
       "arch_support": {
-        "arm_aarch64_available": "",
-        "arm_build_url": "",
-        "note": "TODO: manually check ARM/AArch64 support (e.g. NGC, conda-forge, PyPI wheels, vendor containers) and update 'arm_aarch64_available' to 'Yes' or 'No' and 'arm_build_url' with the relevant image or wheel."
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "Conda-forge provides linux-aarch64 binaries for SciPy 1.16.3; several Linux distros (e.g. Debian/Ubuntu, Arch ARM) ship arm64 packages; PyPI offers ARM wheels for some platforms (e.g. Windows/macOS ARM).",
+        "note": "On GH200/Shaheen III, the recommended path is conda install -c conda-forge scipy==1.16.3 to get prebuilt ARM binaries instead of building from source."
       },
       "license": {
         "raw_license_strings": [
