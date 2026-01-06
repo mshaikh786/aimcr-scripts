@@ -1,0 +1,474 @@
+{
+  "project_name": "Yotta Infinite for Life Science",
+  "snapshot_date": "2026-01-06",
+  "generated_at": "2026-01-06T12:54:35.014980Z",
+  "components": [
+    {
+      "id": "tqdm",
+      "name": "tqdm",
+      "version": "4.67.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/tqdm/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "tqdm",
+        "name": "tqdm",
+        "version": "4.67.1",
+        "summary": "Fast, Extensible Progress Meter",
+        "home_page": "",
+        "project_urls": {
+          "changelog": "https://tqdm.github.io/releases",
+          "homepage": "https://tqdm.github.io",
+          "repository": "https://github.com/tqdm/tqdm",
+          "wiki": "https://github.com/tqdm/tqdm/wiki"
+        },
+        "license": "MPL-2.0 AND MIT"
+      },
+      "github": {
+        "slug": "tqdm/tqdm",
+        "full_name": "tqdm/tqdm",
+        "description": ":zap: A Fast, Extensible Progress Bar for Python and CLI",
+        "stargazers_count": 30833,
+        "forks_count": 1419,
+        "open_issues_count": 582,
+        "watchers_count": 30833,
+        "default_branch": "master",
+        "created_at": "2015-06-03T13:13:14Z",
+        "updated_at": "2026-01-06T09:49:12Z",
+        "pushed_at": "2025-05-22T12:10:29Z",
+        "last_commit_date": "2024-11-12T13:35:33Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/tqdm",
+        "note": "tqdm ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "MPL-2.0 AND MIT",
+          "NOASSERTION"
+        ],
+        "effective_license": "MPL-2.0 AND MIT",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "torch",
+      "name": "torch",
+      "version": "2.9.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/torch/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "torch",
+        "name": "torch",
+        "version": "2.9.1",
+        "summary": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+        "home_page": "",
+        "project_urls": {
+          "Documentation": "https://pytorch.org/docs",
+          "Forum": "https://discuss.pytorch.org",
+          "Homepage": "https://pytorch.org",
+          "Issue Tracker": "https://github.com/pytorch/pytorch/issues",
+          "Repository": "https://github.com/pytorch/pytorch"
+        },
+        "license": "BSD-3-Clause"
+      },
+      "github": {
+        "slug": "pytorch/pytorch",
+        "full_name": "pytorch/pytorch",
+        "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+        "stargazers_count": 96379,
+        "forks_count": 26428,
+        "open_issues_count": 17907,
+        "watchers_count": 96379,
+        "default_branch": "main",
+        "created_at": "2016-08-13T05:26:41Z",
+        "updated_at": "2026-01-06T12:52:18Z",
+        "pushed_at": "2026-01-06T12:53:11Z",
+        "last_commit_date": "2026-01-06T12:01:39Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (official Linux aarch64 wheels and vendor ARM GPU containers)",
+        "arm_build_url": "PyPI aarch64 wheels: https://pypi.org/project/torch/#files ; see also NGC containers",
+        "note": "PyTorch provides official manylinux aarch64 binaries and ARM support for NVIDIA platforms (e.g. Jetson / GH200). Still recommended to validate on the specific Shaheen III software stack and CUDA/toolchain versions."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-3-Clause",
+          "BSD-3-Clause",
+          "NOASSERTION"
+        ],
+        "effective_license": "BSD-3-Clause",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "transformers",
+      "name": "transformers",
+      "version": "4.57.3",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/transformers/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "transformers",
+        "name": "transformers",
+        "version": "4.57.3",
+        "summary": "State-of-the-art Machine Learning for JAX, PyTorch and TensorFlow",
+        "home_page": "https://github.com/huggingface/transformers",
+        "project_urls": {
+          "Homepage": "https://github.com/huggingface/transformers"
+        },
+        "license": "Apache 2.0 License"
+      },
+      "github": {
+        "slug": "huggingface/transformers",
+        "full_name": "huggingface/transformers",
+        "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+        "stargazers_count": 154657,
+        "forks_count": 31639,
+        "open_issues_count": 2161,
+        "watchers_count": 154657,
+        "default_branch": "main",
+        "created_at": "2018-10-29T13:56:00Z",
+        "updated_at": "2026-01-06T12:51:25Z",
+        "pushed_at": "2026-01-06T12:51:18Z",
+        "last_commit_date": "2026-01-06T12:51:18Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/transformers",
+        "note": "Transformers ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache 2.0 License",
+          "Apache-2.0"
+        ],
+        "effective_license": "Apache 2.0 License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "wandb",
+      "name": "wandb",
+      "version": "0.23.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/wandb/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "wandb",
+        "name": "wandb",
+        "version": "0.23.1",
+        "summary": "A CLI and library for interacting with the Weights & Biases API.",
+        "home_page": "",
+        "project_urls": {
+          "Bug Reports": "https://github.com/wandb/wandb/issues",
+          "Documentation": "https://docs.wandb.ai/",
+          "Source": "https://github.com/wandb/wandb"
+        },
+        "license": "MIT license (see project license file for full text)"
+      },
+      "github": {
+        "slug": "wandb/wandb",
+        "full_name": "wandb/wandb",
+        "description": "The AI developer platform. Use Weights & Biases to train and fine-tune models, and manage models from experimentation to production.",
+        "stargazers_count": 10702,
+        "forks_count": 805,
+        "open_issues_count": 804,
+        "watchers_count": 10702,
+        "default_branch": "main",
+        "created_at": "2017-03-24T05:46:23Z",
+        "updated_at": "2026-01-06T04:55:19Z",
+        "pushed_at": "2026-01-06T04:46:37Z",
+        "last_commit_date": "2026-01-06T01:06:15Z",
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/96/b6/fd465827c14c64d056d30b4c9fcf4dac889a6969dba64489a88fc4ffa333/wandb-0.23.1-py3-none-manylinux_2_28_aarch64.whl",
+        "note": "ARM64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT License (MIT License)",
+          "MIT license (see project license file for full text)",
+          "MIT"
+        ],
+        "effective_license": "MIT License (MIT License)",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "peft",
+      "name": "peft",
+      "version": "0.7.0",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/peft/0.7.0/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "peft",
+        "name": "peft",
+        "version": "0.7.0",
+        "summary": "Parameter-Efficient Fine-Tuning (PEFT)",
+        "home_page": "https://github.com/huggingface/peft",
+        "project_urls": {
+          "Homepage": "https://github.com/huggingface/peft"
+        },
+        "license": "Apache"
+      },
+      "github": {
+        "slug": "huggingface/peft",
+        "full_name": "huggingface/peft",
+        "description": "🤗 PEFT: State-of-the-art Parameter-Efficient Fine-Tuning.",
+        "stargazers_count": 20403,
+        "forks_count": 2148,
+        "open_issues_count": 56,
+        "watchers_count": 20403,
+        "default_branch": "main",
+        "created_at": "2022-11-25T03:51:09Z",
+        "updated_at": "2026-01-06T03:52:31Z",
+        "pushed_at": "2025-12-18T10:52:52Z",
+        "last_commit_date": "2025-12-18T10:52:52Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/peft/",
+        "note": "Peft ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache Software License (Apache)",
+          "Apache",
+          "Apache-2.0"
+        ],
+        "effective_license": "Apache Software License (Apache)",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "neo4j",
+      "name": "neo4j",
+      "version": "6.03",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/neo4j/"
+        }
+      ],
+      "declared_function": "Python is primarily achieved through the official",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "neo4j",
+        "name": "neo4j",
+        "version": "6.0.3",
+        "summary": "Neo4j Bolt driver for Python",
+        "home_page": "",
+        "project_urls": {
+          "Changelog": "https://github.com/neo4j/neo4j-python-driver/wiki",
+          "Discord": "https://discord.com/invite/neo4j",
+          "Docs (API Reference)": "https://neo4j.com/docs/api/python-driver/current/",
+          "Docs (Manual)": "https://neo4j.com/docs/python-manual/current/",
+          "Forum": "https://community.neo4j.com/c/drivers-stacks/python/",
+          "Homepage": "https://neo4j.com/",
+          "Issue Tracker": "https://github.com/neo4j/neo4j-python-driver/issues",
+          "Repository": "https://github.com/neo4j/neo4j-python-driver"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "neo4j/neo4j-python-driver",
+        "full_name": "neo4j/neo4j-python-driver",
+        "description": "Neo4j Bolt driver for Python",
+        "stargazers_count": 1015,
+        "forks_count": 204,
+        "open_issues_count": 2,
+        "watchers_count": 1015,
+        "default_branch": "6.x",
+        "created_at": "2015-05-05T13:08:20Z",
+        "updated_at": "2026-01-02T09:20:15Z",
+        "pushed_at": "2025-12-15T13:09:46Z",
+        "last_commit_date": "2025-12-15T13:09:46Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/neo4j/",
+        "note": "Neo4j ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Neo4j",
+          "NOASSERTION"
+        ],
+        "effective_license": "Neo4j",
+        "permissive": null,
+        "notes": "License detected but could not classify as clearly permissive or copyleft."
+      }
+    },
+    {
+      "id": "trl",
+      "name": "trl",
+      "version": "0.25.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/trl/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "trl",
+        "name": "trl",
+        "version": "0.25.1",
+        "summary": "Train transformer language models with reinforcement learning.",
+        "home_page": "",
+        "project_urls": {
+          "Homepage": "https://github.com/huggingface/trl"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "huggingface/trl",
+        "full_name": "huggingface/trl",
+        "description": "Train transformer language models with reinforcement learning.",
+        "stargazers_count": 16884,
+        "forks_count": 2407,
+        "open_issues_count": 631,
+        "watchers_count": 16884,
+        "default_branch": "main",
+        "created_at": "2020-03-27T10:54:55Z",
+        "updated_at": "2026-01-06T11:12:11Z",
+        "pushed_at": "2026-01-06T07:45:38Z",
+        "last_commit_date": "2026-01-06T07:45:38Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/trl/",
+        "note": "trl ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache-2.0",
+          "Apache-2.0"
+        ],
+        "effective_license": "Apache-2.0",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    }
+  ]
+}

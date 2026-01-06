@@ -1,0 +1,8 @@
+Software Package,Version,URL
+tqdm,4.67.1,https://pypi.org/project/tqdm/
+torch,2.9.1,https://pypi.org/project/torch/
+transformers,4.57.3,https://pypi.org/project/transformers/
+wandb,0.23.1,https://pypi.org/project/wandb/
+peft,0.7.0,https://pypi.org/project/peft/0.7.0/
+neo4j,6.03,https://pypi.org/project/neo4j/
+trl,0.25.1,https://pypi.org/project/trl/

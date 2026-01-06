@@ -1,0 +1,73 @@
+project_name: Yotta Infinite for Life Science
+snapshot_date: '2026-01-06'
+components:
+
+- id: tqdm
+  name: tqdm
+  version: 4.67.1
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/tqdm/
+  declared_license: ''
+  declared_function: ''
+
+- id: torch
+  name: torch
+  version: 2.9.1
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/torch/
+  declared_license: BSD-3-Clause
+  declared_function: ''
+
+- id: transformers
+  name: transformers
+  version: 4.57.3
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/transformers/
+  declared_license: ''
+  declared_function: ''
+
+- id: wandb
+  name: wandb
+  version: 0.23.1
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/wandb/
+  declared_license: MIT License (MIT License)
+  declared_function: ''
+
+- id: peft
+  name: peft
+  version: 0.7.0
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/peft/0.7.0/
+  declared_license: Apache Software License (Apache)
+  declared_function: ''
+
+- id: neo4j
+  name: neo4j
+  version: '6.03'
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/neo4j/
+  declared_license: Neo4j
+  declared_function: Python is primarily achieved through the official
+
+- id: trl
+  name: trl
+  version: 0.25.1
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/trl/
+  declared_license: Apache-2.0
+  declared_function: ''
