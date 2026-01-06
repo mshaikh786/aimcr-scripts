@@ -1,0 +1,140 @@
+{
+  "project_name": "Open Source Pre-Training of an Arabic/English LLM",
+  "snapshot_date": "2026-01-06",
+  "generated_at": "2026-01-06T08:58:12.731120Z",
+  "components": [
+    {
+      "id": "torchtitan",
+      "name": "Torchtitan",
+      "version": "v0.2.0",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/pytorch/torchtitan"
+        }
+      ],
+      "declared_function": "Large scale distributed LLM pretraining",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "torchtitan",
+        "name": "torchtitan",
+        "version": "0.2.1",
+        "summary": "A PyTorch native platform for training generative AI models",
+        "home_page": "",
+        "project_urls": {
+          "Documentation": "https://github.com/pytorch/torchtitan/tree/main/docs",
+          "GitHub": "https://github.com/pytorch/torchtitan",
+          "Issues": "https://github.com/pytorch/torchtitan/issues"
+        },
+        "license": "BSD-style license (see project license file for full text)"
+      },
+      "github": {
+        "slug": "pytorch/torchtitan",
+        "full_name": "pytorch/torchtitan",
+        "description": "A PyTorch native platform for training generative AI models",
+        "stargazers_count": 4931,
+        "forks_count": 660,
+        "open_issues_count": 328,
+        "watchers_count": 4931,
+        "default_branch": "main",
+        "created_at": "2023-12-13T01:51:37Z",
+        "updated_at": "2026-01-06T08:46:21Z",
+        "pushed_at": "2026-01-06T08:56:25Z",
+        "last_commit_date": "2025-12-30T01:34:49Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure-Python wheel)",
+        "arm_build_url": "https://pypi.org/project/torchtitan/0.2.0/",
+        "note": "torchtitan 0.2.0 is distributed as a py3-none-any wheel (no native extensions). Architecture support depends on the underlying PyTorch build/container for ARM/aarch64."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-3 License",
+          "BSD-style license (see project license file for full text)",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD-3 License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "datasets",
+      "name": "Datasets",
+      "version": "v4.4.1",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/huggingface/datasets"
+        }
+      ],
+      "declared_function": "Loading datasets from Huggingface",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "datasets",
+        "name": "datasets",
+        "version": "4.4.2",
+        "summary": "HuggingFace community-driven open-source library of datasets",
+        "home_page": "https://github.com/huggingface/datasets",
+        "project_urls": {
+          "Download": "https://github.com/huggingface/datasets/tags",
+          "Homepage": "https://github.com/huggingface/datasets"
+        },
+        "license": "Apache 2.0"
+      },
+      "github": {
+        "slug": "huggingface/datasets",
+        "full_name": "huggingface/datasets",
+        "description": "🤗 The largest hub of ready-to-use datasets for AI models with fast, easy-to-use and efficient data manipulation tools",
+        "stargazers_count": 21054,
+        "forks_count": 3059,
+        "open_issues_count": 1032,
+        "watchers_count": 21054,
+        "default_branch": "main",
+        "created_at": "2020-03-26T09:23:22Z",
+        "updated_at": "2026-01-06T06:34:16Z",
+        "pushed_at": "2025-12-19T15:06:31Z",
+        "last_commit_date": "2025-12-19T15:06:29Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (py3-none-any wheel)",
+        "arm_build_url": "https://pypi.org/project/datasets/4.4.1/",
+        "note": "datasets 4.4.1 is distributed as a pure-Python py3-none-any wheel, so it is architecture-independent. Actual performance depends on the underlying Python and system libraries on ARM/aarch64."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache",
+          "Apache 2.0",
+          "Apache-2.0"
+        ],
+        "effective_license": "Apache",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    }
+  ]
+}

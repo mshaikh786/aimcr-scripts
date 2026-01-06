@@ -1,0 +1,25 @@
+project_name: 'Open Source Pre-Training of an Arabic/English
+
+  LLM'
+snapshot_date: '2026-01-06'
+components:
+
+- id: torchtitan
+  name: Torchtitan
+  version: v0.2.0
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/pytorch/torchtitan
+  declared_license: BSD-3 License
+  declared_function: Large scale distributed LLM pretraining
+
+- id: datasets
+  name: Datasets
+  version: v4.4.1
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/huggingface/datasets
+  declared_license: Apache
+  declared_function: Loading datasets from Huggingface

@@ -246,21 +246,25 @@ def main():
         print("#### 4.1 License Type")
         print()
 
-        lic_spdx = license_info.get("spdx_id")
-        raw_lic_name = license_info.get("name")
+        # New: derive a license "name" from effective_license or raw strings
+        raw_lic_name = (
+            license_info.get("name")
+            or license_info.get("effective_license")
+            or (", ".join(license_info.get("raw_license_strings", [])) or None)
+        )
 
-        # Normalize / shorten license name so we don't dump full license texts
+        # SPDX may or may not be present in this JSON schema
+        lic_spdx = license_info.get("spdx_id")
+
         def normalize_license_name(name):
             if not name:
                 return "Unknown"
-            # Collapse whitespace/newlines
             cleaned = " ".join(str(name).split())
-            # If it's very long, just point to upstream instead of printing it all
             if len(cleaned) > 120:
                 return "Custom / see upstream license text"
             return cleaned
 
-        spdx_display = lic_spdx or "Unknown"
+        spdx_display = lic_spdx or "N/A"
         lic_display = normalize_license_name(raw_lic_name)
 
         print(f"- **SPDX ID:** {spdx_display}")
@@ -270,6 +274,20 @@ def main():
         # 4.2 Permissibility Summary
         print("#### 4.2 Permissibility Summary")
         print()
+
+        # If the 'permissibility' block is missing, derive a simple default
+        if not perms and license_info:
+            if license_info.get("permissive") is True:
+                # Assume standard permissive behaviour
+                perms = {
+                    "academic": True,
+                    "commercial": True,
+                    "modification": True,
+                    "redistribution": True,
+                    "attribution": True,
+                    "copyleft": False,
+                }
+
         print("| Question                           | Answer   |")
         print("|------------------------------------|----------|")
         print(f"| Can be used for academic purposes? | {yn(perms.get('academic'))} |")
@@ -279,7 +297,8 @@ def main():
         print(f"| Attribution required?              | {yn(perms.get('attribution'))} |")
         print(f"| Copyleft obligations?              | {yn(perms.get('copyleft'))} |")
         print()
-        # --- NEW ARCH SECTION HERE ---
+
+        # 5. Architecture / ARM / AArch64
         print(format_arch_support_section(comp))
         print("---")
         print()

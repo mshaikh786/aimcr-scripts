@@ -71,19 +71,19 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** Unknown
-- **License name:** Unknown
+- **SPDX ID:** N/A
+- **License name:** BSD
 
 #### 4.2 Permissibility Summary
 
 | Question                           | Answer   |
 |------------------------------------|----------|
-| Can be used for academic purposes? | Unknown |
-| Can be used for commercial use?    | Unknown |
-| Modification allowed?              | Unknown |
-| Redistribution allowed?            | Unknown |
-| Attribution required?              | Unknown |
-| Copyleft obligations?              | Unknown |
+| Can be used for academic purposes? | Yes |
+| Can be used for commercial use?    | Yes |
+| Modification allowed?              | Yes |
+| Redistribution allowed?            | Yes |
+| Attribution required?              | Yes |
+| Copyleft obligations?              | No |
 
 ### 5. Architecture / ARM / AArch64 Support
 
@@ -156,19 +156,19 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** Unknown
-- **License name:** Unknown
+- **SPDX ID:** N/A
+- **License name:** BSD
 
 #### 4.2 Permissibility Summary
 
 | Question                           | Answer   |
 |------------------------------------|----------|
-| Can be used for academic purposes? | Unknown |
-| Can be used for commercial use?    | Unknown |
-| Modification allowed?              | Unknown |
-| Redistribution allowed?            | Unknown |
-| Attribution required?              | Unknown |
-| Copyleft obligations?              | Unknown |
+| Can be used for academic purposes? | Yes |
+| Can be used for commercial use?    | Yes |
+| Modification allowed?              | Yes |
+| Redistribution allowed?            | Yes |
+| Attribution required?              | Yes |
+| Copyleft obligations?              | No |
 
 ### 5. Architecture / ARM / AArch64 Support
 
@@ -241,8 +241,8 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** Unknown
-- **License name:** Unknown
+- **SPDX ID:** N/A
+- **License name:** NOASSERTION
 
 #### 4.2 Permissibility Summary
 
@@ -325,19 +325,19 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** Unknown
-- **License name:** Unknown
+- **SPDX ID:** N/A
+- **License name:** Apache-2.0
 
 #### 4.2 Permissibility Summary
 
 | Question                           | Answer   |
 |------------------------------------|----------|
-| Can be used for academic purposes? | Unknown |
-| Can be used for commercial use?    | Unknown |
-| Modification allowed?              | Unknown |
-| Redistribution allowed?            | Unknown |
-| Attribution required?              | Unknown |
-| Copyleft obligations?              | Unknown |
+| Can be used for academic purposes? | Yes |
+| Can be used for commercial use?    | Yes |
+| Modification allowed?              | Yes |
+| Redistribution allowed?            | Yes |
+| Attribution required?              | Yes |
+| Copyleft obligations?              | No |
 
 ### 5. Architecture / ARM / AArch64 Support
 
@@ -411,19 +411,19 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** Unknown
-- **License name:** Unknown
+- **SPDX ID:** N/A
+- **License name:** Apache-2.0 (see project license file for full text)
 
 #### 4.2 Permissibility Summary
 
 | Question                           | Answer   |
 |------------------------------------|----------|
-| Can be used for academic purposes? | Unknown |
-| Can be used for commercial use?    | Unknown |
-| Modification allowed?              | Unknown |
-| Redistribution allowed?            | Unknown |
-| Attribution required?              | Unknown |
-| Copyleft obligations?              | Unknown |
+| Can be used for academic purposes? | Yes |
+| Can be used for commercial use?    | Yes |
+| Modification allowed?              | Yes |
+| Redistribution allowed?            | Yes |
+| Attribution required?              | Yes |
+| Copyleft obligations?              | No |
 
 ### 5. Architecture / ARM / AArch64 Support
 
@@ -486,19 +486,19 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** Unknown
-- **License name:** Unknown
+- **SPDX ID:** N/A
+- **License name:** BSD-3-Clause
 
 #### 4.2 Permissibility Summary
 
 | Question                           | Answer   |
 |------------------------------------|----------|
-| Can be used for academic purposes? | Unknown |
-| Can be used for commercial use?    | Unknown |
-| Modification allowed?              | Unknown |
-| Redistribution allowed?            | Unknown |
-| Attribution required?              | Unknown |
-| Copyleft obligations?              | Unknown |
+| Can be used for academic purposes? | Yes |
+| Can be used for commercial use?    | Yes |
+| Modification allowed?              | Yes |
+| Redistribution allowed?            | Yes |
+| Attribution required?              | Yes |
+| Copyleft obligations?              | No |
 
 ### 5. Architecture / ARM / AArch64 Support
 
@@ -570,19 +570,19 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** Unknown
-- **License name:** Unknown
+- **SPDX ID:** N/A
+- **License name:** BSD-style license (see project license file for full text)
 
 #### 4.2 Permissibility Summary
 
 | Question                           | Answer   |
 |------------------------------------|----------|
-| Can be used for academic purposes? | Unknown |
-| Can be used for commercial use?    | Unknown |
-| Modification allowed?              | Unknown |
-| Redistribution allowed?            | Unknown |
-| Attribution required?              | Unknown |
-| Copyleft obligations?              | Unknown |
+| Can be used for academic purposes? | Yes |
+| Can be used for commercial use?    | Yes |
+| Modification allowed?              | Yes |
+| Redistribution allowed?            | Yes |
+| Attribution required?              | Yes |
+| Copyleft obligations?              | No |
 
 ### 5. Architecture / ARM / AArch64 Support
 
