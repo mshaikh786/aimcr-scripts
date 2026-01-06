@@ -1,0 +1,260 @@
+{
+  "project_name": "Brain-3D-FM",
+  "snapshot_date": "2026-01-06",
+  "generated_at": "2026-01-06T12:27:55.986676Z",
+  "components": [
+    {
+      "id": "pytorch",
+      "name": "Pytorch",
+      "version": "Latest",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/pytorch/pytorch"
+        }
+      ],
+      "declared_function": "Core Deep Learning Framework",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "pytorch",
+        "name": "pytorch",
+        "version": "1.0.2",
+        "summary": "",
+        "home_page": "",
+        "project_urls": {},
+        "license": ""
+      },
+      "github": {
+        "slug": "pytorch/pytorch",
+        "full_name": "pytorch/pytorch",
+        "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+        "stargazers_count": 96378,
+        "forks_count": 26428,
+        "open_issues_count": 17906,
+        "watchers_count": 96378,
+        "default_branch": "main",
+        "created_at": "2016-08-13T05:26:41Z",
+        "updated_at": "2026-01-06T12:02:09Z",
+        "pushed_at": "2026-01-06T12:17:49Z",
+        "last_commit_date": "2026-01-06T12:01:39Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (official Linux aarch64 wheels and vendor ARM GPU containers)",
+        "arm_build_url": "PyPI aarch64 wheels: https://pypi.org/project/torch/#files ; see also vendor ARM GPU containers (e.g. NVIDIA GH200 / Grace Hopper images on NGC)",
+        "note": "PyTorch provides official manylinux aarch64 binaries and ARM support for NVIDIA platforms (e.g. Jetson / GH200). Still recommended to validate on the specific Shaheen III software stack and CUDA/toolchain versions."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Open Source BSD",
+          "NOASSERTION"
+        ],
+        "effective_license": "Open Source BSD",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "deepspeed",
+      "name": "DeepSpeed",
+      "version": "Latest",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "other",
+          "url": "https://www.deepspeed.ai"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/deepspeedai/DeepSpeed"
+        }
+      ],
+      "declared_function": "Memory-efficient distributed training",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "DeepSpeed",
+        "name": "deepspeed",
+        "version": "0.18.3",
+        "summary": "DeepSpeed library",
+        "home_page": "http://deepspeed.ai",
+        "project_urls": {
+          "Documentation": "https://deepspeed.readthedocs.io",
+          "Homepage": "http://deepspeed.ai",
+          "Source": "https://github.com/deepspeedai/DeepSpeed"
+        },
+        "license": "Apache Software License 2.0"
+      },
+      "github": {
+        "slug": "deepspeedai/DeepSpeed",
+        "full_name": "deepspeedai/DeepSpeed",
+        "description": "DeepSpeed is a deep learning optimization library that makes distributed training and inference easy, efficient, and effective.",
+        "stargazers_count": 41161,
+        "forks_count": 4680,
+        "open_issues_count": 1251,
+        "watchers_count": 41161,
+        "default_branch": "master",
+        "created_at": "2020-01-23T18:35:18Z",
+        "updated_at": "2026-01-06T10:24:27Z",
+        "pushed_at": "2026-01-05T15:53:40Z",
+        "last_commit_date": "2026-01-05T15:53:40Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (via source build; no official aarch64 wheels on PyPI)",
+        "arm_build_url": "https://github.com/deepspeedai/DeepSpeed (build from source on ARM/aarch64 with a compatible CUDA + PyTorch stack)",
+        "note": "DeepSpeed does not currently provide prebuilt manylinux aarch64 wheels; however, users report successful builds on ARM platforms by compiling from source. Validate performance and compatibility on Shaheen III GPUs."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Open Source (Apache 2.0)",
+          "Apache Software License 2.0",
+          "Apache-2.0"
+        ],
+        "effective_license": "Open Source (Apache 2.0)",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "flashattention-2",
+      "name": "FlashAttention-2",
+      "version": "Latest",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/Dao-AI-Lab/flash-attention"
+        }
+      ],
+      "declared_function": "Fast attention kernels",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "flash-attention",
+        "name": "flash-attention",
+        "version": "1.0.0",
+        "summary": "Flash Attention2 operator on Huawei Ascend 910A.",
+        "home_page": "https://gitee.com/mindspore/acctransformer",
+        "project_urls": {
+          "Homepage": "https://gitee.com/mindspore/acctransformer"
+        },
+        "license": "Apache License, Version 2.0"
+      },
+      "github": {
+        "slug": "Dao-AI-Lab/flash-attention",
+        "error": "Failed to fetch GitHub repo metadata."
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (via source build; CUDA kernels can be compiled on ARM hosts)",
+        "arm_build_url": "https://github.com/Dao-AI-Lab/flash-attention (build from source on ARM/aarch64 with appropriate CUDA toolkit and GPU architecture flags)",
+        "note": "No official aarch64 wheels are provided. FlashAttention-2 is typically built from source on ARM servers/accelerators (e.g. Grace Hopper) by compiling the CUDA extensions directly. Ensure nvcc, GPU arch flags (sm_*), and toolchain match Shaheen III."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Open Source (BSD)",
+          "Apache License, Version 2.0"
+        ],
+        "effective_license": "Open Source (BSD)",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "scanpy-squidpy",
+      "name": "Scanpy/Squidpy",
+      "version": "Latest",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "other",
+          "url": "https://monai.io"
+        },
+        {
+          "type": "github",
+          "url": "https://github.com/scverse/squidpy"
+        }
+      ],
+      "declared_function": "WSI I/O, tiling, augmentations",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "squidpy",
+        "name": "squidpy",
+        "version": "1.7.0",
+        "summary": "Spatial Single Cell Analysis in Python",
+        "home_page": "",
+        "project_urls": {
+          "Bug Tracker": "https://github.com/scverse/squidpy/issues",
+          "Documentation": "https://squidpy.readthedocs.io",
+          "Home-page": "https://github.com/scverse/squidpy",
+          "Source": "https://github.com/scverse/squidpy"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "scverse/squidpy",
+        "full_name": "scverse/squidpy",
+        "description": "Spatial Single Cell Analysis in Python",
+        "stargazers_count": 546,
+        "forks_count": 101,
+        "open_issues_count": 91,
+        "watchers_count": 546,
+        "default_branch": "main",
+        "created_at": "2020-08-21T15:46:28Z",
+        "updated_at": "2026-01-05T20:14:38Z",
+        "pushed_at": "2025-12-22T17:43:42Z",
+        "last_commit_date": "2025-12-17T23:46:51Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/squidpy/#files",
+        "note": "Squidpy ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache-2.0",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "Apache-2.0",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    }
+  ]
+}

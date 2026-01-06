@@ -1,0 +1,47 @@
+project_name: Brain-3D-FM
+snapshot_date: '2026-01-06'
+components:
+
+- id: pytorch
+  name: Pytorch
+  version: Latest
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: github
+    url: https://github.com/pytorch/pytorch
+  declared_license: Open Source BSD
+  declared_function: Core Deep Learning Framework
+
+- id: deepspeed
+  name: DeepSpeed
+  version: Latest
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: other
+    url: https://www.deepspeed.ai
+  - type: github
+    url: https://github.com/deepspeedai/DeepSpeed
+  declared_license: Open Source (Apache 2.0)
+  declared_function: Memory-efficient distributed training
+
+- id: flashattention-2
+  name: FlashAttention-2
+  version: Latest
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/Dao-AI-Lab/flash-attention
+  declared_license: Open Source (BSD)
+  declared_function: Fast attention kernels
+
+- id: scanpy-squidpy
+  name: Scanpy/Squidpy
+  version: Latest
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: other
+    url: https://monai.io
+  - type: github
+    url: https://github.com/scverse/squidpy
+  declared_license: Apache-2.0
+  declared_function: WSI I/O, tiling, augmentations

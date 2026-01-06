@@ -1,0 +1,5 @@
+Software Package,Version,URL
+Pytorch,Latest,https://pytorch.org
+DeepSpeed,Latest,https://www.deepspeed.ai
+FlashAttention-2,Latest,https://github.com/Dao-AI-Lab/flash-attention
+Scanpy/Squidpy,Latest,https://monai.io
