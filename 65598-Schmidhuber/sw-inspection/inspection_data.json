@@ -1,0 +1,107 @@
+{
+  "project_name": "Undefined",
+  "snapshot_date": "2026-01-06",
+  "generated_at": "2026-01-06T10:40:55.307581Z",
+  "components": [
+    {
+      "id": "pytorch",
+      "name": "Pytorch",
+      "version": "2.5.1+cu121",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "other",
+          "url": "https://pytorch.org/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {},
+      "github": {},
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "No (for +cu121 wheel; CPU-only wheels exist)",
+        "arm_build_url": "",
+        "note": "PyTorch 2.5.1 provides Linux aarch64 CPU wheels, but CUDA 12.1 GPU wheels (`torch==2.5.1+cu121`) are only published for x86-64. For ARM/GH200, users may need to use vendor ARM64 containers (e.g. AWS DLC or NGC) with PyTorch 2.5.x and their bundled CUDA version instead."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD-3-Clause",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "flash-linear-attention",
+      "name": "flash-linear-attention",
+      "version": "0.4.0",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/fla-org/flash-linear-attention"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "flash-linear-attention",
+        "name": "flash-linear-attention",
+        "version": "0.4.0",
+        "summary": "Fast linear attention models and layers",
+        "home_page": "",
+        "project_urls": {
+          "Homepage": "https://github.com/fla-org/flash-linear-attention",
+          "Repository": "https://github.com/fla-org/flash-linear-attention"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "fla-org/flash-linear-attention",
+        "full_name": "fla-org/flash-linear-attention",
+        "description": "🚀 Efficient implementations of state-of-the-art linear attention models",
+        "stargazers_count": 4191,
+        "forks_count": 348,
+        "open_issues_count": 61,
+        "watchers_count": 4191,
+        "default_branch": "main",
+        "created_at": "2023-12-20T06:50:18Z",
+        "updated_at": "2026-01-06T09:20:37Z",
+        "pushed_at": "2025-12-30T13:57:03Z",
+        "last_commit_date": "2025-12-30T13:57:01Z",
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://pypi.org/project/flash-linear-attention/",
+        "note": "flash-linear-attention 0.4.0 is distributed as a universal py3-none-any wheel and has explicit ARM installation guidance; ensure Triton and PyTorch versions are ARM-capable (see project FAQ)."
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT License",
+          "MIT"
+        ],
+        "effective_license": "MIT License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    }
+  ]
+}

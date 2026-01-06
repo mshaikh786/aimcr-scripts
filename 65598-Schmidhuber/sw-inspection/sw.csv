@@ -1,0 +1,4 @@
+Software Package,Version,URL
+CUDA,12.1,
+Pytorch,2.5.1+cu121,https://pytorch.org/
+flash-linear-attention,0.4.0,https://github.com/fla-org/flash-linear-attention

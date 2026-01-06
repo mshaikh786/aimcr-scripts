@@ -1,0 +1,33 @@
+project_name: Undefined
+snapshot_date: '2026-01-06'
+components:
+
+- id: cuda
+  name: CUDA
+  version: '12.1'
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: other
+    url: ''
+  declared_license: NVIDIA Proprietary Software
+  declared_function: ''
+
+- id: pytorch
+  name: Pytorch
+  version: 2.5.1+cu121
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: other
+    url: https://pytorch.org/
+  declared_license: BSD-3-Clause
+  declared_function: ''
+
+- id: flash-linear-attention
+  name: flash-linear-attention
+  version: 0.4.0
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/fla-org/flash-linear-attention
+  declared_license: MIT License
+  declared_function: ''
