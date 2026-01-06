@@ -1,7 +1,7 @@
 # Software Stack Inspection – ML models for Scientific Data Compression
 
 - **Snapshot date:** 2026-01-04
-- **Generated at:** 2026-01-05 09:44:33 UTC
+- **Generated at:** 2026-01-05 14:11:43 UTC
 
 ## Agenda
 
@@ -45,27 +45,25 @@
 
 #### 3.2 GitHub Repository Metadata
 
-- **Owner / Organization:**  pytorch
+- **Owner / Organization:**  N/A
 - **Repository:**  pytorch/pytorch
 - **Description:**  Tensors and Dynamic neural networks in Python with strong GPU acceleration
-- **Stars:**  96339
+- **Stars:**  96345
 - **Forks:**  26418
-- **Open Issues:**  17927
+- **Open Issues:**  17929
 - **Last Commit Date:**  2026-01-05T09:18:29Z
-- **Activity Health:**  Active
+- **Activity Health:**  Unknown
 
 #### 3.3 GitHub Release (version 2.8.0)
 
-- **Tag name:** v2.8.0
-- **Release name:** PyTorch 2.8.0 Release
-- **Published at:** 2025-08-06T17:06:10Z
-- **Release URL:** https://github.com/pytorch/pytorch/releases/tag/v2.8.0
-- **Draft:** No
-- **Prerelease:** No
+- No matching GitHub release found.
 
 #### 3.4 PyPI Metadata
 
-- No PyPI metadata (no PyPI URL or API error).
+- **PyPI package name:** N/A
+- **PyPI version considered:** 1.0.2
+- **Release upload time:** N/A
+- **Summary:** 
 
 ---
 
@@ -73,8 +71,8 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** NOASSERTION
-- **License name:** Other
+- **SPDX ID:** Unknown
+- **License name:** Unknown
 
 #### 4.2 Permissibility Summary
 
@@ -86,6 +84,12 @@
 | Redistribution allowed?            | Unknown |
 | Attribution required?              | Unknown |
 | Copyleft obligations?              | Unknown |
+
+### 5. Architecture / ARM / AArch64 Support
+
+- **ARM/aarch64 build available?**: Yes
+- **ARM build source / URL:** Linux aarch64 CUDA wheels via https://download.pytorch.org/whl (e.g. cu128 index for 2.8.0) and NVIDIA NGC PyTorch 25.xx images with torch 2.8.0.
+- **Notes:** On aarch64 (e.g. GH200), use: pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128, or NGC containers such as nvcr.io/nvidia/pytorch:25.05-py3-igpu / GH200-ready tags.
 
 ---
 
@@ -119,22 +123,32 @@
 
 #### 3.2 GitHub Repository Metadata
 
-- **Owner / Organization:**  Lightning-AI
-- **Repository:**  N/A
-- **Description:**  N/A
-- **Stars:**  N/A
-- **Forks:**  N/A
-- **Open Issues:**  N/A
-- **Last Commit Date:**  N/A
+- **Owner / Organization:**  N/A
+- **Repository:**  Lightning-AI/pytorch-lightning
+- **Description:**  Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes.
+- **Stars:**  30675
+- **Forks:**  3638
+- **Open Issues:**  939
+- **Last Commit Date:**  2025-12-22T12:41:14Z
 - **Activity Health:**  Unknown
 
 #### 3.3 GitHub Release (version 2.5.5)
 
-- github_releases_request_failed: 404 Client Error: Not Found for url: https://api.github.com/repos/Lightning-AI/pytorch-lightnin/releases?per_page=100
+- No matching GitHub release found.
 
 #### 3.4 PyPI Metadata
 
-- No PyPI metadata (no PyPI URL or API error).
+- **PyPI package name:** N/A
+- **PyPI version considered:** 2.5.5
+- **Release upload time:** N/A
+- **Summary:** PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. Scale your models. Write less boilerplate.
+- **Homepage:** https://github.com/Lightning-AI/lightning
+- **Project URLs:**
+  - Bug Tracker: https://github.com/Lightning-AI/pytorch-lightning/issues
+  - Documentation: https://pytorch-lightning.rtfd.io/en/latest/
+  - Download: https://github.com/Lightning-AI/lightning
+  - Homepage: https://github.com/Lightning-AI/lightning
+  - Source Code: https://github.com/Lightning-AI/lightning
 
 ---
 
@@ -155,6 +169,12 @@
 | Redistribution allowed?            | Unknown |
 | Attribution required?              | Unknown |
 | Copyleft obligations?              | Unknown |
+
+### 5. Architecture / ARM / AArch64 Support
+
+- **ARM/aarch64 build available?**: Yes
+- **ARM build source / URL:** PyPI (pure-Python wheels) and conda-forge noarch builds that work on both x86_64 and aarch64.
+- **Notes:** PyTorch Lightning is pure Python; ARM support mainly depends on the underlying PyTorch and its dependencies.
 
 ---
 
@@ -188,27 +208,32 @@
 
 #### 3.2 GitHub Repository Metadata
 
-- **Owner / Organization:**  numpy
+- **Owner / Organization:**  N/A
 - **Repository:**  numpy/numpy
 - **Description:**  The fundamental package for scientific computing with Python.
-- **Stars:**  31156
-- **Forks:**  11921
-- **Open Issues:**  2388
-- **Last Commit Date:**  2026-01-05T09:33:40Z
-- **Activity Health:**  Active
+- **Stars:**  31157
+- **Forks:**  11922
+- **Open Issues:**  2389
+- **Last Commit Date:**  2026-01-05T11:56:36Z
+- **Activity Health:**  Unknown
 
 #### 3.3 GitHub Release (version 2.3.4)
 
-- **Tag name:** v2.3.4
-- **Release name:** v2.3.4 (Oct 15,  2025)
-- **Published at:** 2025-10-15T23:15:52Z
-- **Release URL:** https://github.com/numpy/numpy/releases/tag/v2.3.4
-- **Draft:** No
-- **Prerelease:** No
+- No matching GitHub release found.
 
 #### 3.4 PyPI Metadata
 
-- No PyPI metadata (no PyPI URL or API error).
+- **PyPI package name:** N/A
+- **PyPI version considered:** 2.3.4
+- **Release upload time:** N/A
+- **Summary:** Fundamental package for array computing in Python
+- **Project URLs:**
+  - documentation: https://numpy.org/doc/
+  - download: https://pypi.org/project/numpy/#files
+  - homepage: https://numpy.org
+  - release notes: https://numpy.org/doc/stable/release
+  - source: https://github.com/numpy/numpy
+  - tracker: https://github.com/numpy/numpy/issues
 
 ---
 
@@ -216,8 +241,8 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** NOASSERTION
-- **License name:** Other
+- **SPDX ID:** Unknown
+- **License name:** Unknown
 
 #### 4.2 Permissibility Summary
 
@@ -229,6 +254,12 @@
 | Redistribution allowed?            | Unknown |
 | Attribution required?              | Unknown |
 | Copyleft obligations?              | Unknown |
+
+### 5. Architecture / ARM / AArch64 Support
+
+- **ARM/aarch64 build available?**: Yes
+- **ARM build source / URL:** PyPI manylinux2014_aarch64 wheels and conda-forge linux-aarch64 / osx-arm64 builds for NumPy 2.x.
+- **Notes:** On aarch64, prefer conda-forge (linux-aarch64) or pip install numpy==2.3.4, which will usually pull a prebuilt ARM64 wheel.
 
 ---
 
@@ -262,27 +293,31 @@
 
 #### 3.2 GitHub Repository Metadata
 
-- **Owner / Organization:**  pydata
+- **Owner / Organization:**  N/A
 - **Repository:**  pydata/xarray
 - **Description:**  N-D labeled arrays and datasets in Python
 - **Stars:**  4049
 - **Forks:**  1210
 - **Open Issues:**  1358
 - **Last Commit Date:**  2026-01-04T07:31:51Z
-- **Activity Health:**  Active
+- **Activity Health:**  Unknown
 
 #### 3.3 GitHub Release (version 2025.10.1)
 
-- **Tag name:** v2025.10.1
-- **Release name:** 
-- **Published at:** 2025-10-07T20:24:47Z
-- **Release URL:** https://github.com/pydata/xarray/releases/tag/v2025.10.1
-- **Draft:** No
-- **Prerelease:** No
+- No matching GitHub release found.
 
 #### 3.4 PyPI Metadata
 
-- No PyPI metadata (no PyPI URL or API error).
+- **PyPI package name:** N/A
+- **PyPI version considered:** 2025.10.1
+- **Release upload time:** N/A
+- **Summary:** N-D labeled arrays and datasets in Python
+- **Project URLs:**
+  - Documentation: https://docs.xarray.dev
+  - SciPy2015-talk: https://www.youtube.com/watch?v=X0pAhJgySxk
+  - homepage: https://xarray.dev/
+  - issue-tracker: https://github.com/pydata/xarray/issues
+  - source-code: https://github.com/pydata/xarray
 
 ---
 
@@ -290,19 +325,25 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** Apache-2.0
-- **License name:** Apache License 2.0
+- **SPDX ID:** Unknown
+- **License name:** Unknown
 
 #### 4.2 Permissibility Summary
 
 | Question                           | Answer   |
 |------------------------------------|----------|
-| Can be used for academic purposes? | Yes |
-| Can be used for commercial use?    | Yes |
-| Modification allowed?              | Yes |
-| Redistribution allowed?            | Yes |
-| Attribution required?              | Yes |
-| Copyleft obligations?              | No |
+| Can be used for academic purposes? | Unknown |
+| Can be used for commercial use?    | Unknown |
+| Modification allowed?              | Unknown |
+| Redistribution allowed?            | Unknown |
+| Attribution required?              | Unknown |
+| Copyleft obligations?              | Unknown |
+
+### 5. Architecture / ARM / AArch64 Support
+
+- **ARM/aarch64 build available?**: Yes
+- **ARM build source / URL:** PyPI (pure Python) and conda-forge noarch builds usable on aarch64.
+- **Notes:** xarray is implemented in pure Python; no architecture-specific binaries are required. As long as Python and NumPy are available on ARM, xarray works.
 
 ---
 
@@ -336,27 +377,33 @@
 
 #### 3.2 GitHub Repository Metadata
 
-- **Owner / Organization:**  matplotlib
+- **Owner / Organization:**  N/A
 - **Repository:**  matplotlib/matplotlib
 - **Description:**  matplotlib: plotting with Python
 - **Stars:**  22186
 - **Forks:**  8170
 - **Open Issues:**  1539
 - **Last Commit Date:**  2026-01-04T06:14:22Z
-- **Activity Health:**  Active
+- **Activity Health:**  Unknown
 
 #### 3.3 GitHub Release (version 3.10.7)
 
-- **Tag name:** v3.10.7
-- **Release name:** REL: v3.10.7
-- **Published at:** 2025-10-08T22:56:19Z
-- **Release URL:** https://github.com/matplotlib/matplotlib/releases/tag/v3.10.7
-- **Draft:** No
-- **Prerelease:** No
+- No matching GitHub release found.
 
 #### 3.4 PyPI Metadata
 
-- No PyPI metadata (no PyPI URL or API error).
+- **PyPI package name:** N/A
+- **PyPI version considered:** 3.10.7
+- **Release upload time:** N/A
+- **Summary:** Python plotting package
+- **Project URLs:**
+  - Bug Tracker: https://github.com/matplotlib/matplotlib/issues
+  - Documentation: https://matplotlib.org
+  - Donate: https://numfocus.org/donate-to-matplotlib
+  - Download: https://matplotlib.org/stable/install/index.html
+  - Forum: https://discourse.matplotlib.org/
+  - Homepage: https://matplotlib.org
+  - Source Code: https://github.com/matplotlib/matplotlib
 
 ---
 
@@ -377,6 +424,12 @@
 | Redistribution allowed?            | Unknown |
 | Attribution required?              | Unknown |
 | Copyleft obligations?              | Unknown |
+
+### 5. Architecture / ARM / AArch64 Support
+
+- **ARM/aarch64 build available?**: Yes
+- **ARM build source / URL:** Conda (and conda-forge) linux-aarch64 / osx-arm64 builds for 3.10.7 and PyPI manylinux ARM64 wheels in the 3.10.x series.
+- **Notes:** On aarch64, use conda install -c conda-forge matplotlib==3.10.7 or pip install matplotlib==3.10.7 if an ARM64 wheel is available for your platform.
 
 ---
 
@@ -410,23 +463,18 @@
 
 #### 3.2 GitHub Repository Metadata
 
-- **Owner / Organization:**  CNES
+- **Owner / Organization:**  N/A
 - **Repository:**  CNES/pangeo-pyinterp
 - **Description:**  Python library for optimized interpolation.
 - **Stars:**  133
 - **Forks:**  17
 - **Open Issues:**  2
 - **Last Commit Date:**  2025-11-11T20:47:47Z
-- **Activity Health:**  Active
+- **Activity Health:**  Unknown
 
 #### 3.3 GitHub Release (version 2025.11.0)
 
-- **Tag name:** 2025.11.0
-- **Release name:** 2025.11.0
-- **Published at:** 2025-10-31T03:43:44Z
-- **Release URL:** https://github.com/CNES/pangeo-pyinterp/releases/tag/2025.11.0
-- **Draft:** No
-- **Prerelease:** Yes
+- No matching GitHub release found.
 
 #### 3.4 PyPI Metadata
 
@@ -438,19 +486,25 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** BSD-3-Clause
-- **License name:** BSD 3-Clause "New" or "Revised" License
+- **SPDX ID:** Unknown
+- **License name:** Unknown
 
 #### 4.2 Permissibility Summary
 
 | Question                           | Answer   |
 |------------------------------------|----------|
-| Can be used for academic purposes? | Yes |
-| Can be used for commercial use?    | Yes |
-| Modification allowed?              | Yes |
-| Redistribution allowed?            | Yes |
-| Attribution required?              | Yes |
-| Copyleft obligations?              | No |
+| Can be used for academic purposes? | Unknown |
+| Can be used for commercial use?    | Unknown |
+| Modification allowed?              | Unknown |
+| Redistribution allowed?            | Unknown |
+| Attribution required?              | Unknown |
+| Copyleft obligations?              | Unknown |
+
+### 5. Architecture / ARM / AArch64 Support
+
+- **ARM/aarch64 build available?**: Yes (via conda-forge; PyPI is sdist-only for this version)
+- **ARM build source / URL:** https://anaconda.org/conda-forge/pyinterp provides linux-aarch64 binaries for pyinterp 2025.11.0; PyPI only has a source tarball.
+- **Notes:** On aarch64, prefer conda install -c conda-forge pyinterp==2025.11.0 to avoid compiling C++ extensions from source.
 
 ---
 
@@ -484,27 +538,31 @@
 
 #### 3.2 GitHub Repository Metadata
 
-- **Owner / Organization:**  scipy
+- **Owner / Organization:**  N/A
 - **Repository:**  scipy/scipy
 - **Description:**  SciPy library main repository
-- **Stars:**  14313
-- **Forks:**  5571
+- **Stars:**  14314
+- **Forks:**  5572
 - **Open Issues:**  1744
-- **Last Commit Date:**  2026-01-04T17:33:40Z
-- **Activity Health:**  Active
+- **Last Commit Date:**  2026-01-05T13:43:38Z
+- **Activity Health:**  Unknown
 
 #### 3.3 GitHub Release (version 1.16.3)
 
-- **Tag name:** v1.16.3
-- **Release name:** SciPy 1.16.3
-- **Published at:** 2025-10-28T17:42:20Z
-- **Release URL:** https://github.com/scipy/scipy/releases/tag/v1.16.3
-- **Draft:** No
-- **Prerelease:** No
+- No matching GitHub release found.
 
 #### 3.4 PyPI Metadata
 
-- No PyPI metadata (no PyPI URL or API error).
+- **PyPI package name:** N/A
+- **PyPI version considered:** 1.16.3
+- **Release upload time:** N/A
+- **Summary:** Fundamental algorithms for scientific computing in Python
+- **Project URLs:**
+  - documentation: https://docs.scipy.org/doc/scipy/
+  - download: https://github.com/scipy/scipy/releases
+  - homepage: https://scipy.org/
+  - source: https://github.com/scipy/scipy
+  - tracker: https://github.com/scipy/scipy/issues
 
 ---
 
@@ -512,19 +570,25 @@
 
 #### 4.1 License Type
 
-- **SPDX ID:** BSD-3-Clause
-- **License name:** BSD 3-Clause "New" or "Revised" License
+- **SPDX ID:** Unknown
+- **License name:** Unknown
 
 #### 4.2 Permissibility Summary
 
 | Question                           | Answer   |
 |------------------------------------|----------|
-| Can be used for academic purposes? | Yes |
-| Can be used for commercial use?    | Yes |
-| Modification allowed?              | Yes |
-| Redistribution allowed?            | Yes |
-| Attribution required?              | Yes |
-| Copyleft obligations?              | No |
+| Can be used for academic purposes? | Unknown |
+| Can be used for commercial use?    | Unknown |
+| Modification allowed?              | Unknown |
+| Redistribution allowed?            | Unknown |
+| Attribution required?              | Unknown |
+| Copyleft obligations?              | Unknown |
+
+### 5. Architecture / ARM / AArch64 Support
+
+- **ARM/aarch64 build available?**: Yes
+- **ARM build source / URL:** Conda-forge provides linux-aarch64 binaries for SciPy 1.16.3; several Linux distros (e.g. Debian/Ubuntu, Arch ARM) ship arm64 packages; PyPI offers ARM wheels for some platforms (e.g. Windows/macOS ARM).
+- **Notes:** On GH200/Shaheen III, the recommended path is conda install -c conda-forge scipy==1.16.3 to get prebuilt ARM binaries instead of building from source.
 
 ---
 

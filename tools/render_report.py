@@ -26,6 +26,36 @@ def yn(val):
     return "Unknown"
 
 
+def format_arch_support_section(component: dict) -> str:
+    arch = component.get("arch_support") or {}
+    available = arch.get("arm_aarch64_available", "").strip()
+    url = arch.get("arm_build_url", "").strip()
+    note = arch.get("note", "").strip()
+
+    if not available and not url and not note:
+        # Fallback if the field is completely missing
+        return (
+            "### 5. Architecture / ARM / AArch64 Support\n\n"
+            "_Not yet assessed. Please update the inspection data manually._\n"
+        )
+
+    # Graceful fallbacks
+    if not available:
+        available = "Unknown"
+    if not url:
+        url = "-"
+
+    md = []
+    md.append("### 5. Architecture / ARM / AArch64 Support\n")
+    md.append(f"- **ARM/aarch64 build available?**: {available}")
+    md.append(f"- **ARM build source / URL:** {url}")
+    if note:
+        md.append(f"- **Notes:** {note}")
+    md.append("")  # blank line
+
+    return "\n".join(md)
+
+
 def format_date_iso(iso_str):
     if not iso_str:
         return "N/A"
@@ -237,7 +267,6 @@ def main():
         print(f"- **License name:** {lic_display}")
         print()
 
-
         # 4.2 Permissibility Summary
         print("#### 4.2 Permissibility Summary")
         print()
@@ -250,6 +279,8 @@ def main():
         print(f"| Attribution required?              | {yn(perms.get('attribution'))} |")
         print(f"| Copyleft obligations?              | {yn(perms.get('copyleft'))} |")
         print()
+        # --- NEW ARCH SECTION HERE ---
+        print(format_arch_support_section(comp))
         print("---")
         print()
 
