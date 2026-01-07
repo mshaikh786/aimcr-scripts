@@ -1,0 +1,479 @@
+{
+  "project_name": "Optimization Algorithms for Machine Learning",
+  "snapshot_date": "2026-01-07",
+  "generated_at": "2026-01-07T08:18:36.787782Z",
+  "components": [
+    {
+      "id": "pytorch",
+      "name": "Pytorch",
+      "version": "2.7.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/torch/2.7.1/"
+        }
+      ],
+      "declared_function": "Train neural networks",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "torch",
+        "name": "torch",
+        "version": "2.7.1",
+        "summary": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+        "home_page": "",
+        "project_urls": {
+          "Documentation": "https://pytorch.org/docs",
+          "Forum": "https://discuss.pytorch.org",
+          "Homepage": "https://pytorch.org",
+          "Issue Tracker": "https://github.com/pytorch/pytorch/issues",
+          "Repository": "https://github.com/pytorch/pytorch"
+        },
+        "license": "BSD-3-Clause"
+      },
+      "github": {
+        "slug": "pytorch/pytorch",
+        "full_name": "pytorch/pytorch",
+        "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+        "stargazers_count": 96395,
+        "forks_count": 26437,
+        "open_issues_count": 17876,
+        "watchers_count": 96395,
+        "default_branch": "main",
+        "created_at": "2016-08-13T05:26:41Z",
+        "updated_at": "2026-01-07T07:47:56Z",
+        "pushed_at": "2026-01-07T08:09:02Z",
+        "last_commit_date": "2026-01-07T07:47:44Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/66/81/e48c9edb655ee8eb8c2a6026abdb6f8d2146abd1f150979ede807bb75dcb/torch-2.7.1-cp313-cp313-manylinux_2_28_aarch64.whl and also see NGC",
+        "note": "aarch64 wheel available on PyPI - and images available on NGC too"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD",
+          "BSD-3-Clause",
+          "NOASSERTION"
+        ],
+        "effective_license": "BSD",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "torchvision",
+      "name": "Torchvision",
+      "version": "0.22.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/torchvision/0.22.1/"
+        }
+      ],
+      "declared_function": "Train neural networks",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "torchvision",
+        "name": "torchvision",
+        "version": "0.22.1",
+        "summary": "image and video datasets and models for torch deep learning",
+        "home_page": "https://github.com/pytorch/vision",
+        "project_urls": {
+          "Homepage": "https://github.com/pytorch/vision"
+        },
+        "license": "BSD"
+      },
+      "github": {
+        "slug": "pytorch/vision",
+        "full_name": "pytorch/vision",
+        "description": "Datasets, Transforms and Models specific to Computer Vision",
+        "stargazers_count": 17429,
+        "forks_count": 7195,
+        "open_issues_count": 1180,
+        "watchers_count": 17429,
+        "default_branch": "main",
+        "created_at": "2016-11-09T23:11:43Z",
+        "updated_at": "2026-01-06T15:16:46Z",
+        "pushed_at": "2026-01-06T11:36:13Z",
+        "last_commit_date": "2026-01-06T10:09:52Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/ab/c8/2ebe90f18e7ffa2120f5c3eab62aa86923185f78d2d051a455ea91461608/torchvision-0.22.1-cp313-cp313t-manylinux_2_28_aarch64.whl",
+        "note": "aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD",
+          "BSD",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "numpy",
+      "name": "Numpy",
+      "version": "1.26.4",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/numpy/1.26.4/"
+        }
+      ],
+      "declared_function": "Helper for pytorch",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "numpy",
+        "name": "numpy",
+        "version": "1.26.4",
+        "summary": "Fundamental package for array computing in Python",
+        "home_page": "",
+        "project_urls": {
+          "documentation": "https://numpy.org/doc/",
+          "download": "https://pypi.org/project/numpy/#files",
+          "homepage": "https://numpy.org",
+          "release notes": "https://numpy.org/doc/stable/release",
+          "source": "https://github.com/numpy/numpy",
+          "tracker": "https://github.com/numpy/numpy/issues"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "numpy/numpy",
+        "full_name": "numpy/numpy",
+        "description": "The fundamental package for scientific computing with Python.",
+        "stargazers_count": 31171,
+        "forks_count": 11927,
+        "open_issues_count": 2400,
+        "watchers_count": 31171,
+        "default_branch": "main",
+        "created_at": "2010-09-13T23:02:39Z",
+        "updated_at": "2026-01-07T08:18:20Z",
+        "pushed_at": "2026-01-06T20:05:16Z",
+        "last_commit_date": "2026-01-06T20:05:09Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/79/f8/97f10e6755e2a7d027ca783f63044d5b1bc1ae7acb12afe6a9b4286eac17/numpy-1.26.4-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "note": "manylinux aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD",
+          "NOASSERTION"
+        ],
+        "effective_license": "BSD",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "wandb",
+      "name": "wandb",
+      "version": "0.19.11",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/wandb/0.19.11/"
+        }
+      ],
+      "declared_function": "Logging",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "wandb",
+        "name": "wandb",
+        "version": "0.19.11",
+        "summary": "A CLI and library for interacting with the Weights & Biases API.",
+        "home_page": "",
+        "project_urls": {
+          "Bug Reports": "https://github.com/wandb/wandb/issues",
+          "Documentation": "https://docs.wandb.ai/",
+          "Source": "https://github.com/wandb/wandb"
+        },
+        "license": "MIT license (see project license file for full text)"
+      },
+      "github": {
+        "slug": "wandb/wandb",
+        "full_name": "wandb/wandb",
+        "description": "The AI developer platform. Use Weights & Biases to train and fine-tune models, and manage models from experimentation to production.",
+        "stargazers_count": 10706,
+        "forks_count": 806,
+        "open_issues_count": 804,
+        "watchers_count": 10706,
+        "default_branch": "main",
+        "created_at": "2017-03-24T05:46:23Z",
+        "updated_at": "2026-01-07T07:54:56Z",
+        "pushed_at": "2026-01-07T01:29:22Z",
+        "last_commit_date": "2026-01-07T00:51:06Z",
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/68/06/8b827f16a0b8f18002d2fffa7c5a7fd447946e0d0c68aeec0dd7eb18cdd3/wandb-0.19.11-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "note": "manylinux aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT",
+          "MIT license (see project license file for full text)",
+          "MIT"
+        ],
+        "effective_license": "MIT",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "matplotlib",
+      "name": "Matplotlib",
+      "version": "3.10.3",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/matplotlib/3.10.3/"
+        }
+      ],
+      "declared_function": "visualisation",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "matplotlib",
+        "name": "matplotlib",
+        "version": "3.10.3",
+        "summary": "Python plotting package",
+        "home_page": "",
+        "project_urls": {
+          "Bug Tracker": "https://github.com/matplotlib/matplotlib/issues",
+          "Documentation": "https://matplotlib.org",
+          "Donate": "https://numfocus.org/donate-to-matplotlib",
+          "Download": "https://matplotlib.org/stable/install/index.html",
+          "Forum": "https://discourse.matplotlib.org/",
+          "Homepage": "https://matplotlib.org",
+          "Source Code": "https://github.com/matplotlib/matplotlib"
+        },
+        "license": "Apache-2.0 (see project license file for full text)"
+      },
+      "github": {
+        "slug": "matplotlib/matplotlib",
+        "full_name": "matplotlib/matplotlib",
+        "description": "matplotlib: plotting with Python",
+        "stargazers_count": 22190,
+        "forks_count": 8170,
+        "open_issues_count": 1544,
+        "watchers_count": 22190,
+        "default_branch": "main",
+        "created_at": "2011-02-19T03:17:12Z",
+        "updated_at": "2026-01-07T03:11:37Z",
+        "pushed_at": "2026-01-04T06:14:22Z",
+        "last_commit_date": "2026-01-04T06:14:22Z",
+        "license": {
+          "key": null,
+          "name": null,
+          "spdx_id": null
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/89/44/f3bc6b53066c889d7a1a3ea8094c13af6a667c5ca6220ec60ecceec2dabe/matplotlib-3.10.3-cp313-cp313t-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "note": "manylinux aarch64 wheel available"
+      },
+      "license": {
+        "raw_license_strings": [
+          "PSF",
+          "Apache-2.0 (see project license file for full text)"
+        ],
+        "effective_license": "PSF",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "hydra",
+      "name": "Hydra",
+      "version": "1.3.2",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/hydra-core/"
+        }
+      ],
+      "declared_function": "configs",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "hydra-core",
+        "name": "hydra-core",
+        "version": "1.3.2",
+        "summary": "A framework for elegantly configuring complex applications",
+        "home_page": "https://github.com/facebookresearch/hydra",
+        "project_urls": {
+          "Homepage": "https://github.com/facebookresearch/hydra"
+        },
+        "license": "MIT"
+      },
+      "github": {
+        "slug": "facebookresearch/hydra",
+        "full_name": "facebookresearch/hydra",
+        "description": "Hydra is a framework for elegantly configuring complex applications",
+        "stargazers_count": 10081,
+        "forks_count": 780,
+        "open_issues_count": 365,
+        "watchers_count": 10081,
+        "default_branch": "main",
+        "created_at": "2019-06-12T19:33:15Z",
+        "updated_at": "2026-01-07T07:49:53Z",
+        "pushed_at": "2025-12-11T03:46:06Z",
+        "last_commit_date": "2025-11-29T13:53:02Z",
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/hydra-core",
+        "note": "hydra-core ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT License",
+          "MIT",
+          "MIT"
+        ],
+        "effective_license": "MIT License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "pandas",
+      "name": "Pandas",
+      "version": "2.2.3",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/pandas/2.2.3/"
+        }
+      ],
+      "declared_function": "Data analyses",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "pandas",
+        "name": "pandas",
+        "version": "2.2.3",
+        "summary": "Powerful data structures for data analysis, time series, and statistics",
+        "home_page": "",
+        "project_urls": {
+          "documentation": "https://pandas.pydata.org/docs/",
+          "homepage": "https://pandas.pydata.org",
+          "repository": "https://github.com/pandas-dev/pandas"
+        },
+        "license": "Apache-2.0 (see project license file for full text)"
+      },
+      "github": {
+        "slug": "pandas-dev/pandas",
+        "full_name": "pandas-dev/pandas",
+        "description": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more",
+        "stargazers_count": 47496,
+        "forks_count": 19476,
+        "open_issues_count": 3595,
+        "watchers_count": 47496,
+        "default_branch": "main",
+        "created_at": "2010-08-24T01:37:33Z",
+        "updated_at": "2026-01-07T05:53:58Z",
+        "pushed_at": "2026-01-06T22:12:54Z",
+        "last_commit_date": "2026-01-06T22:12:54Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/ed/f9/e995754eab9c0f14c6777401f7eece0943840b7a9fc932221c19d1abee9f/pandas-2.2.3-cp313-cp313t-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+        "note": "manylinux aarc64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD",
+          "Apache-2.0 (see project license file for full text)",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    }
+  ]
+}
