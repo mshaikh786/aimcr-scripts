@@ -1,0 +1,3 @@
+Software Package,Version,URL
+Pytorch,2.8.0,https://pytorch.org
+vLLM,Latest stable,https://github.com/vllm-project/vllm

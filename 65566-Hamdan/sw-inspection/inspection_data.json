@@ -1,0 +1,108 @@
+{
+  "project_name": "Integrated multi-scale modeling, protein foundation models, and autonomous AI agents",
+  "snapshot_date": "2026-01-06",
+  "generated_at": "2026-01-07T07:54:50.624724Z",
+  "components": [
+    {
+      "id": "pytorch",
+      "name": "Pytorch",
+      "version": "2.8.0",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "other",
+          "url": "https://pytorch.org"
+        }
+      ],
+      "declared_function": "Pretrain, fine-tune the model and generation",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {},
+      "github": {},
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (official Linux aarch64 wheels and vendor ARM GPU containers)",
+        "arm_build_url": "PyPI aarch64 wheels: https://pypi.org/project/torch/#files ; see also NGC containers",
+        "note": "PyTorch provides official manylinux aarch64 binaries and ARM support for NVIDIA platforms (e.g. Jetson / GH200). Still recommended to validate on the specific Shaheen III software stack and CUDA/toolchain versions."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD 3-Clause License"
+        ],
+        "effective_license": "BSD 3-Clause License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "vllm",
+      "name": "vLLM",
+      "version": "Latest stable",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/vllm-project/vllm"
+        }
+      ],
+      "declared_function": "For LLM inference in Agentic AI workflow",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "vllm",
+        "name": "vllm",
+        "version": "0.13.0",
+        "summary": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+        "home_page": "",
+        "project_urls": {
+          "Documentation": "https://docs.vllm.ai/en/latest/",
+          "Homepage": "https://github.com/vllm-project/vllm",
+          "Slack": "https://slack.vllm.ai/"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "vllm-project/vllm",
+        "full_name": "vllm-project/vllm",
+        "description": "A high-throughput and memory-efficient inference and serving engine for LLMs",
+        "stargazers_count": 66997,
+        "forks_count": 12428,
+        "open_issues_count": 3099,
+        "watchers_count": 66997,
+        "default_branch": "main",
+        "created_at": "2023-02-09T11:23:20Z",
+        "updated_at": "2026-01-07T07:54:20Z",
+        "pushed_at": "2026-01-07T07:36:14Z",
+        "last_commit_date": "2026-01-07T07:36:13Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/42/82/e6194ac86862c50e9ff3f58ab3eb63d71604f96723bead2fcc610821197f/vllm-0.13.0-cp38-abi3-manylinux_2_31_aarch64.whl",
+        "note": "manylinux aarch64 wheel is available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "Open Source",
+          "Apache-2.0"
+        ],
+        "effective_license": "Open Source",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+project_name: Integrated multi-scale modeling, protein foundation models, and autonomous
+  AI agents
+snapshot_date: '2026-01-06'
+components:
+
+- id: pytorch
+  name: Pytorch
+  version: 2.8.0
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: other
+    url: https://pytorch.org
+  declared_license: BSD 3-Clause License
+  declared_function: Pretrain, fine-tune the model and generation
+
+- id: vllm
+  name: vLLM
+  version: Latest stable
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/vllm-project/vllm
+  declared_license: Open Source
+  declared_function: For LLM inference in Agentic AI workflow
