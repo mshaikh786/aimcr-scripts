@@ -1,0 +1,982 @@
+{
+  "project_name": "Undefined",
+  "snapshot_date": "2026-01-06",
+  "generated_at": "2026-01-06T14:39:40.837006Z",
+  "components": [
+    {
+      "id": "torch",
+      "name": "torch",
+      "version": "2.0.1",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/pytorch/pytorch"
+        }
+      ],
+      "declared_function": "Train and use the machine learning models",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "pytorch",
+        "name": "pytorch",
+        "version": "2.0.1",
+        "summary": "",
+        "home_page": "",
+        "project_urls": {},
+        "license": ""
+      },
+      "github": {
+        "slug": "pytorch/pytorch",
+        "full_name": "pytorch/pytorch",
+        "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration",
+        "stargazers_count": 96377,
+        "forks_count": 26429,
+        "open_issues_count": 17912,
+        "watchers_count": 96377,
+        "default_branch": "main",
+        "created_at": "2016-08-13T05:26:41Z",
+        "updated_at": "2026-01-06T14:36:47Z",
+        "pushed_at": "2026-01-06T14:38:04Z",
+        "last_commit_date": "2026-01-06T10:53:23Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "source build only; no official CUDA wheels",
+        "arm_build_url": "",
+        "note": "PyTorch 2.0.1 provides CUDA 11.7/11.8 wheels for Linux x86-64 only."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-style license",
+          "NOASSERTION"
+        ],
+        "effective_license": "BSD-style license",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "torchvision",
+      "name": "torchvision",
+      "version": "0.15.2",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/torchvision/0.15.2/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "torchvision",
+        "name": "torchvision",
+        "version": "0.15.2",
+        "summary": "image and video datasets and models for torch deep learning",
+        "home_page": "https://github.com/pytorch/vision",
+        "project_urls": {
+          "Homepage": "https://github.com/pytorch/vision"
+        },
+        "license": "BSD"
+      },
+      "github": {
+        "slug": "pytorch/vision",
+        "full_name": "pytorch/vision",
+        "description": "Datasets, Transforms and Models specific to Computer Vision",
+        "stargazers_count": 17430,
+        "forks_count": 7195,
+        "open_issues_count": 1179,
+        "watchers_count": 17430,
+        "default_branch": "main",
+        "created_at": "2016-11-09T23:11:43Z",
+        "updated_at": "2026-01-06T10:33:22Z",
+        "pushed_at": "2026-01-06T11:36:13Z",
+        "last_commit_date": "2026-01-06T10:09:52Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/66/e0/cd847d4d22be88a71d5d65f5809342e7ea7ded62230e7bde7420a2105e51/torchvision-0.15.2-cp311-cp311-manylinux2014_aarch64.whl",
+        "note": "Available wheel on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-style license",
+          "BSD",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD-style license",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "torchaudio",
+      "name": "torchaudio",
+      "version": "2.0.2",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/torchaudio/2.0.2/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "torchaudio",
+        "name": "torchaudio",
+        "version": "2.0.2",
+        "summary": "An audio package for PyTorch",
+        "home_page": "https://github.com/pytorch/audio",
+        "project_urls": {
+          "Homepage": "https://github.com/pytorch/audio"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "pytorch/audio",
+        "full_name": "pytorch/audio",
+        "description": "Data manipulation and transformation for audio signal processing, powered by PyTorch",
+        "stargazers_count": 2808,
+        "forks_count": 754,
+        "open_issues_count": 314,
+        "watchers_count": 2808,
+        "default_branch": "main",
+        "created_at": "2017-05-05T00:38:05Z",
+        "updated_at": "2026-01-06T12:39:51Z",
+        "pushed_at": "2026-01-06T11:36:07Z",
+        "last_commit_date": "2026-01-06T08:58:27Z",
+        "license": {
+          "key": "bsd-2-clause",
+          "name": "BSD 2-Clause \"Simplified\" License",
+          "spdx_id": "BSD-2-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/dc/9c/4d2d65618034ed9833e8997c74b1bf77e3a73c4be0a2b2f80bd9f3c5988b/torchaudio-2.0.2-cp311-cp311-manylinux2014_aarch64.whl",
+        "note": "Available wheel on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-style license",
+          "BSD-2-Clause"
+        ],
+        "effective_license": "BSD-style license",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "torchmetrics",
+      "name": "torchmetrics",
+      "version": "0.9.3",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/torchmetrics/0.9.3/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "torchmetrics",
+        "name": "torchmetrics",
+        "version": "0.9.3",
+        "summary": "PyTorch native Metrics",
+        "home_page": "https://github.com/Lightning-AI/torchmetrics",
+        "project_urls": {
+          "Bug Tracker": "https://github.com/Lightning-AI/torchmetrics/issues",
+          "Documentation": "https://torchmetrics.rtfd.io/en/latest/",
+          "Download": "https://github.com/Lightning-AI/torchmetrics/archive/master.zip",
+          "Homepage": "https://github.com/Lightning-AI/torchmetrics",
+          "Source Code": "https://github.com/Lightning-AI/torchmetrics"
+        },
+        "license": "Apache-2.0"
+      },
+      "github": {
+        "slug": "Lightning-AI/torchmetrics",
+        "full_name": "Lightning-AI/torchmetrics",
+        "description": "Machine learning metrics for distributed, scalable PyTorch applications.",
+        "stargazers_count": 2390,
+        "forks_count": 470,
+        "open_issues_count": 123,
+        "watchers_count": 2390,
+        "default_branch": "master",
+        "created_at": "2020-12-22T20:02:42Z",
+        "updated_at": "2026-01-04T06:58:26Z",
+        "pushed_at": "2026-01-05T20:59:20Z",
+        "last_commit_date": "2025-12-17T23:16:59Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "",
+        "note": "torchmetrics ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-style license",
+          "Apache-2.0",
+          "Apache-2.0"
+        ],
+        "effective_license": "BSD-style license",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "pytorch-lightning",
+      "name": "pytorch-lightning",
+      "version": "2.1.3",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/Lightning-AI/pytorch-lightning"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "pytorch-lightning",
+        "name": "pytorch-lightning",
+        "version": "2.1.3",
+        "summary": "PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers. Scale your models. Write less boilerplate.",
+        "home_page": "https://github.com/Lightning-AI/lightning",
+        "project_urls": {
+          "Bug Tracker": "https://github.com/Lightning-AI/pytorch-lightning/issues",
+          "Documentation": "https://pytorch-lightning.rtfd.io/en/latest/",
+          "Download": "https://github.com/Lightning-AI/lightning",
+          "Homepage": "https://github.com/Lightning-AI/lightning",
+          "Source Code": "https://github.com/Lightning-AI/lightning"
+        },
+        "license": "Apache-2.0"
+      },
+      "github": {
+        "slug": "Lightning-AI/pytorch-lightning",
+        "full_name": "Lightning-AI/pytorch-lightning",
+        "description": "Pretrain, finetune ANY AI model of ANY size on 1 or 10,000+ GPUs with zero code changes.",
+        "stargazers_count": 30677,
+        "forks_count": 3640,
+        "open_issues_count": 943,
+        "watchers_count": 30677,
+        "default_branch": "master",
+        "created_at": "2019-03-31T00:45:57Z",
+        "updated_at": "2026-01-06T03:24:22Z",
+        "pushed_at": "2026-01-05T20:59:13Z",
+        "last_commit_date": "2025-12-22T12:41:14Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/pytorch-lightning/2.1.3",
+        "note": "PyTorch Lightning ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache License 2.0",
+          "Apache-2.0",
+          "Apache-2.0"
+        ],
+        "effective_license": "Apache License 2.0",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "gradio",
+      "name": "gradio",
+      "version": "4.43",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/gradio-app/gradio"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "gradio",
+        "name": "gradio",
+        "version": "6.2.0",
+        "summary": "Python library for easily interacting with trained machine learning models",
+        "home_page": "",
+        "project_urls": {
+          "Homepage": "https://github.com/gradio-app/gradio"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "gradio-app/gradio",
+        "full_name": "gradio-app/gradio",
+        "description": "Build and share delightful machine learning apps, all in Python. 🌟 Star to support our work!",
+        "stargazers_count": 41211,
+        "forks_count": 3221,
+        "open_issues_count": 466,
+        "watchers_count": 41211,
+        "default_branch": "main",
+        "created_at": "2018-12-19T08:24:04Z",
+        "updated_at": "2026-01-06T14:16:29Z",
+        "pushed_at": "2026-01-06T13:32:49Z",
+        "last_commit_date": "2026-01-06T11:28:26Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/gradio/4.43.0",
+        "note": "Gradio ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache License 2.0",
+          "Apache-2.0"
+        ],
+        "effective_license": "Apache License 2.0",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "gradio-client",
+      "name": "gradio_client",
+      "version": "1.13.0",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/gradio-client/1.13.0/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "gradio-client",
+        "name": "gradio-client",
+        "version": "1.13.0",
+        "summary": "Python library for easily interacting with trained machine learning models",
+        "home_page": "",
+        "project_urls": {
+          "Homepage": "https://github.com/gradio-app/gradio"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "gradio-app/gradio",
+        "full_name": "gradio-app/gradio",
+        "description": "Build and share delightful machine learning apps, all in Python. 🌟 Star to support our work!",
+        "stargazers_count": 41211,
+        "forks_count": 3221,
+        "open_issues_count": 466,
+        "watchers_count": 41211,
+        "default_branch": "main",
+        "created_at": "2018-12-19T08:24:04Z",
+        "updated_at": "2026-01-06T14:16:29Z",
+        "pushed_at": "2026-01-06T13:32:49Z",
+        "last_commit_date": "2026-01-06T11:28:26Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/gradio-client/1.13.0",
+        "note": "gradio-client ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available"
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache-2.0"
+        ],
+        "effective_license": "Apache-2.0",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "transformers",
+      "name": "transformers",
+      "version": "4.28.0",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/huggingface/transformers"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "transformers",
+        "name": "transformers",
+        "version": "4.28.0",
+        "summary": "State-of-the-art Machine Learning for JAX, PyTorch and TensorFlow",
+        "home_page": "https://github.com/huggingface/transformers",
+        "project_urls": {
+          "Homepage": "https://github.com/huggingface/transformers"
+        },
+        "license": "Apache 2.0 License"
+      },
+      "github": {
+        "slug": "huggingface/transformers",
+        "full_name": "huggingface/transformers",
+        "description": "🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, audio, and multimodal models, for both inference and training. ",
+        "stargazers_count": 154660,
+        "forks_count": 31639,
+        "open_issues_count": 2162,
+        "watchers_count": 154660,
+        "default_branch": "main",
+        "created_at": "2018-10-29T13:56:00Z",
+        "updated_at": "2026-01-06T14:38:33Z",
+        "pushed_at": "2026-01-06T14:09:19Z",
+        "last_commit_date": "2026-01-06T13:31:30Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/transformers/4.28.0/#files",
+        "note": "Transformers ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache License 2.0",
+          "Apache 2.0 License",
+          "Apache-2.0"
+        ],
+        "effective_license": "Apache License 2.0",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "scikit-learn",
+      "name": "scikit-learn",
+      "version": "1.4.0",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/scikit-learn/scikit-learn"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "scikit-learn",
+        "name": "scikit-learn",
+        "version": "1.4.0",
+        "summary": "A set of python modules for machine learning and data mining",
+        "home_page": "",
+        "project_urls": {
+          "download": "https://pypi.org/project/scikit-learn/#files",
+          "homepage": "https://scikit-learn.org",
+          "release notes": "https://scikit-learn.org/stable/whats_new",
+          "source": "https://github.com/scikit-learn/scikit-learn",
+          "tracker": "https://github.com/scikit-learn/scikit-learn/issues"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "scikit-learn/scikit-learn",
+        "full_name": "scikit-learn/scikit-learn",
+        "description": "scikit-learn: machine learning in Python",
+        "stargazers_count": 64498,
+        "forks_count": 26574,
+        "open_issues_count": 2116,
+        "watchers_count": 64498,
+        "default_branch": "main",
+        "created_at": "2010-08-17T09:43:38Z",
+        "updated_at": "2026-01-06T14:26:28Z",
+        "pushed_at": "2026-01-06T14:26:20Z",
+        "last_commit_date": "2026-01-06T14:26:20Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://pypi.org/project/scikit-learn/1.4.0/#files",
+        "note": "aarch64 wheels available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD-3-Clause license",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD-3-Clause license",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "tabulate",
+      "name": "tabulate",
+      "version": "0.9.0",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/tabulate/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "tabulate",
+        "name": "tabulate",
+        "version": "0.9.0",
+        "summary": "Pretty-print tabular data",
+        "home_page": "",
+        "project_urls": {
+          "Homepage": "https://github.com/astanin/python-tabulate"
+        },
+        "license": "MIT"
+      },
+      "github": {
+        "slug": "astanin/python-tabulate",
+        "full_name": "astanin/python-tabulate",
+        "description": "Pretty-print tabular data in Python, a library and a command-line utility. Repository migrated from bitbucket.org/astanin/python-tabulate.",
+        "stargazers_count": 2500,
+        "forks_count": 178,
+        "open_issues_count": 129,
+        "watchers_count": 2500,
+        "default_branch": "master",
+        "created_at": "2019-09-02T14:34:19Z",
+        "updated_at": "2026-01-06T13:31:01Z",
+        "pushed_at": "2025-07-23T18:54:27Z",
+        "last_commit_date": "2025-07-23T18:54:26Z",
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/tabulate",
+        "note": "Tabulate ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT",
+          "MIT"
+        ],
+        "effective_license": "MIT",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "biopython",
+      "name": "biopython",
+      "version": "1.83",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/biopython/biopython"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "biopython",
+        "name": "biopython",
+        "version": "1.83",
+        "summary": "Freely available tools for computational molecular biology.",
+        "home_page": "https://biopython.org/",
+        "project_urls": {
+          "Documentation": "https://biopython.org/wiki/Documentation",
+          "Homepage": "https://biopython.org/",
+          "Source": "https://github.com/biopython/biopython/",
+          "Tracker": "https://github.com/biopython/biopython/issues"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "biopython/biopython",
+        "full_name": "biopython/biopython",
+        "description": "Official git repository for Biopython (originally converted from CVS)",
+        "stargazers_count": 4855,
+        "forks_count": 1855,
+        "open_issues_count": 572,
+        "watchers_count": 4855,
+        "default_branch": "master",
+        "created_at": "2009-03-15T21:09:53Z",
+        "updated_at": "2026-01-06T14:37:28Z",
+        "pushed_at": "2026-01-05T18:55:46Z",
+        "last_commit_date": "2025-12-26T06:23:00Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "No",
+        "arm_build_url": "",
+        "note": "No precompiled Linux aarch64 wheel - will need build from source"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD 3-Clause License",
+          "NOASSERTION"
+        ],
+        "effective_license": "BSD 3-Clause License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "easydict",
+      "name": "easydict",
+      "version": "1.13",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/makinacorpus/easydict"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "easydict",
+        "name": "easydict",
+        "version": "1.13",
+        "summary": "Access dict values as attributes (works recursively).",
+        "home_page": "https://github.com/makinacorpus/easydict",
+        "project_urls": {
+          "Download": "http://pypi.python.org/pypi/easydict/",
+          "Homepage": "https://github.com/makinacorpus/easydict"
+        },
+        "license": "LGPL-3.0"
+      },
+      "github": {
+        "slug": "makinacorpus/easydict",
+        "full_name": "makinacorpus/easydict",
+        "description": "Access dict values as attributes (works recursively)",
+        "stargazers_count": 311,
+        "forks_count": 48,
+        "open_issues_count": 23,
+        "watchers_count": 311,
+        "default_branch": "master",
+        "created_at": "2011-04-18T12:52:49Z",
+        "updated_at": "2025-12-03T05:16:18Z",
+        "pushed_at": "2024-07-17T02:36:59Z",
+        "last_commit_date": "2024-03-04T12:03:03Z",
+        "license": {
+          "key": "lgpl-3.0",
+          "name": "GNU Lesser General Public License v3.0",
+          "spdx_id": "LGPL-3.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/easydict/#files",
+        "note": "easydict ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "LGPL-3.0 license",
+          "LGPL-3.0",
+          "LGPL-3.0"
+        ],
+        "effective_license": "LGPL-3.0 license",
+        "permissive": false,
+        "notes": "Detected copyleft license family (e.g. GPL/AGPL/LGPL)."
+      }
+    },
+    {
+      "id": "lmdb",
+      "name": "lmdb",
+      "version": "1.4.1",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/jnwatson/py-lmdb/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {},
+      "github": {
+        "slug": "jnwatson/py-lmdb",
+        "full_name": "jnwatson/py-lmdb",
+        "description": "Universal Python binding for the LMDB 'Lightning' Database",
+        "stargazers_count": 730,
+        "forks_count": 114,
+        "open_issues_count": 25,
+        "watchers_count": 730,
+        "default_branch": "master",
+        "created_at": "2013-02-04T19:10:07Z",
+        "updated_at": "2026-01-04T01:36:59Z",
+        "pushed_at": "2025-11-17T02:28:41Z",
+        "last_commit_date": "2025-11-17T02:28:22Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://pypi.org/project/lmdb/1.4.1/#files",
+        "note": "manylinux aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "The OpenLDAP Public License",
+          "NOASSERTION"
+        ],
+        "effective_license": "The OpenLDAP Public License",
+        "permissive": null,
+        "notes": "License detected but could not classify as clearly permissive or copyleft."
+      }
+    },
+    {
+      "id": "multiprocess",
+      "name": "multiprocess",
+      "version": "0.70.18",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/uqfoundation/multiprocess"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "multiprocess",
+        "name": "multiprocess",
+        "version": "0.70.18",
+        "summary": "better multiprocessing and multithreading in Python",
+        "home_page": "https://github.com/uqfoundation/multiprocess",
+        "project_urls": {
+          "Bug Tracker": "https://github.com/uqfoundation/multiprocess/issues",
+          "Documentation": "http://multiprocess.rtfd.io",
+          "Download": "https://pypi.org/project/multiprocess/#files",
+          "Homepage": "https://github.com/uqfoundation/multiprocess",
+          "Source Code": "https://github.com/uqfoundation/multiprocess"
+        },
+        "license": "BSD-3-Clause"
+      },
+      "github": {
+        "slug": "uqfoundation/multiprocess",
+        "full_name": "uqfoundation/multiprocess",
+        "description": "better multiprocessing and multithreading in Python",
+        "stargazers_count": 689,
+        "forks_count": 69,
+        "open_issues_count": 42,
+        "watchers_count": 689,
+        "default_branch": "master",
+        "created_at": "2015-06-20T15:45:09Z",
+        "updated_at": "2026-01-04T03:13:16Z",
+        "pushed_at": "2025-12-31T03:10:53Z",
+        "last_commit_date": "2025-12-31T03:09:47Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "No",
+        "arm_build_url": "",
+        "note": "No wheel available, but can build from source"
+      },
+      "license": {
+        "raw_license_strings": [
+          "N.A.",
+          "BSD-3-Clause",
+          "NOASSERTION"
+        ],
+        "effective_license": "N.A.",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "pyspellchecker",
+      "name": "pyspellchecker",
+      "version": "0.8.2",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/barrust/pyspellchecker"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "pyspellchecker",
+        "name": "pyspellchecker",
+        "version": "0.8.2",
+        "summary": "Pure python spell checker based on work by Peter Norvig",
+        "home_page": "",
+        "project_urls": {
+          "bug-tracker": "https://github.com/barrust/pyspellchecker/issues",
+          "documentation": "https://pyspellchecker.readthedocs.io/",
+          "homepage": "https://github.com/barrust/pyspellchecker"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "barrust/pyspellchecker",
+        "full_name": "barrust/pyspellchecker",
+        "description": "Pure Python Spell Checking http://pyspellchecker.readthedocs.io/en/latest/",
+        "stargazers_count": 768,
+        "forks_count": 161,
+        "open_issues_count": 7,
+        "watchers_count": 768,
+        "default_branch": "master",
+        "created_at": "2018-02-24T01:21:50Z",
+        "updated_at": "2026-01-03T03:47:36Z",
+        "pushed_at": "2025-11-30T00:18:15Z",
+        "last_commit_date": "2025-11-30T00:17:10Z",
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/pyspellchecker/0.8.2/#files",
+        "note": "pyspellchecker ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT license",
+          "MIT"
+        ],
+        "effective_license": "MIT license",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    }
+  ]
+}

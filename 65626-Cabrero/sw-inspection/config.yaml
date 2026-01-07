@@ -1,0 +1,153 @@
+project_name: Undefined
+snapshot_date: '2026-01-06'
+components:
+
+- id: torch
+  name: torch
+  version: 2.0.1
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/pytorch/pytorch
+  declared_license: BSD-style license
+  declared_function: Train and use the machine learning models
+
+- id: torchvision
+  name: torchvision
+  version: 0.15.2
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/torchvision/0.15.2/
+  declared_license: BSD-style license
+  declared_function: ''
+
+- id: torchaudio
+  name: torchaudio
+  version: 2.0.2
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/torchaudio/2.0.2/
+  declared_license: BSD-style license
+  declared_function: ''
+
+- id: torchmetrics
+  name: torchmetrics
+  version: 0.9.3
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/torchmetrics/0.9.3/
+  declared_license: BSD-style license
+  declared_function: ''
+
+- id: pytorch-lightning
+  name: pytorch-lightning
+  version: 2.1.3
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/Lightning-AI/pytorch-lightning
+  declared_license: Apache License 2.0
+  declared_function: ''
+
+- id: gradio
+  name: gradio
+  version: '4.43'
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/gradio-app/gradio
+  declared_license: Apache License 2.0
+  declared_function: ''
+
+- id: gradio-client
+  name: gradio_client
+  version: 1.13.0
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/gradio-client/1.13.0/
+  declared_license: ''
+  declared_function: ''
+
+- id: transformers
+  name: transformers
+  version: 4.28.0
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/huggingface/transformers
+  declared_license: Apache License 2.0
+  declared_function: ''
+
+- id: scikit-learn
+  name: scikit-learn
+  version: 1.4.0
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/scikit-learn/scikit-learn
+  declared_license: BSD-3-Clause license
+  declared_function: ''
+
+- id: tabulate
+  name: tabulate
+  version: 0.9.0
+  environment: Python package (PyPI)
+  distribution_channels:
+  - type: pypi
+    url: https://pypi.org/project/tabulate/
+  declared_license: ''
+  declared_function: ''
+
+- id: biopython
+  name: biopython
+  version: '1.83'
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/biopython/biopython
+  declared_license: BSD 3-Clause License
+  declared_function: ''
+
+- id: easydict
+  name: easydict
+  version: '1.13'
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/makinacorpus/easydict
+  declared_license: LGPL-3.0 license
+  declared_function: ''
+
+- id: lmdb
+  name: lmdb
+  version: 1.4.1
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/jnwatson/py-lmdb/
+  declared_license: The OpenLDAP Public License
+  declared_function: ''
+
+- id: multiprocess
+  name: multiprocess
+  version: 0.70.18
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/uqfoundation/multiprocess
+  declared_license: N.A.
+  declared_function: ''
+
+- id: pyspellchecker
+  name: pyspellchecker
+  version: 0.8.2
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/barrust/pyspellchecker
+  declared_license: MIT license
+  declared_function: ''
