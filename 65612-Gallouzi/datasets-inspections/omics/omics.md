@@ -19,12 +19,10 @@
 
 ### Associated paper:
 
--
-    * Open Materials 2024 (OMat24) Inorganic Materials Dataset and Models [paper title as per arXiv]*
+- *Open Materials 2024 (OMat24) Inorganic Materials Dataset and Models [paper title as per arXiv]*
 - arXiv: https://arxiv.org/abs/2410.12771
 - **Publication Date:** 16 Oct 2024
 
 ### Country of Origin
 
-- **Originating Organization:** Meta Platforms, Inc. (United States)
-  *(Meta Platforms Ireland Limited serves as the legal entity for EEA distribution)*
+- **Originating Organization:** NASA in The US.
