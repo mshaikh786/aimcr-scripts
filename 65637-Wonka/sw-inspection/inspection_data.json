@@ -1,0 +1,988 @@
+{
+  "project_name": "4D Reconstruction and Volume Estimation",
+  "snapshot_date": "2026-01-07",
+  "generated_at": "2026-01-07T09:35:49.331603Z",
+  "components": [
+    {
+      "id": "pytorch",
+      "name": "PyTorch",
+      "version": "2.9.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "other",
+          "url": "https://pytorch.org/"
+        }
+      ],
+      "declared_function": "operations and training neural networks on GPUs",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {},
+      "github": {},
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://pypi.org/project/torch/",
+        "note": "manylinux aarch64 wheel is available on PyPI - and docker images are also available on NGC."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD 3-Clause"
+        ],
+        "effective_license": "BSD 3-Clause",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "torchvision",
+      "name": "TorchVision",
+      "version": "0.24.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "other",
+          "url": "https://pytorch.org/vision"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {},
+      "github": {},
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/30/65/ac0a3f9be6abdbe4e1d82c915d7e20de97e7fd0e9a277970508b015309f3/torchvision-0.24.1-cp313-cp313-manylinux_2_28_aarch64.whl",
+        "note": "manylinux aarch64 wheel is available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD 3-Clause"
+        ],
+        "effective_license": "BSD 3-Clause",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "pytorch3d",
+      "name": "PyTorch3D",
+      "version": "0.7.4",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "other",
+          "url": "https://pytorch3d.org"
+        }
+      ],
+      "declared_function": "rendering (meshes, point clouds, cameras) tightly",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {},
+      "github": {},
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "No",
+        "arm_build_url": "",
+        "note": "No aarch64 wheels available on PyPI and no mention of ARM support on the project's github repo"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD License"
+        ],
+        "effective_license": "BSD License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "deepspeed",
+      "name": "DeepSpeed",
+      "version": "0.18.2",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/microsoft/DeepSpeed"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "DeepSpeed",
+        "name": "deepspeed",
+        "version": "0.18.2",
+        "summary": "DeepSpeed library",
+        "home_page": "http://deepspeed.ai",
+        "project_urls": {
+          "Documentation": "https://deepspeed.readthedocs.io",
+          "Homepage": "http://deepspeed.ai",
+          "Source": "https://github.com/deepspeedai/DeepSpeed"
+        },
+        "license": "Apache Software License 2.0"
+      },
+      "github": {
+        "slug": "microsoft/DeepSpeed",
+        "full_name": "deepspeedai/DeepSpeed",
+        "description": "DeepSpeed is a deep learning optimization library that makes distributed training and inference easy, efficient, and effective.",
+        "stargazers_count": 41170,
+        "forks_count": 4680,
+        "open_issues_count": 1249,
+        "watchers_count": 41170,
+        "default_branch": "master",
+        "created_at": "2020-01-23T18:35:18Z",
+        "updated_at": "2026-01-07T09:28:37Z",
+        "pushed_at": "2026-01-07T08:32:17Z",
+        "last_commit_date": "2026-01-07T08:32:17Z",
+        "license": {
+          "key": "apache-2.0",
+          "name": "Apache License 2.0",
+          "spdx_id": "Apache-2.0"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Through source build",
+        "arm_build_url": "",
+        "note": "No available aarch64 wheel on PyPI. Pip installation will build all of the extensions/ops just-in-time (JIT) using torch's JIT C++ extension loader that relies on ninja to build and dynamically link them at runtime."
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT License",
+          "Apache Software License 2.0",
+          "Apache-2.0"
+        ],
+        "effective_license": "MIT License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "open3d",
+      "name": "Open3D",
+      "version": "0.19.0",
+      "environment": "Built from source (GitHub)",
+      "distribution_channels": [
+        {
+          "type": "github",
+          "url": "https://github.com/isl-org/Open3D"
+        }
+      ],
+      "declared_function": "voxel grids) and visualization, used for geometry",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "Open3D",
+        "name": "open3d",
+        "version": "0.19.0",
+        "summary": "Open3D: A Modern Library for 3D Data Processing.",
+        "home_page": "https://www.open3d.org",
+        "project_urls": {
+          "Documentation": "https://www.open3d.org/docs",
+          "Homepage": "https://www.open3d.org",
+          "Issues": "https://github.com/isl-org/Open3D/issues",
+          "Source code": "https://github.com/isl-org/Open3D"
+        },
+        "license": "MIT"
+      },
+      "github": {
+        "slug": "isl-org/Open3D",
+        "full_name": "isl-org/Open3D",
+        "description": "Open3D: A Modern Library for 3D Data Processing",
+        "stargazers_count": 13176,
+        "forks_count": 2507,
+        "open_issues_count": 1328,
+        "watchers_count": 13176,
+        "default_branch": "main",
+        "created_at": "2016-12-02T16:40:38Z",
+        "updated_at": "2026-01-07T08:33:36Z",
+        "pushed_at": "2026-01-07T00:06:50Z",
+        "last_commit_date": "2026-01-05T22:38:56Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Not directly, but through source build - Also, note that the following disclaimer is written on their documentation: \"Open3D provides experimental support for 64-bit ARM architecture (arm64 or aarch64) on Linux\"",
+        "arm_build_url": "",
+        "note": "For v0.19.0 specified, there is no manylinux aarch64 on PyPI. However, it is available in older versions like 0.14.1. There is documentation for compiling Open3D on ARM64 Linux, but it is experimental support."
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT License",
+          "MIT",
+          "NOASSERTION"
+        ],
+        "effective_license": "MIT License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "opencv-python-opencv-python",
+      "name": "OpenCV-Python (opencv-python)",
+      "version": "4.12.0.88",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/opencv-python/"
+        }
+      ],
+      "declared_function": "processing (filters, feature detection, geometric",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "opencv-python",
+        "name": "opencv-python",
+        "version": "4.12.0.88",
+        "summary": "Wrapper package for OpenCV python bindings.",
+        "home_page": "https://github.com/opencv/opencv-python",
+        "project_urls": {
+          "Homepage": "https://github.com/opencv/opencv-python"
+        },
+        "license": "Apache 2.0"
+      },
+      "github": {
+        "slug": "opencv/opencv-python",
+        "full_name": "opencv/opencv-python",
+        "description": "Automated CI toolchain to produce precompiled opencv-python, opencv-python-headless, opencv-contrib-python and opencv-contrib-python-headless packages.",
+        "stargazers_count": 5139,
+        "forks_count": 981,
+        "open_issues_count": 181,
+        "watchers_count": 5139,
+        "default_branch": "4.x",
+        "created_at": "2016-04-08T13:36:40Z",
+        "updated_at": "2026-01-07T06:30:31Z",
+        "pushed_at": "2026-01-06T10:31:06Z",
+        "last_commit_date": "2026-01-06T10:31:06Z",
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/62/3a/440bd64736cf8116f01f3b7f9f2e111afb2e02beb2ccc08a6458114a6b5d/opencv_python-4.12.0.88-cp37-abi3-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+        "note": "manylinux aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "Apache 2.0",
+          "MIT"
+        ],
+        "effective_license": "Apache 2.0",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "numpy",
+      "name": "NumPy",
+      "version": "2.3.5",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/numpy/2.3.5/"
+        }
+      ],
+      "declared_function": "algebra, random numbers) underpinning most",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "numpy",
+        "name": "numpy",
+        "version": "2.3.5",
+        "summary": "Fundamental package for array computing in Python",
+        "home_page": "",
+        "project_urls": {
+          "documentation": "https://numpy.org/doc/",
+          "download": "https://pypi.org/project/numpy/#files",
+          "homepage": "https://numpy.org",
+          "release notes": "https://numpy.org/doc/stable/release",
+          "source": "https://github.com/numpy/numpy",
+          "tracker": "https://github.com/numpy/numpy/issues"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "numpy/numpy",
+        "full_name": "numpy/numpy",
+        "description": "The fundamental package for scientific computing with Python.",
+        "stargazers_count": 31171,
+        "forks_count": 11927,
+        "open_issues_count": 2400,
+        "watchers_count": 31171,
+        "default_branch": "main",
+        "created_at": "2010-09-13T23:02:39Z",
+        "updated_at": "2026-01-07T08:18:20Z",
+        "pushed_at": "2026-01-06T20:05:16Z",
+        "last_commit_date": "2026-01-06T20:05:09Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/7d/e4/68d2f474df2cb671b2b6c2986a02e520671295647dad82484cde80ca427b/numpy-2.3.5-pp311-pypy311_pp73-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "note": "manylinux aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD License",
+          "NOASSERTION"
+        ],
+        "effective_license": "BSD License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "scipy",
+      "name": "SciPy",
+      "version": "1.16.3",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/scipy/"
+        }
+      ],
+      "declared_function": "integration, interpolation, signal and image",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "scipy",
+        "name": "scipy",
+        "version": "1.16.3",
+        "summary": "Fundamental algorithms for scientific computing in Python",
+        "home_page": "",
+        "project_urls": {
+          "documentation": "https://docs.scipy.org/doc/scipy/",
+          "download": "https://github.com/scipy/scipy/releases",
+          "homepage": "https://scipy.org/",
+          "source": "https://github.com/scipy/scipy",
+          "tracker": "https://github.com/scipy/scipy/issues"
+        },
+        "license": "BSD-style license (see project license file for full text)"
+      },
+      "github": {
+        "slug": "scipy/scipy",
+        "full_name": "scipy/scipy",
+        "description": "SciPy library main repository",
+        "stargazers_count": 14318,
+        "forks_count": 5578,
+        "open_issues_count": 1749,
+        "watchers_count": 14318,
+        "default_branch": "main",
+        "created_at": "2011-03-09T18:52:03Z",
+        "updated_at": "2026-01-07T08:08:55Z",
+        "pushed_at": "2026-01-07T08:08:49Z",
+        "last_commit_date": "2026-01-07T08:08:49Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/16/9d/d9e148b0ec680c0f042581a2be79a28a7ab66c0c4946697f9e7553ead337/scipy-1.16.3-cp314-cp314t-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+        "note": "manylinux aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD License",
+          "BSD-style license (see project license file for full text)",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "pandas",
+      "name": "pandas",
+      "version": "2.3.3",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/pandas/"
+        }
+      ],
+      "declared_function": "and heterogeneous data (data cleaning,",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "pandas",
+        "name": "pandas",
+        "version": "2.3.3",
+        "summary": "Powerful data structures for data analysis, time series, and statistics",
+        "home_page": "",
+        "project_urls": {
+          "documentation": "https://pandas.pydata.org/docs/",
+          "homepage": "https://pandas.pydata.org",
+          "repository": "https://github.com/pandas-dev/pandas"
+        },
+        "license": "Apache-2.0 (see project license file for full text)"
+      },
+      "github": {
+        "slug": "pandas-dev/pandas",
+        "full_name": "pandas-dev/pandas",
+        "description": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more",
+        "stargazers_count": 47498,
+        "forks_count": 19476,
+        "open_issues_count": 3595,
+        "watchers_count": 47498,
+        "default_branch": "main",
+        "created_at": "2010-08-24T01:37:33Z",
+        "updated_at": "2026-01-07T09:32:30Z",
+        "pushed_at": "2026-01-06T22:12:54Z",
+        "last_commit_date": "2026-01-06T22:12:54Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/f9/88/702bde3ba0a94b8c73a0181e05144b10f13f29ebfc2150c3a79062a8195d/pandas-2.3.3-cp314-cp314t-manylinux_2_24_aarch64.manylinux_2_28_aarch64.whl",
+        "note": "aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD 3-Clause License",
+          "Apache-2.0 (see project license file for full text)",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD 3-Clause License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "scikit-learn",
+      "name": "scikit-learn",
+      "version": "1.7.2",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/scikit-learn/1.7.2/"
+        }
+      ],
+      "declared_function": "(classification, regression, clustering,",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "scikit-learn",
+        "name": "scikit-learn",
+        "version": "1.7.2",
+        "summary": "A set of python modules for machine learning and data mining",
+        "home_page": "",
+        "project_urls": {
+          "download": "https://pypi.org/project/scikit-learn/#files",
+          "homepage": "https://scikit-learn.org",
+          "release notes": "https://scikit-learn.org/stable/whats_new",
+          "source": "https://github.com/scikit-learn/scikit-learn",
+          "tracker": "https://github.com/scikit-learn/scikit-learn/issues"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "scikit-learn/scikit-learn",
+        "full_name": "scikit-learn/scikit-learn",
+        "description": "scikit-learn: machine learning in Python",
+        "stargazers_count": 64532,
+        "forks_count": 26582,
+        "open_issues_count": 2119,
+        "watchers_count": 64532,
+        "default_branch": "main",
+        "created_at": "2010-08-17T09:43:38Z",
+        "updated_at": "2026-01-07T09:26:20Z",
+        "pushed_at": "2026-01-06T14:26:20Z",
+        "last_commit_date": "2026-01-06T14:26:20Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/99/7e/290362f6ab582128c53445458a5befd471ed1ea37953d5bcf80604619250/scikit_learn-1.7.2-cp314-cp314-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "note": "aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD 3-Clause License",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD 3-Clause License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "scikit-image",
+      "name": "scikit-image",
+      "version": "0.25.2",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/scikit-image/0.25.2/"
+        }
+      ],
+      "declared_function": "segmentation, morphology, feature extraction) on",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "scikit-image",
+        "name": "scikit-image",
+        "version": "0.25.2",
+        "summary": "Image processing in Python",
+        "home_page": "",
+        "project_urls": {
+          "documentation": "https://scikit-image.org/docs/stable",
+          "download": "https://pypi.org/project/scikit-image/#files",
+          "homepage": "https://scikit-image.org",
+          "source": "https://github.com/scikit-image/scikit-image",
+          "tracker": "https://github.com/scikit-image/scikit-image/issues"
+        },
+        "license": "BSD-style license (see project license file for full text)"
+      },
+      "github": {
+        "slug": "scikit-image/scikit-image",
+        "full_name": "scikit-image/scikit-image",
+        "description": "Image processing in Python",
+        "stargazers_count": 6418,
+        "forks_count": 2353,
+        "open_issues_count": 857,
+        "watchers_count": 6418,
+        "default_branch": "main",
+        "created_at": "2011-07-07T22:07:20Z",
+        "updated_at": "2026-01-06T16:39:38Z",
+        "pushed_at": "2026-01-06T16:39:33Z",
+        "last_commit_date": "2026-01-06T16:39:33Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/4e/63/3368902ed79305f74c2ca8c297dfeb4307269cbe6402412668e322837143/scikit_image-0.25.2-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "note": "aarch64 wheel is available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD 3-Clause License",
+          "BSD-style license (see project license file for full text)",
+          "NOASSERTION"
+        ],
+        "effective_license": "BSD 3-Clause License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "matplotlib",
+      "name": "Matplotlib",
+      "version": "3.10.7",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/matplotlib/3.10.7/"
+        }
+      ],
+      "declared_function": "figures (used for diagnostics, result plots,",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "matplotlib",
+        "name": "matplotlib",
+        "version": "3.10.7",
+        "summary": "Python plotting package",
+        "home_page": "",
+        "project_urls": {
+          "Bug Tracker": "https://github.com/matplotlib/matplotlib/issues",
+          "Documentation": "https://matplotlib.org",
+          "Donate": "https://numfocus.org/donate-to-matplotlib",
+          "Download": "https://matplotlib.org/stable/install/index.html",
+          "Forum": "https://discourse.matplotlib.org/",
+          "Homepage": "https://matplotlib.org",
+          "Source Code": "https://github.com/matplotlib/matplotlib"
+        },
+        "license": "Apache-2.0 (see project license file for full text)"
+      },
+      "github": {
+        "slug": "matplotlib/matplotlib",
+        "full_name": "matplotlib/matplotlib",
+        "description": "matplotlib: plotting with Python",
+        "stargazers_count": 22190,
+        "forks_count": 8170,
+        "open_issues_count": 1544,
+        "watchers_count": 22190,
+        "default_branch": "main",
+        "created_at": "2011-02-19T03:17:12Z",
+        "updated_at": "2026-01-07T03:11:37Z",
+        "pushed_at": "2026-01-04T06:14:22Z",
+        "last_commit_date": "2026-01-04T06:14:22Z",
+        "license": {
+          "key": null,
+          "name": null,
+          "spdx_id": null
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/77/b5/e6ca22901fd3e4fe433a82e583436dd872f6c966fca7e63cf806b40356f8/matplotlib-3.10.7-cp314-cp314t-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "note": "aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "Matplotlib license (BSD-compatible)",
+          "Apache-2.0 (see project license file for full text)"
+        ],
+        "effective_license": "Matplotlib license (BSD-compatible)",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "seaborn",
+      "name": "Seaborn",
+      "version": "0.13.2",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/seaborn/"
+        }
+      ],
+      "declared_function": "Matplotlib and pandas for quick, publication-ready",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "seaborn",
+        "name": "seaborn",
+        "version": "0.13.2",
+        "summary": "Statistical data visualization",
+        "home_page": "",
+        "project_urls": {
+          "Docs": "http://seaborn.pydata.org",
+          "Source": "https://github.com/mwaskom/seaborn"
+        },
+        "license": ""
+      },
+      "github": {
+        "slug": "mwaskom/seaborn",
+        "full_name": "mwaskom/seaborn",
+        "description": "Statistical data visualization in Python",
+        "stargazers_count": 13660,
+        "forks_count": 2074,
+        "open_issues_count": 200,
+        "watchers_count": 13660,
+        "default_branch": "master",
+        "created_at": "2012-06-18T18:41:19Z",
+        "updated_at": "2026-01-07T05:38:29Z",
+        "pushed_at": "2025-12-24T15:21:17Z",
+        "last_commit_date": "2025-12-24T15:21:16Z",
+        "license": {
+          "key": "bsd-3-clause",
+          "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+          "spdx_id": "BSD-3-Clause"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/seaborn/#files",
+        "note": "seaborn ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "BSD 3-Clause License",
+          "BSD-3-Clause"
+        ],
+        "effective_license": "BSD 3-Clause License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "weights-biases-wandb",
+      "name": "Weights & Biases (wandb)",
+      "version": "0.23.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/wandb/"
+        }
+      ],
+      "declared_function": "",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "wandb",
+        "name": "wandb",
+        "version": "0.23.1",
+        "summary": "A CLI and library for interacting with the Weights & Biases API.",
+        "home_page": "",
+        "project_urls": {
+          "Bug Reports": "https://github.com/wandb/wandb/issues",
+          "Documentation": "https://docs.wandb.ai/",
+          "Source": "https://github.com/wandb/wandb"
+        },
+        "license": "MIT license (see project license file for full text)"
+      },
+      "github": {
+        "slug": "wandb/wandb",
+        "full_name": "wandb/wandb",
+        "description": "The AI developer platform. Use Weights & Biases to train and fine-tune models, and manage models from experimentation to production.",
+        "stargazers_count": 10706,
+        "forks_count": 806,
+        "open_issues_count": 804,
+        "watchers_count": 10706,
+        "default_branch": "main",
+        "created_at": "2017-03-24T05:46:23Z",
+        "updated_at": "2026-01-07T07:54:56Z",
+        "pushed_at": "2026-01-07T01:29:22Z",
+        "last_commit_date": "2026-01-07T00:51:06Z",
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes",
+        "arm_build_url": "https://files.pythonhosted.org/packages/96/b6/fd465827c14c64d056d30b4c9fcf4dac889a6969dba64489a88fc4ffa333/wandb-0.23.1-py3-none-manylinux_2_28_aarch64.whl",
+        "note": "aarch64 wheel available on PyPI"
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT License",
+          "MIT license (see project license file for full text)",
+          "MIT"
+        ],
+        "effective_license": "MIT License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "hydra-hydra-core",
+      "name": "Hydra (hydra-core)",
+      "version": "1.3.2",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/hydra-core/"
+        }
+      ],
+      "declared_function": "experiments (config composition, overrides, multi-",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "hydra-core",
+        "name": "hydra-core",
+        "version": "1.3.2",
+        "summary": "A framework for elegantly configuring complex applications",
+        "home_page": "https://github.com/facebookresearch/hydra",
+        "project_urls": {
+          "Homepage": "https://github.com/facebookresearch/hydra"
+        },
+        "license": "MIT"
+      },
+      "github": {
+        "slug": "facebookresearch/hydra",
+        "full_name": "facebookresearch/hydra",
+        "description": "Hydra is a framework for elegantly configuring complex applications",
+        "stargazers_count": 10082,
+        "forks_count": 780,
+        "open_issues_count": 365,
+        "watchers_count": 10082,
+        "default_branch": "main",
+        "created_at": "2019-06-12T19:33:15Z",
+        "updated_at": "2026-01-07T09:20:36Z",
+        "pushed_at": "2025-12-11T03:46:06Z",
+        "last_commit_date": "2025-11-29T13:53:02Z",
+        "license": {
+          "key": "mit",
+          "name": "MIT License",
+          "spdx_id": "MIT"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/hydra-core",
+        "note": "hydra-core ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT License",
+          "MIT",
+          "MIT"
+        ],
+        "effective_license": "MIT License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    },
+    {
+      "id": "tqdm",
+      "name": "tqdm",
+      "version": "4.67.1",
+      "environment": "Python package (PyPI)",
+      "distribution_channels": [
+        {
+          "type": "pypi",
+          "url": "https://pypi.org/project/tqdm/"
+        }
+      ],
+      "declared_function": "processing in Python (useful for monitoring long",
+      "sbom": {
+        "path": null,
+        "exists": false,
+        "size_bytes": null,
+        "modified_at": null
+      },
+      "pypi": {
+        "project_name": "tqdm",
+        "name": "tqdm",
+        "version": "4.67.1",
+        "summary": "Fast, Extensible Progress Meter",
+        "home_page": "",
+        "project_urls": {
+          "changelog": "https://tqdm.github.io/releases",
+          "homepage": "https://tqdm.github.io",
+          "repository": "https://github.com/tqdm/tqdm",
+          "wiki": "https://github.com/tqdm/tqdm/wiki"
+        },
+        "license": "MPL-2.0 AND MIT"
+      },
+      "github": {
+        "slug": "tqdm/tqdm",
+        "full_name": "tqdm/tqdm",
+        "description": ":zap: A Fast, Extensible Progress Bar for Python and CLI",
+        "stargazers_count": 30834,
+        "forks_count": 1419,
+        "open_issues_count": 582,
+        "watchers_count": 30834,
+        "default_branch": "master",
+        "created_at": "2015-06-03T13:13:14Z",
+        "updated_at": "2026-01-07T05:20:05Z",
+        "pushed_at": "2025-05-22T12:10:29Z",
+        "last_commit_date": "2024-11-12T13:35:33Z",
+        "license": {
+          "key": "other",
+          "name": "Other",
+          "spdx_id": "NOASSERTION"
+        }
+      },
+      "ngc_url": "",
+      "arch_support": {
+        "arm_aarch64_available": "Yes (pure Python / py3-none-any wheels)",
+        "arm_build_url": "https://pypi.org/project/tqdm",
+        "note": "tqdm ships as a pure Python package (`py3-none-any` wheels on PyPI), so it is architecture-independent and runs on ARM/aarch64 as long as the Python ecosystem dependencies are available."
+      },
+      "license": {
+        "raw_license_strings": [
+          "MIT License",
+          "MPL-2.0 AND MIT",
+          "NOASSERTION"
+        ],
+        "effective_license": "MIT License",
+        "permissive": true,
+        "notes": "Detected permissive license family (e.g. Apache/BSD/MIT)."
+      }
+    }
+  ]
+}
