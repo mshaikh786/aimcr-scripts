@@ -1,0 +1,24 @@
+project_name: 'Scaling Laws and Optimization Dynamics of Looped Transformers: Toward
+  Efficient and High-Capacity Language Models'
+snapshot_date: '2026-01-11'
+components:
+
+- id: pytorch
+  name: Pytorch
+  version: 2.9.0
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/pytorch/pytorch
+  declared_license: BSD 3-Clause
+  declared_function: Train neural networks
+
+- id: megatron-lm
+  name: Megatron-LM
+  version: 0.15.0
+  environment: Built from source (GitHub)
+  distribution_channels:
+  - type: github
+    url: https://github.com/NVIDIA/Megatron-LM
+  declared_license: Apache 2.0
+  declared_function: Framework for training large-scale models
